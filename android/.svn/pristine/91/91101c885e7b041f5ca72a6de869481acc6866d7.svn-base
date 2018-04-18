@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,user-scalable=no" name="viewport" />
+    <title>首页-楼先生</title>
+    <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+    <link rel="styleSheet" type="text/css" href="/resourse/css/register.css">
+    <link href="css/lxs.css" type="text/css" rel="styleSheet"/>
+    <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+    <link href="/resourse/css/iSlider.css" type="text/css" rel="styleSheet"/>
+    <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+</head>
+<body class="lxs_bg">
+<div class="page out" id="index">
+    <div class="top_banner">
+        <a href="#search" class="search" id="index_search_btn"><i></i></a>
+        <a href="javascript:app.href('xiaoxi_index.html');" class="msg"><i></i></a>
+        <p class="title">楼先生</p>
+    </div>
+    <div class="lxs_content" id="index_buliding_list">
+        <div class="common-list" id="bulidingListArea" style="position:relative;">
+            <div id="scroller" class="common-list-scroller fans-scroller">
+                <div id="pullDown" class="common-list-pull">
+                    <span class="pullDownIcon"></span><span class="pullDownLabel">下拉更新数据...</span>
+                </div>
+                <div id="thelist" class="clearfix" style="min-height: 100%;">
+                    <div class="part left_part" id="left_part"></div>
+                    <div class="part right_part" id="right_part"></div>
+                </div>
+                <div id="pullUp" class="common-list-pull">
+                    <span class="pullUpIcon"></span><span class="pullUpLabel">上拉获取更多...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page out" id="detail" data-fallback="detailFallback">
+    <div class="top_banner">
+        <a href="#index" class="go_back" data-rel="back"><i></i></a>
+        <div class="buliding_operate">
+            <a class="buliding_search" href="#search" data-rel="auto" id="bulidingdetail_search_btn"><i></i></a>
+            <a href="javascript:app.href('xiaoxi_index.html');" class="buliding_msg"><i></i></a>
+            <a href="javascript:;" class="buliding_collect" id="collect_buliding"><i></i></a>
+            <a href="javascript:;" class="buliding_share" id="buliding_share"><i></i></a>
+        </div>
+        <p class="title_right"><a href="javascript:app.href('lxs_consultant_recommand.html')">资深经纪</a></p>
+    </div>
+    <div class="content buliding_inner_info white" id="detail_scroller">
+        <div class="scroller_inner">
+            <div class="buliding_detail ">
+                <div class="buliding_img">
+                    <img src="" id="avatar"/>
+                    <a class="img_count" href="javascript:;" id="buliding_img" style="display:none;">
+                        <i></i>
+                        <span class="img_count_span" id="img_total_span"></span>
+                    </a>
+                </div>
+                <div class="buliding_info">
+                    <a href="javascript:;" class="go_pos" id="go_map"></a>
+                    <p class="name" id="name"></p>
+                    <p class="pos" id="address"></p>
+                </div>
+            </div>
+            <div class="info_list clearfix">
+                <div class="info_item" id="rent_price">
+                    <span>租金：</span>
+                    <span id="rent_price_span"></span>
+                </div>
+                <div class="clearfix"></div>
+                <div class="info_item" id="sell_price">
+                    <span>售价：</span>
+                    <span id="sell_price_span"></span>
+                </div>
+                <div class="clearfix"></div>
+                <div class="info_item" id="property_costs">
+                    <span>物业费：</span>
+                    <span id="property_costs_span"></span>
+                </div>
+                <div class="clearfix"></div>
+                <div class="info_item half" id="type">
+                    <span>类型：</span>
+                    <span id="type_span"></span>
+                </div>
+                <div class="info_item half" id="build_date">
+                    <span>竣工日期：</span>
+                    <span id="build_date_span"></span>
+                </div>
+                <div class="clearfix"></div>
+                <div class="info_item clearfix" id="metro">
+                    <span style="float:left;">地铁：</span>
+                    <p id="metro_span" style="margin-left:42px;"></p>
+                </div>
+                <div class="info_item clearfix" id="tags">
+                    <span style="float:left;">特色：</span>
+                    <p id="tags_span" style="margin-left:42px;"></p>
+                </div>
+                <div class="clearfix"></div>
+                <a class="go_detail" href="#detail_more" data-rel="auto" style="display:none;">
+                    <span>详细信息</span>
+                    <i></i>
+                </a>
+            </div>
+            <div class="phones clearfix" id="phones" style="display:none;">
+                <i></i>
+                <a class="phone" id="phone1" data-verify=""></a>
+                <a class="phone" id="phone2" data-verify="" style="margin-right:0;"></a>
+            </div>
+
+            <div class="house_list" id="rooms">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page out search_page" id="search">
+    <div class="top_banner">
+        <a href="javascript:;" class="go_back" data-rel="back" id="search_go_back"><i></i></a>
+        <div class="search_warper">
+            <i></i>
+            <div class="ipt_warp"><input type="text" id="keyword" placeholder="请输入楼盘名称或地址"/></div>
+        </div>
+    </div>
+    <div class="content" id="search_scroller" style="top:60px;">
+        <div class="scroller_inner">
+            <div class="search_condition">
+                <div class="line">
+                    <p class="search_title">请选择搜索条件，可多选</p>
+                </div>
+                <div class="line">
+                    <span class="condition_name">交易</span>
+                    <div class="condition clearfix">
+                        <div class="conditon_option">
+                            <label class="radio">
+                                <input type="radio" name="trade" value="1" checked="checked"/>
+                                <span class="is_check left"></span>
+                                <span class="radio_title">出租</span>
+                            </label>
+                        </div>
+                        <div class="conditon_option">
+                            <label class="radio">
+                                <input type="radio" name="trade" value="2"/>
+                                <span class="is_check left"></span>
+                                <span class="radio_title">出售</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="line1">
+                    <span class="condition_name">属性</span>
+                    <div class="sub_line clearfix">
+                        <div class="conditon_option">
+                            <label class="checkbox ">
+                                <input type="checkbox" name="prop1" value="0" id="prop_all" checked="checked"/>
+                                <span class="is_check left"></span>
+                                <span class="checkbox_title">全部</span>
+                            </label>
+                        </div>
+                        <div class="conditon_option">
+                            <label class="checkbox" id="prop1">
+                                <input type="checkbox" name="prop" value="1" id="prop1_ipt"/>
+                                <span class="is_check left"></span>
+                                <span class="checkbox_title">单元</span>
+                            </label>
+                        </div>
+                        <div class="conditon_option">
+                            <label class="checkbox" id="prop2">
+                                <input type="checkbox" name="prop" value="2" id="prop2_ipt"/>
+                                <span class="is_check left"></span>
+                                <span class="checkbox_title">整层</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sub_line clearfix">
+                        <div class="conditon_option">
+                            <label class="checkbox " id="prop3">
+                                <input type="checkbox" name="prop" value="3" id="prop3_ipt"/>
+                                <span class="is_check left"></span>
+                                <span class="checkbox_title">独栋</span>
+                            </label>
+                        </div>
+                        <div class="conditon_option">
+                            <label class="checkbox" id="prop4">
+                                <input type="checkbox" name="prop" value="4" id="prop4_ipt"/>
+                                <span class="is_check left"></span>
+                                <span class="checkbox_title">商务中心</span>
+                            </label>
+                        </div>
+                        <div class="conditon_option">
+                            <label class="checkbox" id="prop5">
+                                <input type="checkbox" name="prop" value="5" id="prop5_ipt"/>
+                                <span class="is_check left"></span>
+                                <span class="checkbox_title">创客空间</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">面积</span>
+                    <div class="condition">
+                        <input type="text" class="condition_ipt" id="acreage" placeholder="0"/>m²
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">预算</span>
+                    <div class="condition">
+                        <input type="text" class="condition_ipt" id="budget" placeholder="¥"/><span id="price_unit">元/m²/天</span>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">区域</span>
+                    <div class="condition">
+                        <a id="go_select_region" class="select_condition clearfix" href="#select">
+                            <i></i>
+                            <p>全部</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">板块</span>
+                    <div class="condition">
+                        <a data-preventdefault="checkSelectedRegion" id="go_select_plate" class="select_condition clearfix" href="#select">
+                            <i></i>
+                            <p>全部</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">地铁</span>
+                    <div class="condition">
+                        <a st="地铁" ste="metro" id="go_select_metro" class="select_condition clearfix" href="#select">
+                            <i></i>
+                            <p>全部</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">类型</span>
+                    <div class="condition">
+                        <a st="类型" ste="type"  id="go_select_type" class="select_condition clearfix" href="#select">
+                            <i></i>
+                            <p>全部</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">交付</span>
+                    <div class="condition">
+                        <a st="交付" ste="status" id="go_select_status" class="select_condition clearfix" href="#select">
+                            <i></i>
+                            <p>全部</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="search_operate clearfix">
+                <a href="#index" class="submit" data-rel="back" id="search_buliding">搜索房源</a>
+                <a href="javascript:;" class="reset">重置搜索条件</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page out" id="detail_more">
+    <div class="top_banner gray">
+        <a href="#detail" class="go_back" data-rel="back"><i></i></a>
+        <p class="title" id="buliding_title2"></p>
+    </div>
+    <div class="content" id="detail_more_scroller">
+        <div class="buliding_more scroller_inner" id="more_info">
+
+        </div>
+    </div>
+</div>
+
+<div class="page out" id="select">
+    <div class="select_area">
+        <div class="top_banner">
+            <a href="#search" class="go_back" data-rel="back"><i></i></a>
+            <a href="javascript:;" class="submit" data-rel="back"><i></i></a>
+            <p class="title" id="select_title"></p>
+        </div>
+        <div class="content" id="select_scroller" style="top:60px;">
+            <div class="scroller_inner">
+                <div class="areas">
+                    <label class="checkbox area">
+                        <input type="checkbox" name="all" id="select_all" value="" checked="checked"/>
+                        <span class="is_check right"></span>
+                        <span class="checkbox_title">全部</span>
+                    </label>
+                </div>
+                <div id="options">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page out" id="room_detail" data-fallback="detailFallback">
+    <div class="top_banner">
+        <a href="#detail" class="go_back" data-rel="back"><i></i></a>
+        <div class="buliding_operate">
+            <a href="#search" class="buliding_search" data-back="auto" id="roomdetail_search_btn"><i></i></a>
+            <a href="javascript:app.href('xiaoxi_index.html');" class="buliding_msg"><i></i></a>
+            <a href="javascript:;" class="buliding_collect" id="collect_room"><i></i></a>
+            <a href="javascript:;" class="buliding_share" id="room_share"><i></i></a>
+        </div>
+        <p class="title_right"><a href="javascript:app.href('lxs_consultant_recommand.html');">资深经纪</a></p>
+    </div>
+    <div class="content buliding_inner_info white" id="room_detail_scroller">
+        <div class="scroller_inner">
+            <div class="buliding_detail">
+                <div class="buliding_img">
+                    <img src="" id="room_detail_atavar"/>
+                    <a class="img_count" href="javascript:;" id="room_imgs" style="display:none;">
+                        <i></i>
+                        <span class="img_count_span" id="room_total_span"></span>
+                    </a>
+                </div>
+                <div class="buliding_info">
+                    <a href="javascript:;" class="room_status" id="room_status"></a>
+                    <div class="room_collection_num"><i></i><span id="collection_num"></span></div>
+                    <p class="name" id="room_buliding_name"></p>
+                    <p class="pos" id="unit_no">浦东新区 陆家嘴（核心区） 锐成中路312号</p>
+                </div>
+            </div>
+            <div class="info_list clearfix">
+                <div class="info_item" prop_val="rent_price">
+                    <span>租金：</span>
+                    <span id="room_rent_price_span"></span>
+                </div>
+                <div class="info_item" prop_val="rent_price_monthly">
+                    <span>月租金：</span>
+                    <span id="room_rent_price_monthly_span"></span>
+                </div>
+                <div class="info_item" prop_val="sell_price">
+                    <span>售价：</span>
+                    <span id="room_sell_price_span"></span>
+                </div>
+                <div class="info_item" prop_val="sell_price_all">
+                    <span>总价：</span>
+                    <span id="room_sell_price_all_span"></span>
+                </div>
+                <div class="info_item" prop_val="head_to">
+                    <span>朝向：</span>
+                    <span id="room_head_to_span">向南</span>
+                </div>
+                <div class="info_item" prop_val="square_meter">
+                    <span style="float:left;">面积：</span>
+                    <span id="room_square_meter_span"></span>
+                </div>
+                <div class="info_item" prop_val="delivery_status">
+                    <span>交付状态：</span>
+                    <span id="room_delivery_status_span"></span>
+                </div>
+                <div class="info_item" prop_val="delivery_time">
+                    <span>交付时间：</span>
+                    <span id="room_delivery_time_span">2015年8月p3日</span>
+                </div>
+                <div class="info_item" prop_val="min_rent_period">
+                    <span>最短租约：</span>
+                    <span id="room_min_rent_period_span"></span>
+                </div>
+                <div class="info_item" prop_val="note">
+                    <span style="float:left;">简介：</span>
+                    <p id="room_note_span" style="margin-left:42px;"></p>
+                </div>
+                <div class="info_item" prop_val="update_time">
+                    <span>更新时间：</span>
+                    <span id="room_update_time_span">2015年6月15日</span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="house_list hd_consultant_list">
+                <div class="house_item">
+                    <div class="phone_warper clearfix" id="user_phone_con" style="display:none;">
+                        <i class="phone_icon"></i>
+                        <a class="phone_num" id="user_phone" data-verify="" ></a>
+                    </div>
+                    <div class="house_img avatar">
+                        <img src="" id="user_avatar"/>
+                    </div>
+                    <div class="house_info">
+                        <p class="house_name" id="user_name"></p>
+                        <p class="house_price"><span id="user_company"></span><span class="ml15" id="user_type"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="scripts/lxsConfig.js"></script>
+<script type="text/tpl">
+            <!--^bulid_item-->
+                <div class="part_item">
+                    <div class="item_img">
+                        <a href="#detail" class="buliding_link" bid="{#id}">
+                            <img class="img" src="{#avatar}" style="{#id|styleFormat}"/>
+                        </a>
+                    </div>
+                    <div class="item_detail">
+                        <p class="item_name"><a href="#detail" class="buliding_link" bid="{#id}">{#name}</a></p>
+                        <p class="item_pos">{#address}</p>
+                        <div class="item_money">
+                            <span class="money_icon"></span>
+                            <div class="money_info">
+                                {#rent_price|rentPriceFunction}
+                                {#sell_price|sellPriceFunction}
+                            </div>
+                        </div>
+                        <div class="other_info">
+                            <p class="fy_num">
+                                <i class="fy_icon"></i>
+                                <span class="fy_count">房源{#room_total}</span>
+                            </p>
+                            <p class="like_num">
+                                <i class="like_icon"></i>
+                                <span class="like_count">收藏{#collect_total}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <!--bulid_item$-->
+            <!--^select_plate-->
+                <div class="areas">
+                    <div class="area_title">
+                        {#name}
+                    </div>
+                    {#child|childSelectCreate}
+                </div>
+            <!--select_plate$-->
+            <!--^select_option-->
+                <label class="checkbox area">
+                    <input type="checkbox" name="{#keyName}" value="{#id}"/>
+                    <span class="is_check right"></span>
+                    <span class="checkbox_title">{#name}</span>
+                </label>
+            <!--select_option$-->
+            <!--^room-->
+                <div class="house_item">
+                    <a href="#room_detail" rid="{#id}" class="room_detail">
+                        <div class="house_img">
+                            <img src="{#avatar}" />
+                        </div>
+                   </a>
+                    <span class="house_type {#transaction_type|typeClass}"></span>
+                    <div class="house_info">
+                        <a href="#room_detail" rid="{#id}" class="room_detail">
+                            <p class="house_name">{#unit_no}</p>
+                            {#id|priceAssert}
+                        </a>
+                    </div>
+                    <span class="house_want {#status|statusClass}"></span>
+                    {#id|isVerified}
+                </div>
+            <!--room$-->
+            <!--^more_info-->
+                <div class="buliding_info_item">
+                    <span class="item_value">{#key}： {#value}</span>
+                </div>
+            <!--more_info$-->
+            <!--^building-->
+                <div class="page out" id="building_detail_{#id}" data-fallback="detailFallback">
+                    <div class="top_banner">
+                        <a href="#index" class="go_back" data-rel="back"><i></i></a>
+                        <div class="buliding_operate">
+                            <a class="buliding_search" href="#search" data-rel="auto" id="bulidingdetail_search_btn"><i></i></a>
+                            <a href="javascript:app.href('xiaoxi_index.html');" class="buliding_msg"><i></i></a>
+                            <a href="javascript:;" class="buliding_collect" id="collect_buliding"><i></i></a>
+                            <a href="javascript:;" class="buliding_share" id="buliding_share"><i></i></a>
+                        </div>
+                        <p class="title_right"><a href="javascript:app.href('lxs_consultant_recommand.html')">资深经纪</a></p>
+                    </div>
+                    <div class="content buliding_inner_info white" id="detail_scroller_{#id}">
+                        <div class="scroller_inner">
+                            <div class="buliding_detail ">
+                                <div class="buliding_img">
+                                    <img src="" id="avatar"/>
+                                    <a class="img_count" href="javascript:;" id="buliding_img" style="display:none;">
+                                        <i></i>
+                                        <span class="img_count_span" id="img_total_span"></span>
+                                    </a>
+                                </div>
+                                <div class="buliding_info">
+                                    <a href="javascript:;" class="go_pos" id="go_map"></a>
+                                    <p class="name" id="name"></p>
+                                    <p class="pos" id="address"></p>
+                                </div>
+                            </div>
+                            <div class="info_list clearfix">
+                                <div class="info_item" id="rent_price">
+                                    <span>租金：</span>
+                                    <span id="rent_price_span"></span>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="info_item" id="sell_price">
+                                    <span>售价：</span>
+                                    <span id="sell_price_span"></span>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="info_item" id="property_costs">
+                                    <span>物业费：</span>
+                                    <span id="property_costs_span"></span>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="info_item half" id="type">
+                                    <span>类型：</span>
+                                    <span id="type_span"></span>
+                                </div>
+                                <div class="info_item half" id="build_date">
+                                    <span>竣工日期：</span>
+                                    <span id="build_date_span"></span>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="info_item clearfix" id="metro">
+                                    <span style="float:left;">地铁：</span>
+                                    <p id="metro_span" style="margin-left:42px;"></p>
+                                </div>     
+                                <div class="info_item clearfix" id="tags">
+                                    <span style="float:left;">特色：</span>
+                                    <p id="tags_span" style="margin-left:42px;"></p>
+                                </div>
+                                <div class="clearfix"></div>
+                                <a class="go_detail" href="#detail_more" data-rel="auto" style="display:none;">
+                                    <span>详细信息</span>
+                                    <i></i>
+                                </a>
+                            </div>
+                            <div class="phones clearfix" id="phones" style="display:none;">
+                                <i></i>
+                                <a class="phone" id="phone1" data-verify=""></a>
+                                <a class="phone" id="phone2" data-verify="" style="margin-right:0;"></a>
+                            </div>
+                            
+                            <div class="house_list" id="rooms">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--building$-->
+        </script>
+
+</body>
+</html>

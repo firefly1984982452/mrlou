@@ -1,0 +1,695 @@
+.select_type .types .type_warp {
+	display: inline-block;
+	float: none;
+	text-decoration: none;
+	width: 31%;
+}
+
+
+/* 首页 */
+
+.no_content {
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	height: 180px;
+	width: 180px;
+}
+
+.no_content img {
+	height: 180px;
+	width: 180px;
+}
+
+.no_content_tip {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 14px;
+	color: #b9b9b9;
+}
+
+.house_desc {
+	padding: 0 10px;
+	height: 60%;
+	background: #fff;
+}
+
+.text_area {
+	color: #444;
+	font-size: 14px;
+	height: 100%;
+	width: 100%;
+}
+
+.top_banner .title_right {
+	width: 60px;
+	float: right;
+	margin-top: 14px;
+	border-radius: 5px;
+	background: #bd081c;
+	padding: 2px 6px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 23px;
+	height: 23px;
+	margin-top: 5px;
+	text-align: center;
+}
+
+.title_right a {
+	color: #fff;
+}
+
+.form {
+	background: #fff;
+	border-bottom: 1px solid #dadada;
+	border-top: 1px solid #dadada;
+	overflow: hidden;
+	color: #444;
+	font-size: 14px;
+}
+
+.form .line {
+	border-top: 1px solid #cdcdcd;
+	padding: 15px 10px 15px 0;
+	margin-top: -1px;
+	position: relative;
+	margin-left: 10px;
+}
+
+.form .search_title {
+	color: #444;
+	font-size: 14px;
+}
+
+.form .condition_name {
+	position: absolute;
+	left: 0;
+	top: 15px;
+}
+
+.form .condition {
+	margin-left: 70px;
+	min-height: 20px;
+}
+
+.form .conditon_option {
+	float: left;
+	width: 33.3333%;
+}
+
+.form .checkbox {
+	height: 20px;
+	line-height: 20px;
+}
+
+.form .checkbox input+ .is_check {
+	margin: 3px 0;
+}
+
+.form .condition .condition_ipt {
+	font-size: 14px;
+	color: #444;
+	float: left;
+	width: 124px;
+}
+
+.form .condition .condition_ipt::-webkit-input-placeholder {
+	color: #b9b9b9;
+}
+
+.form .condition .condition_ipt:-moz-placeholder {
+	color: #b9b9b9;
+}
+
+.form .condition .condition_ipt::-moz-placeholder {
+	color: #b9b9b9;
+}
+
+.form .condition .condition_ipt:-ms-input-placeholder {
+	color: #b9b9b9;
+}
+
+.form .line1 {
+	position: relative;
+	border-top: 1px solid #cdcdcd;
+}
+
+.form .line1 .condition_name {
+	top: 15px;
+}
+
+.form .line1 .sub_line {
+	border-bottom: 1px solid #cdcdcd;
+	padding: 15px 0 15px 40px;
+	padding-right: 10px;
+}
+
+.form .select_condition span {
+	float: left;
+}
+
+.form .select_condition i {
+	float: right;
+	background: url(../images/more.png) no-repeat;
+	background-size: 100%;
+	width: 8.5px;
+	height: 13.5px;
+}
+
+.select_waprer {
+	top: 14px;
+	font-size: 12px;
+}
+
+.select2-results__option {
+	padding: 3px 6px;
+	font-size: 12px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	font-size: 12px;
+}
+
+.room_list {
+	background: #fff;
+}
+
+.room_list .room_item {
+	padding: 10px;
+	margin-top: -1px;
+	border-top: 1px solid #dbdbdb;
+	position: relative;
+	color: #9a9a9a;
+	text-decoration: none;
+	display: block;
+}
+
+.room_list .room_item .room_img {
+	width: 70px;
+	height: 70px;
+	overflow: hidden;
+	border-radius: 5px;
+	float: left;
+}
+
+.room_list .room_item .room_img img {
+	width: 100%;
+	height: 100%;
+}
+
+.room_list .room_item .room_want {
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	width: 35px;
+	height: 17.5px;
+	top: -1px;
+}
+
+.room_list .room_item .dealed {
+	background: url(/lxs/images/dealed.png) no-repeat;
+	background-size: 100%;
+}
+
+.room_list .room_item .disabled {
+	background: url(/lxs/images/disabled.png) no-repeat;
+	background-size: 100%;
+}
+
+.room_list .room_item .want {
+	background: url(/lxs/images/want.png) no-repeat;
+	background-size: 100%;
+}
+
+.room_list .room_item .looking {
+	background: url(/lxs/images/looking.png) no-repeat;
+	background-size: 100%;
+}
+
+.room_list .room_item .room_info {
+	margin-left: 80px;
+	padding: 6px 0 0;
+}
+
+.room_list .room_item .room_info .room_name {
+	color: #444;
+	font-size: 14px;
+	font-size: 16px;
+	line-height: 16px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.room_list .room_item .room_info .room_pos {
+	color: #9a9a9a;
+	font-size: 12px;
+	margin-top: 12px;
+	line-height: 12px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.room_list .room_item .room_info .room_price {
+	color: #9a9a9a;
+	font-size: 12px;
+	margin-top: 6px;
+	line-height: 12px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.room_list .room_item .room_active {
+	position: absolute;
+	color: #bd081c;
+	font-size: 10px;
+	bottom: 10px;
+	right: 10px;
+	vertical-align: middle;
+}
+
+.room_list .room_item .room_active i {
+	margin-top: 3px;
+	background: url(/lxs/images/authentication.png) no-repeat;
+	width: 9px;
+	height: 9px;
+	background-size: 100%;
+	float: left;
+	vertical-align: middle;
+}
+
+.room_list .room_item .room_active span {
+	vertical-align: middle;
+	margin-left: 3px;
+	float: left;
+}
+
+
+/* 房源跟踪 */
+
+.room_detail .room_info {
+	overflow: hidden;
+	padding: 10px;
+	background: #fff;
+	position: relative;
+}
+
+.room_detail .room_info .room_img {
+	width: 70px;
+	height: 70px;
+	overflow: hidden;
+	border-radius: 5px;
+	float: left;
+}
+
+.room_detail .room_info .room_img img {
+	width: 100%;
+	height: 100%;
+}
+
+.room_detail .room_info .room_name {
+	color: #444;
+	font-size: 14px;
+	font-size: 14px;
+	font-size: 16px;
+	line-height: 16px;
+}
+
+.room_detail .room_info .room_pos {
+	color: #9a9a9a;
+	font-size: 12px;
+	margin-top: 12px;
+	line-height: 12px;
+}
+
+.room_detail .room_info .room_price {
+	color: #9a9a9a;
+	font-size: 12px;
+	margin-top: 6px;
+	line-height: 12px;
+}
+
+.room_detail .infos {
+	margin-left: 80px;
+	padding: 4px 0 0;
+}
+
+.room_detail .room_active {
+	position: absolute;
+	color: #bd081c;
+	font-size: 10px;
+	bottom: 10px;
+	right: 10px;
+	vertical-align: middle;
+}
+
+.room_detail .room_active i {
+	margin-top: 3px;
+	background: url(/lxs/images/authentication.png) no-repeat;
+	width: 9px;
+	height: 9px;
+	background-size: 100%;
+	float: left;
+	vertical-align: middle;
+}
+
+.room_detail .room_active span {
+	vertical-align: middle;
+	margin-left: 3px;
+	float: left;
+	font-weight: normal;
+}
+
+.room_progess {
+	padding: 12px 10px;
+	border-bottom: 1px solid #cdcdcd;
+	border-top: 1px solid #cdcdcd;
+	background: #fff;
+	margin-top: 10px;
+}
+
+.room_progess .progess {
+	float: left;
+	font-size: 14px;
+	color: #444;
+	margin-top: -1px;
+}
+
+.room_progess .progess_options {
+	margin-left: 60px;
+}
+
+.room_progess .progess_options .radio {
+	width: 25%;
+	float: left;
+	margin-top: 3px;
+}
+
+.log_scroller_warper {
+	position: absolute;
+	bottom: 0px;
+	top: 210px;
+	left: 0;
+	right: 0;
+	background: #fff;
+}
+
+
+/* .room_progess .progess_options .radio_title{margin-left:7.5px;font-size:14px;color:#444;} */
+
+.note_list {
+	margin-top: 10px;
+	background: #fff;
+	border-top: 1px solid #cdcdcd;
+}
+
+.note_list .note_title {
+	padding: 10px;
+	border-bottom: 1px solid #cdcdcd;
+}
+
+.note_list .note_title .title_content {
+	font-size: 14px;
+	color: #444;
+	float: left;
+}
+
+.note_list .note_title .add_note {
+	width: 30px;
+	height: 15px;
+	float: right;
+	padding: 4px
+}
+
+.add_note i {
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url(../images/add.png) no-repeat;
+	background-size: 100%;
+}
+
+.note_list .notes {}
+
+.note_list .notes .note {
+	border-bottom: 1px solid #cdcdcd;
+	padding: 10px;
+	display: block;
+}
+
+.note_list .notes .note .note_date {
+	font-size: 14px;
+	color: #9a9a9a;
+}
+
+.note_list .notes .note .note_content {
+	font-size: 14px;
+	color: #444;
+	margin-top: 4px;
+	word-break: break-all;
+}
+
+
+/* 工作日志编辑 */
+
+.note_form {
+	background: #fff;
+	font-size: 14px;
+}
+
+.note_form .line {
+	border: 1px solid #cdcdcd;
+	margin-top: -1px;
+	padding: 10px;
+}
+
+.note_form .note_date,
+.note_form .note_content,
+.note_form .notice_day,
+.note_form .notice_time {
+	font-size: 14px;
+	color: #444;
+}
+
+.note_form .note_date,
+.note_form .note_content {
+	width: 100%;
+}
+
+.note_form .note_content {
+	height: 200px;
+}
+
+.note_form .notice_day {
+	width: 130px;
+}
+
+.note_form .notice_time {
+	width: 35px;
+}
+
+.note_form .key {
+	margin-right: 20px;
+	vertical-align: middle;
+}
+
+.note_form .ipt_span {
+	border: 1px solid #cdcdcd;
+	border-radius: 5px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 10px;
+}
+
+.note_form .ipt_span input {
+	font-size: 14px;
+	line-height: 20px;
+	height: 20px;
+	text-align: center;
+}
+
+
+/* 房源图片页面 */
+
+.house_img_edit .img_tips {
+	padding: 10px;
+	color: #444;
+	font-size: 14px;
+}
+
+.house_img_edit .spliter {
+	height: 10px;
+	background: #e7e7e7;
+}
+
+.house_img_edit .cover_con {
+	padding: 0 10px 10px;
+}
+
+.house_img_edit .other_imgs {
+	padding: 0 10px 10px;
+	border-top: 1px solid #cdcdcd;
+}
+
+.house_img_edit .img_type_name {
+	display: block;
+	padding: 10px 0;
+}
+
+.house_img_edit .add_img {
+	background: url(../images/add_img.png) no-repeat;
+	background-size: 100%;
+	width: 64px;
+	height: 64px;
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+.house_img_edit .img_con {
+	margin-left: 50px;
+	max-width: 222px;
+}
+
+.house_img_edit .img_span {
+	width: 64px;
+	height: 64px;
+	float: left;
+	margin-left: 10px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.house_img_edit .img_span img {
+	width: 100%;
+	height: 100%;
+}
+
+.house_img_edit .img_del {
+	background: url(../images/del_img.png) no-repeat;
+	height: 16px;
+	width: 16px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-size: 100%;
+}
+
+
+/* 房源编辑页面 */
+
+.room_img_list {
+	max-width: 222px;
+}
+
+.room_img_list .img_span {
+	width: 64px;
+	height: 64px;
+	float: left;
+	margin-left: 10px;
+	overflow: hidden;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.room_img_list .img_span img {
+	width: 100%;
+	height: 100%;
+}
+
+.room_img_list .add_img {
+	background: url(../images/add_img.png) no-repeat;
+	background-size: 100%;
+	width: 64px;
+	height: 64px;
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+.room_img_list .img_del {
+	background: url(../images/del_img.png) no-repeat;
+	height: 16px;
+	width: 16px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-size: 100%;
+}
+
+.top_banner .go_add {
+	position: absolute;
+	left: 10px;
+	margin-top: 14px;
+	width: 22px;
+	height: 22px;
+	background: url(../images/add.png) no-repeat;
+	background-size: 100%;
+}
+
+.line .select_condition p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #444;
+	text-decoration: none;
+}
+
+.line .select_condition i {
+	float: right;
+	background: url(../images/more.png) no-repeat;
+	background-size: 100%;
+	width: 8.5px;
+	height: 13.5px;
+}
+
+.search_page .top_banner {
+	background: transparent;
+}
+
+.search_page .search_warper {
+	margin-left: 5px;
+	padding: 4px 10px;
+	position: absolute;
+	left: 30px;
+	right: 30px;
+	background: #fff;
+	margin-top: 10px;
+}
+
+.search_page .search_warper i {
+	float: left;
+	width: 22px;
+	height: 22px;
+	background: url(../images/search1.png) no-repeat;
+	background-size: 100%;
+}
+
+.search_page .search_warper i.active {
+	background: url(../images/search_active.png) no-repeat;
+	background-size: 100%;
+}
+
+.search_buliding_option {
+	display: block;
+	padding: 10px 0 10px 40px;
+	font-size: 14px;
+	color: #444;
+	border-top: 1px solid #dadada;
+	margin-top: -1px;
+}
+
+.search_buliding_option2 {
+	display: block;
+	padding: 10px 0 10px 5px;
+	font-size: 14px;
+	color: #444;
+	border-top: 1px solid #dadada;
+	margin-top: -1px;
+}

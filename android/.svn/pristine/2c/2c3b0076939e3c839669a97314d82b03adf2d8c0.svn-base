@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>房源简介填写 - 房源</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/lxs/css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css"rel="styleSheet" />
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="css/fangyuan.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body>
+        <div class="page">
+            <div class="top_banner graybg">
+                <a href="javascript:;" data-rel="back" class="go_back"><i></i></a>
+                <a href="fangyuan_house_image.html" data-rel="auto" class="next_step">下一步</a>
+            </div>
+            <div class="content graybg">
+                <div class="house_desc"><textarea placeholder="请输入发布房源简介" class="text_area"></textarea></div>
+            </div>
+        </div>
+        <script src="scripts/fyConfig.js"></script>
+    </body>
+</html>

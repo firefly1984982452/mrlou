@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lay_mine_act_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E4E4E4"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="130dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_mine_customer_service"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/corner"
+                    android:gravity="center" >
+					
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 邀 "
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_setting"
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical" >
+
+                <com.mrlou.economic.view.XCCircleRectImageView_head
+                    android:id="@+id/mine_act_head"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/tv_mine_act_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginBottom="12dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom" >
+
+                        <TextView
+                            android:id="@+id/tv_mine_act_identy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/light_gray"
+                            android:textSize="13dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical" >
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/lxs_images_more" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+				
+                <LinearLayout
+                    android:id="@+id/lay_membertype"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border_bottom_gray_white" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+
+                        <TextView
+                            android:id="@+id/tv_membertype"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" >
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/lxs_images_more" />
+                    </LinearLayout>
+                </LinearLayout>
+                
+                 <LinearLayout
+                     android:layout_marginTop="10dp"
+                    android:id="@+id/lay_mycollect"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border_bottom_gray_white" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/my_collect" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="我的收藏"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" >
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/lxs_images_more" />
+                    </LinearLayout>
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/lay_myhourse"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border_bottom_gray_white" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/mine_fangyuan" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="我的房源"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" >
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/lxs_images_more" />
+                    </LinearLayout>
+                </LinearLayout>
+				
+                 <LinearLayout
+                    android:id="@+id/lay_mymessage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border_bottom_gray_white" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/mymessage" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="我的消息"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" >
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/lxs_images_more" />
+                    </LinearLayout>
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/lay_mycustomer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border_bottom_gray_white" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/mine_customer" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="我的客户"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" >
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/lxs_images_more" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@color/white"
+                    android:id="@+id/lay_mypost"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/mine_post" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="我的帖子"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" >
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/lxs_images_more" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/lay_history_complete"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/mine_history" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="历史成交"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" >
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/lxs_images_more" />
+                    </LinearLayout>
+                </LinearLayout>
+
+<!--                 <LinearLayout -->
+<!--                     android:id="@+id/lay_business_cooperation" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="45dp" -->
+<!--                     android:layout_marginTop="10dp" -->
+<!--                     android:background="@drawable/border_bottom_gray_white" > -->
+
+<!--                     <LinearLayout -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="fill_parent" -->
+<!--                         android:layout_weight="1" -->
+<!--                         android:gravity="center_vertical" > -->
+
+<!--                         <ImageView -->
+<!--                             android:layout_width="20dp" -->
+<!--                             android:layout_height="20dp" -->
+<!--                             android:layout_marginLeft="10dp" -->
+<!--                             android:background="@drawable/mine_help" /> -->
+
+<!--                         <TextView -->
+<!--                             android:layout_width="wrap_content" -->
+<!--                             android:layout_height="wrap_content" -->
+<!--                             android:layout_marginLeft="10dp" -->
+<!--                             android:text="商务合作" -->
+<!--                             android:textSize="16dp" /> -->
+<!--                     </LinearLayout> -->
+
+<!--                     <LinearLayout -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="fill_parent" -->
+<!--                         android:layout_weight="3" -->
+<!--                         android:gravity="right|center_vertical" > -->
+
+<!--                         <ImageView -->
+<!--                             android:layout_width="10dp" -->
+<!--                             android:layout_height="15dp" -->
+<!--                             android:layout_marginRight="10dp" -->
+<!--                             android:background="@drawable/lxs_images_more" /> -->
+<!--                     </LinearLayout> -->
+<!--                 </LinearLayout> -->
+
+                <LinearLayout
+                    android:id="@+id/lay_added_service"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border_bottom_gray_white" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/add_services" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="企业服务"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:gravity="right|center_vertical" >
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/lxs_images_more" />
+                    </LinearLayout>
+                </LinearLayout>
+
+<!--                 <LinearLayout -->
+<!--                     android:id="@+id/lay_feedback" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="45dp" -->
+<!--                     android:background="@drawable/border_bottom_gray_white" > -->
+
+<!--                     <LinearLayout -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="fill_parent" -->
+<!--                         android:layout_weight="1" -->
+<!--                         android:gravity="center_vertical" > -->
+
+<!--                         <ImageView -->
+<!--                             android:layout_width="20dp" -->
+<!--                             android:layout_height="20dp" -->
+<!--                             android:layout_marginLeft="10dp" -->
+<!--                             android:background="@drawable/mine_history" /> -->
+
+<!--                         <TextView -->
+<!--                             android:layout_width="wrap_content" -->
+<!--                             android:layout_height="wrap_content" -->
+<!--                             android:layout_marginLeft="10dp" -->
+<!--                             android:text="意见反馈" -->
+<!--                             android:textSize="16dp" /> -->
+<!--                     </LinearLayout> -->
+
+<!--                     <LinearLayout -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="fill_parent" -->
+<!--                         android:layout_weight="3" -->
+<!--                         android:gravity="right|center_vertical" > -->
+
+<!--                         <ImageView -->
+<!--                             android:layout_width="10dp" -->
+<!--                             android:layout_height="15dp" -->
+<!--                             android:layout_marginRight="10dp" -->
+<!--                             android:background="@drawable/lxs_images_more" /> -->
+<!--                     </LinearLayout> -->
+<!--                 </LinearLayout> -->
+
+<!--                 <LinearLayout -->
+<!--                     android:id="@+id/lay_help_center" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="45dp" -->
+<!--                     android:background="@drawable/border_bottom_gray_white" > -->
+
+<!--                     <LinearLayout -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="fill_parent" -->
+<!--                         android:layout_weight="1" -->
+<!--                         android:gravity="center_vertical" > -->
+
+<!--                         <ImageView -->
+<!--                             android:layout_width="20dp" -->
+<!--                             android:layout_height="20dp" -->
+<!--                             android:layout_marginLeft="10dp" -->
+<!--                             android:background="@drawable/mine_help" /> -->
+
+<!--                         <TextView -->
+<!--                             android:layout_width="wrap_content" -->
+<!--                             android:layout_height="wrap_content" -->
+<!--                             android:layout_marginLeft="10dp" -->
+<!--                             android:text="帮助中心" -->
+<!--                             android:textSize="16dp" /> -->
+<!--                     </LinearLayout> -->
+
+<!--                     <LinearLayout -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="fill_parent" -->
+<!--                         android:layout_weight="3" -->
+<!--                         android:gravity="right|center_vertical" > -->
+
+<!--                         <ImageView -->
+<!--                             android:layout_width="10dp" -->
+<!--                             android:layout_height="15dp" -->
+<!--                             android:layout_marginRight="10dp" -->
+<!--                             android:background="@drawable/lxs_images_more" /> -->
+<!--                     </LinearLayout> -->
+<!--                 </LinearLayout> -->
+
+<!--                 <LinearLayout -->
+<!--                     android:id="@+id/lay_about_mrlou" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="45dp" -->
+<!--                     android:background="@color/white" > -->
+
+<!--                     <LinearLayout -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="fill_parent" -->
+<!--                         android:layout_weight="1" -->
+<!--                         android:gravity="center_vertical" > -->
+
+<!--                         <ImageView -->
+<!--                             android:layout_width="20dp" -->
+<!--                             android:layout_height="20dp" -->
+<!--                             android:layout_marginLeft="10dp" -->
+<!--                             android:background="@drawable/mine_about" /> -->
+
+<!--                         <TextView -->
+<!--                             android:layout_width="wrap_content" -->
+<!--                             android:layout_height="wrap_content" -->
+<!--                             android:layout_marginLeft="10dp" -->
+<!--                             android:text="关于楼先生" -->
+<!--                             android:textSize="16dp" /> -->
+<!--                     </LinearLayout> -->
+
+<!--                     <LinearLayout -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="fill_parent" -->
+<!--                         android:layout_weight="3" -->
+<!--                         android:gravity="right|center_vertical" > -->
+
+<!--                         <ImageView -->
+<!--                             android:layout_width="10dp" -->
+<!--                             android:layout_height="15dp" -->
+<!--                             android:layout_marginRight="10dp" -->
+<!--                             android:background="@drawable/lxs_images_more" /> -->
+<!--                     </LinearLayout> -->
+<!--                 </LinearLayout> -->
+                
+                <LinearLayout 
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:text="如有任何疑问请拨打以下客服电话"/>
+                    <TextView 
+                        android:id="@+id/tv_company_phone"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/red"
+                        android:textSize="15dp"
+                        android:text="400-968-7099"/>
+                </LinearLayout>
+                
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

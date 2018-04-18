@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>房源信息填写 - 房源</title>
+        <link href="resourse_css_reset.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_register.css" type="text/css" rel="styleSheet"/>
+        <link href="lxs_css_lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.css" type="text/css"rel="styleSheet" />
+        <link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_select2.min.css" type="text/css" rel="styleSheet"/>
+        <link href="fangyuan_css_fangyuan.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="graybg">
+        <div class="page out">
+            <div class="top_banner graybg">
+                <a href="javascript:app.goBack()" class="go_back"><i></i></a>
+                <p class="title">
+                    <span class="main_title">太平金融大厦</span>
+                    <span class="sub_title">A栋1402室</span>
+                </p>
+            </div>
+            <div class="content whole_page">
+                <!-- 其他字段从house_add.html 或 house_add2.html中直接复制 line 行即可-->
+                <div class="form">
+                    <div class="line">
+                        <span class="condition_name">交易类型</span>
+                        <div class="condition clearfix">
+                            <div class="conditon_option">
+                                <label class="checkbox ">
+                                    <input type="checkbox" name="trade">
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">全部</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="trade">
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">出租</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="trade">
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">出售</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">楼盘名称</span>
+                        <div class="condition clearfix">
+                            <div class="select_waprer">
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">房源单元</span>
+                        <div class="condition clearfix">
+                            <input type="text"  style="width:90%" placeholder="示例：A栋1402室" class="condition_ipt"/>
+                        </div>
+                    </div>
+
+                    <div class="line">
+                        <span class="condition_name">房源面积</span>
+                        <div class="condition clearfix">
+                            <input type="text" placeholder="选填"  class="condition_ipt"/> m²
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">房源报价</span>
+                        <div class="condition clearfix">
+                            <input type="text" class="condition_ipt"/>
+                            <span class="select_waprer">
+                                <select>
+                                    <option>元/m²</option>
+                                    <option>元/m²/天</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">房源朝向</span>
+                        <div class="condition clearfix">
+                            <input type="text"  style="width:90%" class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">交付状态</span>
+                        <div class="condition clearfix">
+                            <span class="select_waprer">
+                                <select>
+                                    <option>毛坯房</option>
+                                    <option>已装修已装修已装修</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">交付日期</span>
+                        <div class="condition clearfix">
+                            <input type="text" class="condition_ipt"/>
+                        </div>
+                    </div>
+                    
+                    <div class="line">
+                        <span class="condition_name">房源简介</span>
+                        <div class="condition clearfix">
+                            <textarea class="common_txt"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="line">
+                        <span class="condition_name">房源封面</span>
+                        <div class="condition clearfix">
+                            <div class="room_img_list">
+                                <span class="img_span">
+                                    <img src="fangyuan_images_test.png" />
+                                </span>
+                                <a href="javascript:;" class="add_img"></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="line">
+                        <span class="condition_name">其他图片</span>
+                        <div class="condition clearfix">
+                            <div class="room_img_list">
+                                <span class="img_span">
+                                    <img src="fangyuan_images_test.png" />
+                                    <a href="javascript:;" class="img_del"></a>
+                                </span>
+                                <span class="img_span">
+                                    <img src="fangyuan_images_test.png" />
+                                    <a href="javascript:;" class="img_del"></a>
+                                </span>
+                                <span class="img_span">
+                                    <img src="fangyuan_images_test.png" />
+                                    <a href="javascript:;" class="img_del"></a>
+                                </span>
+                                <a href="javascript:;" class="add_img"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="javascript:;" class="common_submit">编辑完成发送至楼先生</a>
+            </div>
+
+
+        </div>
+        <script src="fangyuan_scripts_fyConfig.js"></script>
+    </body>
+</html>

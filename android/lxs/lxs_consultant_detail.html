@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>资深经纪人推荐-楼先生</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link rel="styleSheet" type="text/css" href="/resourse/css/register.css">
+        <link href="css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="lxs_bg">
+        <div class="page out" id="index">
+            <div class="top_banner">
+                <a href="javascript:app.goBack();" class="go_back"><i></i></a>
+                <a href="#search" class="search right" data-rel="auto"><i></i></a>
+                <p class="title">资深经纪人推荐</p>
+            </div>
+            <div class="content">
+                <div class="consultant_list" style="height:100%;">
+                    <div class="common-list" id="agentListArea" style="position:relative;">
+                        <div id="scroller" class="common-list-scroller fans-scroller">
+                            <div id="pullDown" class="common-list-pull">
+                                <span class="pullDownIcon"></span>
+                                <span class="pullDownLabel">下拉更新数据...</span>
+                            </div>
+                            <div id="consultants" class="clearfix">
+                            </div>
+                            <div id="pullUp" class="common-list-pull">
+                                <span class="pullUpIcon"></span><span class="pullUpLabel">上拉获取更多...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page out search_page" id="search">
+            <div class="top_banner">
+                <a href="#index" class="go_back" data-rel="back" id="search_go_back"><i></i></a>
+                <div class="search_warper">
+                    <i></i>
+                    <div class="ipt_warp">
+                    	<input type="text" id="keyword" list="search_list_broker" 
+                    		placeholder="请输入经纪人名字或经纪公司名称"/>
+                    </div>
+                    <datalist id="search_list_broker">
+                    	<option>ee</option>
+            		</datalist>
+                </div>
+            </div>
+            <div class="content" id="search_scroller" style="top:60px;">
+                <div class="scroller_inner">
+                    <div class="search_condition">
+                        <div class="line">
+                            <span class="condition_name">区域</span>
+                            <div class="condition">
+                                <a id="go_select_region" class="select_condition clearfix" href="#select">
+                                    <i></i>
+                                    <p>全部</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search_operate clearfix">
+                        <a href="#index" class="submit" data-rel="back" id="search_agent">搜索经纪人</a>
+                        <a href="javascript:;" class="reset" id="reset_search">重置搜索条件</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page out" id="select">
+            <div class="select_area">
+                <div class="top_banner">
+                    <a href="#search" class="go_back" data-rel="back"><i></i></a>
+                    <a href="javascript:;" class="submit" data-rel="back" id="search_region_agent"><i></i></a>
+                    <p class="title" id="select_title">选择区域</p>
+                </div>
+                <div class="content" id="select_scroller">
+                    <div class="scroller_inner">
+                        <div class="areas">
+                            <label class="checkbox area">
+                                <input type="checkbox" name="all" id="select_all" value="" checked="checked"/>
+                                <span class="is_check right"></span>
+                                <span class="checkbox_title">全部</span>
+                            </label>
+                        </div>
+                        <div id="options">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/lxsConfig.js"></script>
+        <script type="text/tpl">
+        <!--^item-->
+            <div class="consultant_item">
+                <div class="consultant_top clearfix">
+                    <div class="consultant_name_warper">
+                        <p class="consultant_name">{#en_username|nameAssert}</p>
+                    </div>
+                    <div class="consultant_phone_warper">
+						<div class="center_warper">
+							<i class="phone_icon"></i>
+							<a class="consultant_phone" href="tel:{#phone}" data-verify="1-{#id}" click="click">{#phone}</a>
+						</div>
+                    </div>
+                </div>
+                <div class="consultant_bottom clearfix">
+                    <div class="consultant_avatar">
+                        <img src="{#avatar}" />
+                    </div>
+                    <div class="consultant_info">
+                        <p class="consultant_desc">简介：{#intro}</p>
+                        <p class="consultant_company">{#company}<span class="work_age">{#work_age|workAgeFormat}</span></p>
+                        <p class="consultant_googat">擅长：{#regions|goodAtFormat}</p>
+                    </div>
+                </div>
+            </div>
+        <!--item$-->
+            <!--^select_option-->
+                <label class="checkbox area">
+                    <input type="checkbox" name="{#keyName}" value="{#id}"/>
+                    <span class="is_check right"></span>
+                    <span class="checkbox_title">{#name}</span>
+                </label>
+            <!--select_option$-->
+        </script>
+    </body>
+</html>

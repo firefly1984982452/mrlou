@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#E7E7E7"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/lay_goodtype01"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/border_bottom_gray_white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="办公租赁"
+            android:paddingLeft="10dp"
+            android:textSize="15dp" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_goodtype02"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/border_bottom_gray_white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="办公租售"
+            android:paddingLeft="10dp"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_goodtype03"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/border_bottom_gray_white"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="办公买卖"
+            android:paddingLeft="10dp"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

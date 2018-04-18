@@ -1,0 +1,135 @@
+/* 首页 */
+.bbs_index{}
+.thread_list{background:#fff;overflow:hidden;}
+.thread_list .thread_item{margin-bottom:-1px;border-bottom:1px solid #e7e7e7;padding:10px 10px 5px;}
+
+.thread_list .thread_item .thread_top{}
+.thread_list .thread_item .thread_top .thread_like{float:right;margin-top:3px;}
+.thread_list .thread_item .thread_top .thread_like i{background:url(/lxs/images/collect1.png) no-repeat;background-size:100%;width:14px;height:14px;float:left;}
+.thread_list .thread_item .thread_top .thread_like span{color:#b9b9b9;font-size:10px;float:left;margin-left:4px;}
+
+.thread_list .thread_item .thread_top .thread_reply{float:right;margin-right:11px;margin-top:3px;}
+.thread_list .thread_item .thread_top .thread_reply i{background:url(/lxs/images/message2.png) no-repeat;background-size:100%;width:14px;height:14px;float:left;}
+.thread_list .thread_item .thread_top .thread_reply span{color:#b9b9b9;font-size:10px;float:left;margin-left:4px;}
+
+.thread_list .thread_item .thread_top .poster_avatar{float:left;width:24px;height:24px;overflow:hidden;border-radius:24px;}
+.thread_list .thread_item .thread_top .poster_avatar img{width:100%;height:100%;}
+
+.thread_list .thread_item .thread_top .thread_type{float:left;margin-top:3px;text-align:center;width:53.5px;height:18px;color:#fff;font-size:10px;line-height:18px;}
+.thread_list .thread_item .thread_top .thread_type1{background:url(../images/type1.png) no-repeat;background-size:100%;}
+.thread_list .thread_item .thread_top .thread_type2{background:url(../images/type2.png) no-repeat;background-size:100%;}
+.thread_list .thread_item .thread_top .thread_type3{background:url(../images/other_type.png) no-repeat;background-size:100%;}
+
+.thread_list .thread_item .thread_bottom a{display:block;color:#444;font-size:15px;word-break:break-all;overflow:hidden;text-overflow:ellipsis;padding-top:5px;height:50px;}
+
+/* 添加 */
+.whole_form{padding-left:0px;}
+.whole_form .line{padding-left:10px;}
+.whole_form .condition_name{left:10px;top:16px}
+.upload_img_btn{background:url(../images/upload.png) no-repeat;background-size:100%;width:24px;height:24px;display:block;}
+.upload_img_btn:active{background:url(../images/upload_active.png) no-repeat;background-size:100%;}
+.upload_img_btn.active{background:url(../images/upload_active.png) no-repeat;background-size:100%;}
+
+
+.img_list {max-width:222px;margin-top:10px;}
+.img_list .img_span{width:64px;height:64px;float:left;margin-left:10px;overflow:hidden;margin-bottom:10px;position:relative;}
+.img_list .img_span img{width:100%;height:100%;}
+.whole_form .condition_ipt{font-size:14px;color:#444;height:18px;line-height:18px;}
+
+.whole_form .whole_line{overflow:hidden;}
+/* 帖子详情页 */
+
+.thread_operate{margin-left:50px;float:left;margin-top:14px;}
+.thread_operate a{width:18px;height:18px;float:left;margin-right:20px;padding:4px;}
+.thread_operate .msg i{width:18px;height:18px;display:block;background:url(../images/message2.png) no-repeat;background-size:100%;}
+.thread_operate .msg:active i{background:url(../images/message2_active.png) no-repeat;background-size:100%;}
+.thread_operate .collect i{width:18px;height:18px;display:block;background:url(../images/collect1.png) no-repeat;background-size:100%;}
+.thread_operate .collected i{background:url(../images/collect1_active.png) no-repeat;background-size:100%;}
+.thread_operate .collect:active i{background:url(../images/collect1_active.png) no-repeat;background-size:100%;}
+
+.thread_operate .new_msg i{width:18px;height:18px;display:block;background:url(../images/new_message.png) no-repeat;background-size:100%;}
+.thread_operate .new_msg:active i{background:url(../images/new_message_select.png) no-repeat;background-size:100%;}
+
+.img_list .img_del{background:url(../images/del_img.png) no-repeat;height:16px;width:16px;position:absolute;right:0;top:0;background-size:100%;}
+
+
+.consultant_list{padding:0 10px;}
+.consultant_list .consultant_item{background:#fff;border-radius:5px;margin-bottom:10px;overflow:hidden;width:100%;}
+.consultant_list .consultant_item .consultant_top{}
+.consultant_list .consultant_item .consultant_top .consultant_name_warper{width:50%;float:left;height:33px;line-height:33px;background:#cdcdcd;}
+.consultant_list .consultant_item .consultant_top .consultant_phone_warper{width:50%;float:left;height:33px;line-height:33px;background:#bd081c;}
+.consultant_list .consultant_item .consultant_top .consultant_phone_warper .center_warper{margin:0 auto;width:140px;}
+.consultant_list .consultant_item .consultant_top .consultant_name{font-size:15px;color:#444;margin-left:15px;}
+.consultant_list .consultant_item .consultant_top .phone_icon{float:left;width:15px;height:15px;margin-left:16px;background:url(../images/phone2.png) no-repeat;background-size:100%;margin-top:9px;}
+.consultant_list .consultant_item .consultant_top .consultant_phone{font-size:15px;color:#fff;margin-left:10px;}
+
+.consultant_list .consultant_item .consultant_bottom{padding:12px;}
+.consultant_list .consultant_item .consultant_bottom .consultant_avatar{width:70px;height:70px;border-radius:39px;overflow:hidden;float:left;font-size:0;}
+.consultant_list .consultant_item .consultant_bottom .consultant_avatar img{width:100%;height:100%;}
+.consultant_list .consultant_item .consultant_bottom .consultant_info{margin-left:86px;padding:8px 0 0;}
+.consultant_list .consultant_item .consultant_bottom .consultant_info p{color:#444;font-size:13px;line-height:14px;white-space: nowrap;}
+.consultant_list .consultant_item .consultant_bottom .consultant_info .consultant_company{margin-top:8px;color:#9a9a9a;}
+.consultant_list .consultant_item .consultant_bottom .consultant_info .consultant_company .company_name{margin-right:10px;}
+.consultant_list .consultant_item .consultant_bottom .consultant_info .consultant_googat{margin-top:8px;color:#9a9a9a;}
+
+
+.thead_content{padding:4px 10px;background:#fff;}
+.thead_content .title_area .thread_time{float:right;font-size:12px;color:#b9b9b9;margin-top:5px;}
+.thead_content .title_area .thread_day{float:right;margin-right:21px;font-size:12px;color:#b9b9b9;margin-top:5px;}
+.thead_content .title_area .thread_type{font-size:13px;color:#b9b9b9;}
+
+.thead_content .thead_title{margin-top:5px;line-height:25px;font-size:17px;color:#444;}
+.thead_content .thead_text{margin-top:5px;line-height:25px;font-size:14px;color:#444;font-weight:normal;}
+
+.thead_content  .img_area{margin-top:10px;width:100%;font-size:0;}
+.thead_content .img_area img{width:100%;}
+.reply_list{border-top:1px solid #e7e7e7;}
+.reply_list .reply_item{padding:10px 10px 8px;background:#f9f9f9;border-bottom:1px solid #cdcdcd;}
+.reply_list .reply_item .replyer_avatar{float:left;width:24px;height:24px;border-radius:12px;overflow:hidden;margin-top:-2px;}
+.reply_list .reply_item .replyer_avatar img{width:100%;height:100%;}
+.reply_list .reply_item .reply_detail{margin-left:34px;}
+
+.reply_list .reply_item .detail_top{height:12px;line-height:12px;}
+
+.reply_list .reply_item .reply_time{float:right;font-size:10px;color:#b9b9b9;}
+.reply_list .reply_item .replyer_name{float:left;font-size:12px;color:#444;}
+.reply_list .reply_item .replyer_type{float:left;margin-left:10px;font-size:10px;color:#b9b9b9;}
+.reply_list .reply_item .reply_floor{float:left;margin-left:10px;font-size:10px;color:#b9b9b9;}
+.reply_list .reply_item .reply_content{margin-top:6px;font-size:14px;color:#444;white-space:normal;word-break:break-all;}
+
+.page .content.reply_bottom{bottom:45px;height:auto;}
+.reply_area{z-index:10;position:fixed;bottom:0;left:0px;right:0px;background:#fff;min-height:45px;}
+.reply_area .reply_warp{position:relative;}
+.reply_txt_con{border:1px solid #e7e7e7;background:#f9f9f9;margin:10px 95px 10px 10px;height:26px;overflow:hidden;}
+.reply_txt_con .reply_txt{/* -webkit-user-modify: read-write-plaintext-only; */width:100%;font-size:14px;color:#444;height:26px;word-break:break-all;white-space:normal;padding-top:3px;}
+.reply_area .post_reply_btn{position:absolute;bottom:0;right:0;width:78px;height:28px;line-height:28px;text-decoration:none;text-align:center;background:#bd081c;color:#fff;font-size:14px;float:right;border-radius:5px;margin-right:10px;margin-top:10px;}
+
+
+.house_list{overflow:hidden;background:#fff;}
+.house_list .house_item{border-bottom:1px solid #cdcdcd;margin-bottom:-1px;padding:10px;position:relative;}
+.house_list .house_item .house_img{width:42px;height:42px;overflow:hidden;border-radius:5px;float:left;margin-right:10px;}
+.house_list .house_item .house_img img{width:100%;height:100%;}
+.house_list .house_item .house_type{width:17px;height:17px;float:left;margin-top:4px;}
+.house_list .house_item .rent{background:url(../images/rent.png) no-repeat;background-size:100%;}
+.house_list .house_item .sale{background:url(../images/sale.png) no-repeat;background-size:100%;}
+.house_list .house_item .house_info{margin-left:70px;padding:3px 0 1px;}
+.house_list .house_item .house_info .house_name{color:#444;font-size:13px;font-weight: bold;overflow: hidden;  text-overflow: ellipsis;  white-space: nowrap;  margin-right: 10px;}
+.house_list .house_item .house_info .house_price{color:#9a9a9a;font-size:12px;font-weight: bold;}
+
+.house_list .house_item .house_want{position:absolute;top:0px;right:10px;width:35px;height:17.5px;}
+.house_list .house_item .dealed{background:url(../images/dealed.png) no-repeat;background-size:100%;}
+.house_list .house_item .disabled{background:url(../images/disabled.png) no-repeat;background-size:100%;}
+.house_list .house_item .want{background:url(../images/want.png) no-repeat;background-size:100%;}
+.house_list .house_item .looking{background:url(../images/looking.png) no-repeat;background-size:100%;}
+
+.house_list .house_item .house_active{position:absolute;color:#bd081c;font-size:9px;bottom:8px;right:10px;vertical-align:middle;}
+.house_list .house_item .house_active i{margin-top:3px;background:url(../images/authentication.png) no-repeat;width:8px;height:8px;background-size:100%;float:left;vertical-align:middle;}
+.house_list .house_item .house_active span{vertical-align:middle;margin-left:3px;float:left;}
+
+.hd_consultant_list{margin-top:10px;margin-bottom:10px;}
+.house_list .house_item .avatar{border-radius:22px;}
+
+.hd_consultant_list .house_item .house_info{margin-left:54px;}
+.hd_consultant_list .house_item .phone_warper{height:22px;line-height:20px;position:absolute;border-radius:4px;top:10px;right:10px;padding:0px 11px;background:#bd081c;color:#fff;}
+.hd_consultant_list .house_item .phone_warper .phone_icon{float:left;width:13px;height:13px;background:url(../images/phone2.png) no-repeat;background-size:100%;margin-top:4px;}
+.hd_consultant_list .house_item .phone_warper .phone_num{color:#fff;font-size:13px;font-weight:bold;margin-left:9px;}

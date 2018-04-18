@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=no" />
+        <title>楼盘详情</title>
+        <link href="resourse_css_reset.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_register.css" type="text/css" rel="styleSheet"/>
+        <link href="lxs_css_lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_iSlider.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mui.min.css" />
+        <script src="resourse_scripts_mui.min.js"></script>
+        <style>
+        
+		.xiaoxi{
+			margin-right: 40px;
+			float: right;	
+			margin-top: 10px;
+			position: absolute;
+			right: 10px;
+			height: 22px;
+			width: 22px;
+		}
+		.xiaoxi i{
+			width: 22px;
+			height: 22px;
+			display: block;
+			background: url(lxs_images_msglogo.png) no-repeat;
+			background-size: 100%;
+		}
+		.callPhone{
+			width: 80px;
+			text-align: center;
+			font-size: 12px;
+			color: #FFFFFF;
+			height: 20px;
+			line-height: 20px;
+			margin-top: 10px;
+			border: 1px solid #FFFFFF;
+			border-radius: 5px;
+			float: right;
+		}
+		#consul_recom1{
+			width: 16%;
+			height: 50px;
+			color: #000000;
+		}
+		#mui-grid-view1{
+			height: 70px;
+		}
+		#mui-grid-view1 li{
+			float: left;
+			width: 15%;
+			margin-left: 1%;
+			height: 55px;
+			list-style: none;
+			text-align: center;
+			border: 1px solid #999;
+			border-radius: 4px;
+			position: relative;
+			overflow: hidden;
+		}
+		#mui-grid-view1 li img{
+			width: 100%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+		}
+		#mui-grid-view1 li .info{
+			position: absolute;
+			bottom: 0px;
+			height: 28px;
+			left: 0px;
+			right: 0px;
+		}
+		.noLength{
+			height: 28px;
+			line-height: 14px;
+			overflow: hidden;
+			font-size: 12px;
+			padding: 0px 2px;
+			text-align: left;
+			color: #9a9a9a;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			text-align: center;
+		}
+		.length{
+			height: 25px;
+			line-height: 25px;
+			overflow: hidden;
+			font-size: 12px;
+			color: #9a9a9a;
+		}
+		.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-object {
+			width: 50px;
+			height: 50px;
+			border-radius: 50px;
+		}
+        .recomtest {
+			color: #444;
+			font-size: 14px;
+			height: 20px;
+			line-height: height;
+			display: block;
+			position: relative;
+			overflow: hidden;
+			padding-right: 50px;
+			overflow : hidden;
+			position: relative;
+			text-align: left;
+			line-height: 20px;
+		}
+		.recomtest span{
+			height: 20px;
+		}
+		.recomtest #go_jinyin{
+			float: right;
+			padding: 0px 20px;
+			height: 100%;
+			height: 20px;line-height: 20px;
+			position: absolute;
+			right: 0px;
+			top: 0px;
+		}
+		.recomtest a{
+			padding-left: 8px;
+		}
+            .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-object {
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+            }
+            
+            .recom {
+                color: #444;
+            }
+
+            .search_page {
+                position: absolute;
+            }
+
+            .search_page .top_banner {
+                background: transparent;
+            }
+            .error_cor_page .top_banner{
+                background: transparent;
+            }
+            
+            .search_operate {
+                width: 100%;
+                display: inline;
+                position: fixed;
+                font-size: 16px;
+                left: 0px;
+                bottom: 0px;
+            }
+
+            .search_operate a {
+                width: 48%;
+            }
+            .search_operate .reset {
+                color: #444;
+                margin: 5px 0px 5px 5px;
+                border: 1px solid #cdcdcd;
+                background: #fff;
+                float: left;
+            }
+
+            .search_operate .submit {
+                color: #fff;
+                margin: 5px 5px 5px 0px;
+                border: 1px solid #bd081c;
+                background: #bd081c;
+                float: right;
+            }
+
+            /* 邀请的样式 */
+            #go_qr{
+                width: 60px;
+                float: right;
+                margin-top: 14px;
+                border-radius: 5px;
+                background: #bd081c;
+                padding: 2px 6px;
+                font-size: 13px;
+                font-weight: bold;
+                color: #fff;
+                line-height: 23px;
+                height: 23px;
+                text-align: center;
+            }
+
+            #go_qr span{
+                color: #fff;
+            }
+
+            .house_list .house_item .fee_rate {
+                text-align: right;
+                position: absolute;
+                top: 45px;
+                right: 10px;
+                width: auto;
+                height: 17.5px;
+                font-size: 10px;
+                color: #bd081c;
+            }
+
+
+            /* .house_list .house_item .house_want {
+                position: absolute;
+                top: 0px;
+                right: 10px;
+                width: 35px;
+                height: 17.5px;
+            } */
+
+            .house_list .house_item .user_type{
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                width: 50px;
+                height: 25px;
+            }
+            /* 1开发商 
+            2代理商 
+            3运营商 
+            102 经纪人 
+            103 物业公司 
+            201 小业主 
+            202 代理人 
+            203 转租人
+             */
+            .house_list .house_item .user_type1{
+                background: url(kaifashang.png) no-repeat;
+                background-size: 100%;
+            }
+            .house_list .house_item .user_type2{
+                background: url(dailishang.png) no-repeat;
+                background-size: 100%;
+            }
+            .house_list .house_item .user_type3{
+                background: url(yunyingshang.png) no-repeat;
+                background-size: 100%;
+            }
+            .house_list .house_item .user_type102{
+                background: url(jingjiren.png) no-repeat;
+                background-size: 100%;
+            }
+            .house_list .house_item .user_type103{
+                background: url(wuye.png) no-repeat;
+                background-size: 100%;
+            }
+            .house_list .house_item .user_type201{
+                background: url(xiaoyezhu.png) no-repeat;
+                background-size: 100%;
+            }
+            .house_list .house_item .user_type202{
+                background: url(dailiren.png) no-repeat;
+                background-size: 100%;
+            }
+            .house_list .house_item .user_type203{
+                background: url(zhuangzuren.png) no-repeat;
+                background-size: 100%;
+            }
+
+            .info_item_dan {
+                font-size: 13px;
+                color: #444;
+                margin-bottom: 4px;
+                font-weight: bold;
+            }
+
+            .info_item_dan p i {
+                font-style: normal;
+                padding-right: 10px;
+            }
+
+            .info_item_dan.half {
+                width: 50%;
+                float: left;
+            }
+
+            .buliding_inner_info .info_list .go_detail {
+                width: 100%
+                float: right;
+            }
+
+            .info_list {
+                background: #fff;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            /* #go_loupan{
+                float: right;
+                margin-top: -30px;
+                width: 30px;
+                height: 30px;
+                background: url(lxs_images_more.png) no-repeat;
+            } */
+            #go_loupan{
+                float: right;
+                font-size: 12px;
+                color: #bd081c;    
+                margin-top: 5px;    
+                font-weight: bold;
+            }
+            #go_loupan i{
+                background-size: 100%;
+                width: 13px;
+                height: 13px;
+                background: url(lxs_images_right_arrow.png) no-repeat;
+            }
+
+            .house_list .house_item .house_img {
+                position: relative;
+            }
+            .house_list .house_item .house_active {
+                position: absolute;
+                color: #bd081c;
+                /*font-size: 9px;*/
+                bottom: 18px;
+                left: 10px;
+                vertical-align: middle;
+            }
+
+            .house_list .house_item .house_active i {
+                background: url(lxs_images_authentication.png) no-repeat;
+                width: 42px;
+                height: 10px;
+                background-size: 100%;
+                float: left;
+                vertical-align: middle;
+            }
+
+            .house_list .house_item .house_active span {
+                vertical-align: middle;
+                margin-left: 3px;
+                float: left;
+            }
+
+            .room_time{
+                display: none;
+                text-align: right;
+                position: absolute;
+                top: 45px;
+                right: 10px;
+                width: auto;
+                height: 17.5px;
+                font-size: 10px;
+                color: #bd081c;
+            }
+            .house_list .house_item .dujia0{
+                display: none;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 30px;
+                height: 30px;
+                z-index: 66;
+            }
+
+            .house_list .house_item .dujia1{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 30px;
+                height: 30px;
+                z-index: 66;
+            }
+            .buliding_info .go_pos {
+                float: right;
+                width: 30px;
+                height: 30px;
+                background: url(lxs_images_go_pos.png) no-repeat;
+                background-size: 100%;
+                /* margin-top: 4px; */
+            }
+
+            .buliding_info .go_pos span{
+                width: 30px;
+                text-align: center;
+                position: absolute;
+                margin-top: 30px;
+                font-size: 12px;
+                color: #9a9a9a;
+                font-weight: bold;
+            }
+
+        </style>
+    </head>
+        <body class="graybg">
+        <div class="page out" id="detail" data-fallback="detailFallback">
+            <div class="top_banner">
+                <a  id="goBack" class="go_back" data-rel="back"><i></i></a>
+                <div class="buliding_operate">
+                   <a class="error_correction">
+						<i></i>
+					</a>
+                    <a href="javascript:;" class="buliding_collect" id="collect_buliding"><i></i></a>
+                    <a href="javascript:;" class="buliding_share" id="buliding_share"><i></i></a>
+                </div>
+                <p class="title_right" style="display:none;"><a href="javascript:app.goMsg();">消息</a></p>
+            </div>
+            <div class="content buliding_inner_info white" id="detail_scroller">
+                <div class="scroller_inner">
+                    <div class="buliding_detail ">
+                        <div class="buliding_img">
+                            <img src="" id="avatar"/>
+                            <a class="img_count" href="javascript:;" id="buliding_img" style="display:none;">
+                                <i></i>
+                                <span class="img_count_span" id="img_total_span"></span>
+                            </a>
+                        </div>
+                        <div class="buliding_info">
+                            <a href="javascript:;" class="go_pos" id="go_map"></a>
+                            <p class="name" id="name"></p>
+                            <p class="pos" id="address"></p>
+                        </div>
+                    </div>
+                    <div class="info_list clearfix">
+                        <div class="info_item" id="rent_price">
+                            <span>租金：</span>
+                            <span id="rent_price_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item" id="sell_price">
+                            <span>售价：</span>
+                            <span id="sell_price_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item" id="property_costs">
+                            <span>物业费：</span>
+                            <span id="property_costs_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item half" id="type">
+                            <span>类型：</span>
+                            <span id="type_span"></span>
+                        </div>
+                        <div class="info_item half" id="build_date">
+                            <span>竣工日期：</span>
+                            <span id="build_date_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item clearfix" id="metro">
+                            <span style="float:left;">地铁：</span>
+                            <p id="metro_span" style="margin-left:42px;"></p>
+                        </div>     
+                        <div class="info_item clearfix" id="tags">
+                            <span style="float:left;">特色：</span>
+                            <p id="tags_span" style="margin-left:42px;"></p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <a class="go_detail" href="#detail_more" data-rel="auto" style="display:none;">
+                            <span>详细信息</span>
+                            <i></i>
+                        </a>
+                    </div>
+                    <div class="phones clearfix" id="phones">
+                        <i></i>
+                        <a class="phone" id="phone1" data-verify=""></a>
+						<input type="button" value="查看业主电话" class="callPhone" id="callPhone" />
+                        <a class="phone" id="phone2" data-verify="" style="margin-right:0;"></a>
+                    </div>
+                    
+                    <div id="consultant_space" style="width: 1px;height: 10px;display:none;"></div>
+                    <!-- consultant_space为空隙，当phones隐藏时，它就显示，反之隐藏 -->
+                    <!--成交经纪人推荐-->
+                    <div style="font-size: 14px;" class="house_list" id="con_recom">
+                        <div style="width: 1px;height: 10px;"></div>
+                        <a style="margin-left: 8px;" class="recom" id="name">上海来福士广场</a><span class="recom">成交经纪服务商推荐（<span id="total">1</span>）</span>
+                        <span style="float: right; margin: -5px 15px 5px 0px;font-size: 20px;" id="go_jinyin">+</span>
+                        <div style="width: 1px;height: 10px;"></div>
+                        <!-- 多图 -->
+                        <div class="mui-slider">
+                            <div class="mui-slider-group mui-slider-loop">
+                                <div class="mui-slider-item mui-slider-item-duplicate">
+                                    <ul style="margin-left: 9px;" class="mui-table-view mui-grid-view" id="mui-grid-view">
+                                    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 1px;height: 60px;"></div>
+
+                    </div>
+                    <div id="consultant_space_bottom" style="width: 1px;height: 10px;"></div>
+                    
+                    <div class="house_list" id="rooms">
+                    </div>
+                    
+					<!--企业服务商推荐-->
+				<div id="consultant_space_bottom" style="width: 1px;height: 10px;"></div>
+
+					<div class="house_list" id="con_recom1">
+						<div class="recomtest" style="padding: 10px 0px 10px 0px;">
+							<a class="recom" id="name">上海来福士广场</a>
+							企业服务商案例推荐（<span id="total1">1</span>）
+							<!--<span id="go_jinyin" style="margin-top: 10px;">+</span>-->
+						</div>
+						<!-- 多图 -->
+						<ul id="mui-grid-view1">
+						</ul>
+						<div></div>
+					</div>
+				<div id="consultant_space_bottom1" style="width: 1px;height: 10px;">
+					
+				</div>
+                </div>
+            </div>
+        </div>
+        <div class="page out" id="detail_more">
+            <div class="top_banner gray">
+                <a href="#detail" class="go_back" data-rel="back"><i></i></a>
+                <p class="title" id="buliding_title2"></p>
+            </div>
+            <div class="content" id="detail_more_scroller">
+                <div class="buliding_more scroller_inner" id="more_info">
+
+                </div>
+            </div>
+        </div>
+        <script src="lxs_scripts_lxsConfig.js"></script>
+        
+        <script type="text/javascript">
+        	$("#goBack").on('click',function(){
+				var u = navigator.userAgent;
+				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+				var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+				if(isAndroid) {
+        			window.mrlou.goBack();
+				} else if(isIos) {
+        		 	app.goBack();
+				}
+        		
+        	})
+        </script>
+        <script type="text/tpl">
+            <!--^room-->
+                <div class="house_item">
+                    <img class="dujia{#unique}" src="dujia.png" /> 
+                    <a href="#room_detail" id="image_more" rid="{#id}" class="room_detail">
+                        <div class="house_img">
+                            <img src="{#avatar}" />
+                        </div>
+                   </a>
+                    <span class="house_type {#transaction_type|typeClass}"></span>
+                    <div class="house_info">
+                        <a href="#room_detail" rid="{#id}" class="room_detail">
+                            <p class="house_name">{#unit_no}</p>
+                            {#id|priceAssert}
+                        </a>
+                    </div>
+                    <!-- <span class="house_want {#status|statusClass}"></span> -->
+                    <span class="user_type user_type{#user_type}"></span>
+                    {#id|isVerified}
+                    <span class="fee_rate">{#fee_rate}</span>
+                    <!-- <span  class="room_time">{#time}</span> -->
+                </div>
+            <!--room$-->
+            <!--^more_info-->
+                <div class="buliding_info_item">
+                    <span class="item_value">{#key}: {#value}</span>
+                </div>
+            <!--more_info$-->
+        </script>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+从其他地方直接跳转至楼盘详情页时调用以下接口
+location.href = 'http://obj@href@lxs_buliding_detail.html@buildid=1'或者
+app.href('lxs_buliding_detail.html','buildid=1')
+从其他地方直接跳转至房源详情页时，调用以下接口
+location.href = 'http://obj@href@lxs_room_detail.html@roomid=1'或者
+
+app.href('lxs_room_detail.html','roomid=1')

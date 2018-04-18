@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>房源分享</title>
+        <link href="resourse_css_reset.css" type="text/css" rel="styleSheet"/>
+        <link rel="styleSheet" type="text/css" href="resourse_css_register.css">
+        <link href="lxs_css_lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="lxs_css_swiper.min.css" type="text/css" rel="styleSheet"/>
+        <!--[if !IE]> 
+        <link href="resourse_css_mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <![endif]-->
+    </head>
+    <body class="lxs_bg">
+        <div class="content buliding_inner_info white" id="room_detail_scroller">
+            <div class="scroller_inner">
+                <div class="buliding_detail">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper" id="images">
+                        </div>
+                    </div>
+                    <div class="buliding_info">
+                        <p class="name" id="room_buliding_name"></p>
+                        <p class="pos" id="unit_no"> </p>
+                    </div>
+                </div>
+
+                <!-- 楼盘 -->
+                <div class="info_list clearfix">
+                    <div class="buliding_info" style="margin-top:-7px;margin-bottom: 7px;">
+                        <p class="pos" id="building_address"> </p>
+                    </div>
+                    <div class="info_item half" prop_val="building_type">
+                        <span>类型：</span>
+                        <span id="room_building_type_span"></span>
+                    </div>
+                    <div class="info_item half" prop_val="building_date">
+                        <span>竣工日期：</span>
+                        <span id="room_building_date_span"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="info_item clearfix" prop_val="building_metro">
+                        <span style="float:left;">地铁：</span>
+                        <p id="room_building_metro_span" style="margin-left:42px;"></p>
+                    </div>
+                    <div class="info_item clearfix" prop_val="building_tags">
+                        <span style="float:left;">特色：</span>
+                        <p id="room_building_tags_span" style="margin-left:42px;"></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <!-- 经纪人 -->
+                <div class="house_list hd_consultant_list">
+                    <div class="house_item">
+                        <div class="phone_warper clearfix" id="user_phone_con">
+                            <a class="phone_num" id="user_phone"  style="font-size: 12px;"></a>
+                            <i class="phone_icon"></i>
+                        </div>
+                        <div class="house_img avatar">
+                            <img src="" id="user_avatar"/>
+                        </div>
+                        <div class="house_info">
+                            <p class="house_name" id="user_name"></p>
+                            <p class="house_price"><span id="user_company"></span><span class="ml15" id="user_type"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info_list clearfix">
+                    <div class="info_item" prop_val="rent_price">
+                        <span>租金：</span>
+                        <span id="room_rent_price_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="rent_price_monthly">
+                        <span>月租金：</span>
+                        <span id="room_rent_price_monthly_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="sell_price">
+                        <span>售价：</span>
+                        <span id="room_sell_price_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="sell_price_all">
+                        <span>总价：</span>
+                        <span id="room_sell_price_all_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="head_to">
+                        <span>朝向:</span>
+                        <span id="room_head_to_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="square_meter">
+                        <span style="float:left;">面积：</span>
+                        <span id="room_square_meter_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="delivery_status">
+                        <span>交付状态：</span>
+                        <span id="room_delivery_status_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="delivery_time">
+                        <span>交付时间：</span>
+                        <span id="room_delivery_time_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="rent_period">
+                        <span>合同租期：</span>
+                        <span id="room_rent_period_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="pay_method">
+                        <span>付款方式：</span>
+                        <span id="room_pay_method_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="zxmz">
+                        <span>装修免租：</span>
+                        <span id="room_zxmz_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="min_rent_period">
+                        <span>最短租约：</span>
+                        <span id="room_min_rent_period_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="note">
+                        <span>简介：</span>
+                        <span id="room_note_span"></span>
+                    </div>     
+                    <div class="info_item" prop_val="update_time">
+                        <span>更新时间：</span>
+                        <span id="room_update_time_span"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <script src="lxs_scripts_lxsShareConfig.js"></script>
+        <script type="text/tpl">
+        </script>
+    </body>
+</html>

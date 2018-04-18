@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/lay_introduction_main"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:background="#E4E4E4"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" >
+
+        <LinearLayout
+            android:id="@+id/lay_mine_intro_back"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/resourse_images_back"
+                android:layout_width="22dp"
+                android:layout_height="22dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_mine_intro_submit"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|right" >
+
+            <ImageView
+                android:background="@drawable/resourse_images_submit"
+                android:layout_marginRight="10dp"
+                android:layout_width="22dp"
+                android:layout_height="22dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        
+        <EditText 
+            android:id="@+id/et_mine_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入您的个人简介（不超过200个字符）"
+            android:maxLength="200"
+            android:background="@null"/>
+    </LinearLayout>
+
+</LinearLayout>

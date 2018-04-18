@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>图片预览-楼先生</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link rel="styleSheet" type="text/css" href="/resourse/css/register.css">
+        <link href="css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/iSlider.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body style="background:#000;">
+        <script src="scripts/lxsConfig.js"></script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>房源分享</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link rel="styleSheet" type="text/css" href="/resourse/css/register.css">
+        <link href="/lxs/css/lxs.css" type="text/css" rel="styleSheet"/>
+        <!--[if !IE]> 
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <![endif]-->
+    </head>
+    <body class="lxs_bg">
+        <div class="content buliding_inner_info white" id="room_detail_scroller">
+            <div class="scroller_inner">
+                <div class="buliding_detail">
+                    <div class="buliding_img">
+                        <img src="" id="room_detail_atavar"/>
+                        <a class="img_count" href="javascript:;" id="room_imgs" style="display:none;">
+                            <i></i>
+                            <span class="img_count_span" id="room_total_span"></span>
+                        </a>
+                    </div>
+                    <div class="buliding_info">
+                        <p class="name" id="room_buliding_name"></p>
+                        <p class="pos" id="unit_no"> </p>
+                    </div>
+                </div>
+                <div class="info_list clearfix">
+                    <div class="info_item" prop_val="rent_price">
+                        <span>租金：</span>
+                        <span id="room_rent_price_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="rent_price_monthly">
+                        <span>月租金：</span>
+                        <span id="room_rent_price_monthly_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="sell_price">
+                        <span>售价：</span>
+                        <span id="room_sell_price_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="sell_price_all">
+                        <span>总价：</span>
+                        <span id="room_sell_price_all_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="head_to">
+                        <span>朝向:</span>
+                        <span id="room_head_to_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="square_meter">
+                        <span style="float:left;">面积：</span>
+                        <span id="room_square_meter_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="delivery_status">
+                        <span>交付状态：</span>
+                        <span id="room_delivery_status_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="delivery_time">
+                        <span>交付时间：</span>
+                        <span id="room_delivery_time_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="min_rent_period">
+                        <span>最短租约：</span>
+                        <span id="room_min_rent_period_span"></span>
+                    </div>
+                    <div class="info_item" prop_val="note">
+                        <span>简介：</span>
+                        <span id="room_note_span"></span>
+                    </div>     
+                    <div class="info_item" prop_val="update_time">
+                        <span>更新时间：</span>
+                        <span id="room_update_time_span"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <script src="/lxs/scripts/lxsShareConfig.js"></script>
+        <script type="text/tpl">
+        </script>
+    </body>
+</html>

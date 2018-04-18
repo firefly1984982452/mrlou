@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=no" />
+        <title>楼盘详情2</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <!--目前不知道这个页面有什么用，好像没有用到它-->
+    <body class="graybg">
+        <div class="page">
+            <div class="top_banner">
+                <a href="javascript:;" class="go_back" data-rel="back"><i></i></a>
+                <div class="buliding_operate">
+                    <a href="javascript:;" class="buliding_search"></a>
+                    <a href="javascript:app.href('xiaoxi_index.html');" class="buliding_msg"></a>
+                    <a href="javascript:;" class="buliding_collect"></a>
+                    <a href="javascript:;" class="buliding_share"></a>
+                </div>
+                <p class="title_right">易楼帮(经)</p>
+            </div>
+            <div class="content buliding_inner_info">
+                <div class="info_list clearfix">
+                    <div class="info_item half">
+                        <span>租金：</span>
+                        <span>¥8元/m²/天</span>
+                    </div>
+                    <div class="info_item half">
+                        <span>售价：</span>
+                        <span>¥70000元/m²</span>
+                    </div>
+                    <div class="info_item">
+                        <span>物业费：</span>
+                        <span>¥34元/m²/天</span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="info_item half">
+                        <span>类型：</span>
+                        <span>5A甲级写字楼</span>
+                    </div>
+                    <div class="info_item half">
+                        <span>竣工日期：</span>
+                        <span>2008年6月</span>
+                    </div>
+                    <div class="info_item">
+                        <span>地铁：</span>
+                        <span>地铁2号线，4号线，6号线，9号线，世纪大道站</span>
+                    </div>     
+                    <div class="info_item">
+                        <span>特色：</span>
+                        <span>CBD商圈 名企入驻 近轨交</span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <a class="go_detail" href="lxs_buliding_moreinfo.html" data-rel="auto">
+                        <span>详细信息</span>
+                        <i></i>
+                    </a>
+                </div>
+                <div class="phones clearfix">
+                    <i></i>
+                    <span class="phone">021-51898976</span>
+                    <span class="phone">021-51898976</span>
+                </div>
+                
+                <div class="house_list">
+                    <div class="house_item">
+                        <div class="house_img">
+                            <img src="images/test.png" />
+                        </div>
+                        <span class="house_type rent"></span>
+                        <div class="house_info">
+                            <p class="house_name">A栋18层商务中心外侧间3人位</p>
+                            <p class="house_price">租金报价：<span>¥ 8.5元/m²/天</span></p>
+                        </div>
+                        <span class="house_want dealed"></span>
+                        <span class="house_active">
+                            <i></i>
+                            认证
+                        </span>
+                    </div>
+                    <div class="house_item">
+                        <div class="house_img">
+                            <img src="images/test.png" />
+                        </div>
+                        <span class="house_type sale"></span>
+                        <div class="house_info">
+                            <p class="house_name">A栋18层商务中心外侧间3人位</p>
+                            <p class="house_price">租金报价：<span>¥8.5元/m²/天</span></p>
+                        </div>
+                        <span class="house_want looking"></span>
+                        <span class="house_active">
+                            <i></i>
+                            <span>认证</span>
+                        </span>
+                    </div>
+                    <div class="house_item">
+                        <div class="house_img">
+                            <img src="images/test.png" />
+                        </div>
+                        <span class="house_type rent"></span>
+                        <div class="house_info">
+                            <p class="house_name">A栋18层商务中心外侧间3人位</p>
+                            <p class="house_price">租金报价：<span>¥8.5元/m²/天</span></p>
+                        </div>
+                        <span class="house_want want"></span>
+                        <span class="house_active">
+                            <i></i>
+                            <span>认证</span>
+                        </span>
+                    </div>
+                    <div class="house_item">
+                        <div class="house_img">
+                            <img src="images/test.png" />
+                        </div>
+                        <span class="house_type sale"></span>
+                        <div class="house_info">
+                            <p class="house_name">A栋18层商务中心外侧间3人位</p>
+                            <p class="house_price">租金报价：<span>¥8.5元/m²/天</span></p>
+                        </div>
+                        <span class="house_want disabled"></span>
+                        <span class="house_active">
+                            <i></i>
+                            <span>认证</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+        <script src="/resourse/scripts/mobilebone.js"></script>
+        <script>
+            var a=document.getElementsByTagName('a');
+            for(var i=0;i<a.length;i++){
+                a[i].addEventListener('touchstart',function(){
+                },false);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>邀请朋友</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../resourse/css/mui.min.css" rel="stylesheet" />
+		<script src="../resourse/scripts/mui.min.js"></script>
+		<script src="../resourse/scripts/jquery-1.8.3.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<style>
+			#five a {
+				font-size: 23px;
+				color: #B50D17;
+			}
+			
+			.space {
+				height: 10px;
+			}
+			
+			.top_banner {
+				padding: 10px;
+				height: 50px;
+				background: #e7e7e7;
+				position: absolute;
+				left: 0;
+				right: 0;
+			}
+			
+			.go_back {
+				left: 6px;
+				top: 6px;
+				padding: 8px;
+				height: 22px;
+				width: 22px;
+				background: url(../resourse/images/back.png)
+			}
+			
+			.go_back:active {
+				background: url(../resourse/images/back_active.png);
+			}
+			
+			.go_sure {
+				position: absolute;
+				right: 10px;
+				overflow: hidden;
+				margin-top: 6px;
+				width: 50px;
+				color: #bd081c;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div class="top_banner">
+				<a href="javascript:app.goBack();" class="go_back" data-rel="back"><i></i></a>
+				<h1 class="mui-title">邀请朋友</h1>
+				<a class="go_sure" id="invite">OK</a>
+			</div>
+		</header>
+		<center>
+			<div style="margin-top: 30px;" class="mui-card">
+				<br />
+				<div class="mui-card-content">
+					<div id="five" class="mui-card-content-inner">
+						<a>专业写字楼租售平台</a><br />
+						<div class="space">
+
+						</div>
+						<a>5年+金牌经济人免佣服务</a>
+					</div>
+				</div>
+				<img id="imgee" style="width: 70%;" src="images/code.png" />
+				<br /> 上海易楼信息科技有限公司
+				<br /> 电话 : 400-968-7099&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<br /> 网址 : www.mrlou.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<br /> 邮箱 : service@mrlou.com&nbsp;
+				<br />
+			</div>
+		</center>
+	</body>
+	<script src="scripts/lxsConfig.js"></script>
+	<script type="text/javascript">
+		$("#invite").on('click', function() {
+			alert(2)
+			$("#imgee").src = "images/share_code.png";
+		})
+	</script>
+
+</html>

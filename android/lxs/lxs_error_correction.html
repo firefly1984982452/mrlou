@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../resourse/css/mui.min.css" rel="stylesheet" />
+		<!--<link rel="stylesheet" type="text/css" href="css/lxs.css" />-->
+		<!--<link href="../resourse_css_reset.css" />-->
+		<script src="../resourse/scripts/mui.min.js"></script>
+		<script src="../resourse/scripts/jquery-2.1.0.js"></script>
+		<style>
+			.top_banner {
+				padding: 10px;
+				height: 50px;
+				background: #e7e7e7;
+				position: absolute;
+				left: 0;
+				right: 0;
+			}
+			
+			.go_back {
+				left: 6px;
+				top: 6px;
+				padding: 8px;
+				height: 20px;
+				width: 20px;
+				background: url(../resourse/images/back.png)
+			}
+			
+			.go_back:active{
+				background: url(../resourse/images/back_active.png);
+			}
+			
+			 .go_sure {
+			 	position: absolute;
+			    margin-right: 40px;
+			    overflow: hidden;
+			    margin-top: 6px;
+			    width: 50px;
+			    color: #bd081c;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+
+			<header class="mui-bar mui-bar-nav">
+				<div class="top_banner">
+					<a href="javascript:app.goBack();" class="go_back" data-rel="back"><i></i></a>
+					<h1 class="mui-title">我要纠错</h1>
+					<a class="go_sure" >提交</a>
+				</div>
+			</header>
+			<div class="mui-content">
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner mui-ellipsis">
+							<label id="error_corrt_title">上海来福士广场</label>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-content">
+						<textarea id="error_cor_content" rows="8" maxlength="200" placeholder="请填写纠错信息(最多200个字符)" onkeyup="getCount();"></textarea>
+						<p id="error_cor_count">0/200</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script >
+			var url_ = location.search;
+			var type_;
+			var squre = new Array();
+			var userId = localStorage.getItem("user_id");
+			if(url_.indexOf("?")!=-1){
+				type_ = url_.substr(6,1);
+				if(type_==1){
+					//楼盘进
+					$("h1").text("我要纠错");
+					$("#error_corrt_title").text(localStorage.getItem("lp_name"));
+				}
+				if(type_==2){
+					//房源进
+					$("h1").text("我要纠错");
+					$("#error_corrt_title").text(localStorage.getItem("fy_name")
+					+"    "+localStorage.getItem("unit"));
+				}
+				if(type_==3){
+					//帖子进
+					$("h1").text("我要举报");
+					$("#error_corrt_title").text(localStorage.getItem("tz_name"));
+				}
+			}
+			$(".go_sure").css("margin-left",$("h1").width());
+			$(".go_sure").on('click', function() {
+				var content = $("textarea").val();
+				if(content==null||content==""){
+					if($("h1").text()=="我要纠错"){	
+						alert("纠错信息不能为空");
+						return false;
+					} 
+					if($("h1").text()=="我要举报"){
+						alert("举报信息不能为空");
+						return false;
+					} 
+				}else{
+					alert("感谢您的宝贵意见，楼先生将尽快核实并修正信息");
+					return true;
+					history.go(-1);
+				}
+				var err_cor_url = "http://test.imrlou.com/api/insertreport";
+				var err_cor_parm = {
+					title: $("#error_corrt_title").text(),
+					content: $("textarea").val(),
+//					user_id:userId,
+					type: type_
+				};
+				$.getJSON(err_cor_url,err_cor_parm,function(data){					
+					localStorage.removeItem("lp_name");				
+					localStorage.removeItem("fy_name");				
+					localStorage.removeItem("unit");
+				})
+			})
+
+			function getCount() {
+				var leng = $("#error_cor_content").val().length;
+				var str = leng + "/" + Number(200 - leng);
+				$("#error_cor_count").text(str);
+			}
+		</script>
+		        <script src="scripts/lxsConfig.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>房源信息填写 - 房源</title>
+        <link href="resourse_css_reset.css" type="text/css" rel="styleSheet"/>
+        <link href="lxs_css_lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_register.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.css" type="text/css"rel="styleSheet" />
+        <link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_select2.min.css" type="text/css" rel="styleSheet"/>
+        <link href="fangyuan_css_fangyuan.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="graybg">
+        <div class="page out">
+            <div class="top_banner graybg">
+                <a href="javascript:;" data-rel="back" class="go_back" data-fallback="test.destroy"><i></i></a>
+                <a href="fangyuan_house_summary.html" data-rel="auto" class="next_step">下一步</a>
+            </div>
+            <div class="content">
+                <div class="form">
+                    <div class="line">
+                        <span class="condition_name">楼盘名称</span>
+                        <div class="condition clearfix">
+                            <div class="select_waprer">
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">房源单元</span>
+                        <div class="condition clearfix">
+                            <input type="text" placeholder="示例：1201室或A栋（1号楼）12A室" class="condition_ipt"/>
+                        </div>
+                    </div>
+                    
+                    <div class="line">
+                        <span class="condition_name">房间位置</span>
+                        <div class="condition clearfix">
+                            <span class="select_waprer">
+                                <select>
+                                    <option value="外侧间">外侧间</option>
+                                    <option value="内侧间">内侧间</option>
+                                    <option value="公共位">公共位</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="line">
+                        <span class="condition_name">房间座位</span>
+                        <div class="condition clearfix">
+                            <input type="text" class="condition_ipt"/> 人位
+                        </div>
+                    </div>
+                    
+                    <div class="line">
+                        <span class="condition_name">房源面积</span>
+                        <div class="condition clearfix">
+                            <input type="text" class="condition_ipt"/> m²
+                        </div>
+                    </div>
+                    
+                    <div class="line">
+                        <span class="condition_name">房源报价</span>
+                        <div class="condition clearfix">
+                            <input type="text" class="condition_ipt"/> 元/月
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">房源朝向</span>
+                        <div class="condition clearfix">
+                            <input type="text" class="condition_ipt"/>
+                        </div>
+                    </div>
+
+                    <div class="line">
+                        <span class="condition_name">交付状态</span>
+                        <div class="condition clearfix">
+                            <span class="select_waprer">
+                                <select>
+                                    <option>毛坯房</option>
+                                    <option>已装修已装修已装修</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    
+
+                    <div class="line">
+                        <span class="condition_name">交付日期</span>
+                        <div class="condition clearfix">
+                            <input type="text" class="condition_ipt"/>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="line">
+                        <span class="condition_name">最短租约</span>
+                        <div class="condition clearfix">
+                            <input type="text" class="condition_ipt"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="fangyuan_scripts_fyConfig.js"></script>
+        <!--^img-->
+            <span class="img_span {#imgType}">
+                <a href="javascript:;" class="img_del" imgId="{#id}"></a>
+                <img src="{#avatar}" />
+            </span>
+        <!--img$-->
+    </body>
+</html>

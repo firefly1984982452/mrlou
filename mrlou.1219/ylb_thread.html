@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width,user-scalable=no" name="viewport" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>帖子详情 - 易楼帮</title>
+		<link href="resourse_css_reset.css" type="text/css" rel="styleSheet" />
+		<link href="fangyuan_css_fangyuan.css" type="text/css" rel="styleSheet" />
+		<link href="resourse_css_register.css" type="text/css" rel="styleSheet" />
+		<link href="resourse_css_mobilebone.css" type="text/css" rel="styleSheet" />
+		<link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet" />
+		<link href="resourse_css_select2.min.css" type="text/css" rel="styleSheet" />
+		<link href="ylb_css_ylb.css" type="text/css" rel="styleSheet" />
+		<style>
+			.agree {
+				background: white;
+				width: 100%;
+				min-height: 70px;
+				height: auto;
+				padding: 10px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				color: #b9b9b9;
+				font-size: 13px;
+			}
+			
+			.titile_info {
+				height: 25px;
+			}
+			
+			.left_total {
+				float: left;
+				height: 20px;
+				line-height: 20px;
+			}
+			
+			.right_total {
+				float: right;
+				line-height: 20px;
+				margin-right: 20px;
+			}
+			
+			.right_total img {
+				padding-left: 10px;
+				width: 18px;
+				height: 18px;
+			}
+			
+			.reply_total {
+				width: 55px;
+				height: 20px;
+				border: solid 1px #b9b9b9;
+				border-radius: 5px;
+				text-align: center;
+				line-height: 20px;
+				float: left;
+				margin-right: 20px;
+			}
+			
+			.agree_total {
+				width: 55px;
+				height: 20px;
+				border: solid 1px #b9b9b9;
+				border-radius: 5px;
+				text-align: center;
+				line-height: 20px;
+				float: left;
+			}
+			/*点赞列表*/
+			
+			.avatars {
+				margin-top: 10px;
+				padding-bottom: 10px;
+				background: #f9f9f9;
+				width: 95%;
+				min-height: 55px;
+				height: auto;
+				padding-top: 10px;
+			}
+			
+			#avatars_list {
+				min-height: 55px;
+				overflow: auto;
+			}
+			
+			.avatars ul li {
+				float: left;
+				list-style-type: none;
+				width: 11.8%;
+				height: 30px;
+				/*background: yellow;
+				border: solid 1px;*/
+				text-align: center;
+				position: relative;
+			}
+			
+			.avatars ul li img {
+				width: 28px;
+				height: 28px;
+				border-radius: 50%;
+			}
+			
+			#oval_ {
+				/*加V*/
+				width: 13px;
+				height: 13px;
+				line-height: 13px;
+				margin-left: -6px;
+				margin-top: 15px;
+				z-index: 66;
+				position: absolute;
+				/*display: none;*/
+			}
+			/*加载更多*/
+			/*.more_agree{
+				width: 90%;
+				height:15px;
+				border: solid 1px #b9b9b9;
+				border-radius: 5px;
+				font-size: 12px;
+			}*/
+			
+			.user_avatar_agree_display {
+				display: none;
+			}
+			/*点赞*/
+			
+			.post_agree_btn {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 50px;
+				height: 28px;
+				line-height: 28px;
+				text-decoration: none;
+				text-align: center;
+				background: #bd081c;
+				color: #fff;
+				font-size: 14px;
+				float: right;
+				border-radius: 5px;
+				margin-right: 10px;
+				margin-top: 10px;
+			}
+			/*评论*/
+			
+			.reply_area .post_reply_btn {
+				position: absolute;
+				bottom: 0;
+				right: 55px;
+				width: 50px;
+				height: 28px;
+				line-height: 28px;
+				text-decoration: none;
+				text-align: center;
+				background: #bd081c;
+				color: #fff;
+				font-size: 14px;
+				float: right;
+				border-radius: 5px;
+				margin-right: 10px;
+				margin-top: 10px;
+			}
+			
+			.reply_txt_con {
+				width: 60%;
+			}
+			.img_area{
+				position: relative;
+			}
+			
+			.img_count {
+				position: absolute;
+				bottom: 10px;
+				right: 10px;
+				background: rgba(0, 0, 0, .5);
+				padding: 5px;
+				border-radius: 3px;
+			}
+			
+			#buliding_img i {
+				float: left;
+				width: 17px;
+				height: 13.5px;
+				background: url(lxs_images_img_count.png) no-repeat;
+				background-size: 100%;
+			}
+			
+			#buliding_img .img_count_span {
+				font-size: 11px;
+				color: #b9b9b9;
+				margin-left: 6px;
+				float: left;
+			}
+			
+			/*轮播*/
+		.lb {
+			width: 100%;
+			height: auto;
+			top: 50%;
+			position: absolute;
+			transform: translateY(-50%);
+		}
+		.lb .control {
+			position: absolute;
+			top: 20px;
+			width: 100%;
+			height: 10px;
+		}
+		.lb .control .cont {
+			width: 100px;
+			height: 100%;
+			margin: 0px auto;
+		}
+		.lb img {
+			height: 100%;
+			width: 100%;
+		}
+		.lb .control .cont span {
+			width: 10px;
+			height: 10px;
+			display: block;
+			float: left;
+			margin-left: 10px;
+			background-color: #000;
+			border-radius: 10px;
+		}
+		.lb ul {
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			height: 100%;
+			width: 400%;
+		}
+		.lb li {
+			width: 25%;
+			height: 100%;
+			float: left;
+		}
+		</style>
+	</head>
+
+	<body class="graybg">
+		<div class="page in" id="index">
+			<div class="top_banner white">
+				<a href="javascript:app.goBack();" class="go_back" data-rel="back"><i></i></a>
+				<div class="thread_operate">
+					<a class="error_correction"><i></i></a>
+					<a class="collect" href="javascript:;" id="collect_thread"><i></i></a>
+				</div>
+				<a href="javascript:;"  style="line-height: 25px;" class="right_title">
+					<img style="float: left;width: 24px;height: 24px;" src="ylb_images_praise.png" />
+					<span id="agree_count1"></span>
+				</a>
+			</div>
+			<div class="content whole_page reply_bottom" style="top:50px;overflow:hidden;" id="thread_detail_scroller">
+				<div style="width:100%;">
+					<div class="scroller_inner" style="height:100%;">
+						<div id="poster_info"></div>
+
+						<div class="thead_content">
+							<div class="title_area">
+								<span class="thread_time" id="post_time"></span>
+								<span class="thread_day" id="post_date"></span>
+								<span class="thread_type" id="thread_type"></span>
+								<span class="thread_remark" style="font-size: 13px;color: #b9b9b9;margin-left: 10px;" id="thread_remark"></span>
+							</div>
+							<div>
+								<p class="thead_title" id="thread_title"></p>
+								<p class="thead_text" id="thread_content"></p>
+							</div>
+							<div class="img_area" id="thread_img_con" >
+								<img src="" id="thread_img" />
+								<a class="img_count" href="javascript:;" id="buliding_img" style="display: none;">
+									<i></i>
+									<span class="img_count_span" id="img_total_span"></span>
+								</a>
+							</div>
+						</div>
+						<div class="agree">
+							<div class="titile_info">
+								<!--<div class="left_total">
+									浏览量:<span id="visit_total">0</span>
+								</div>-->
+								<div class="right_total">
+									<div class="reply_total">
+										<img id="reply_image" style="float: left;padding-top: 2px;width: 15px;height: 15px;" src="ylb_images_message2.png" />
+										<div id="reply_count2">0</div>
+									</div>
+									<div class="agree_total">
+										<img style="float: left;" id="agree_image" src="ylb_images_praise.png" />
+										<div id="agree_count">0</div>
+									</div>
+								</div>
+							</div>
+							<div class="avatars">
+								<ul id="avatars_list">
+								</ul>
+							</div>
+						</div>
+						<!-- <div id="thread_remark_fu" style="padding: 4px 10px;background: #fff;margin-top:10px;width:100%">
+                        </div> -->
+						<div class="reply_list" id="reply_list">
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="reply_area">
+				<div class="reply_warp">
+					<a href="javascript:;" class="post_reply_btn" id="post_reply">评论</a>
+					<a href="javascript:;" class="post_agree_btn" id="post_agree">
+						<img id="agree_image1" style="height: 25px;width: 25px;line-height: 25px;" src="ylb_images_praise.png" />
+					</a>
+					<p class="reply_txt_con"><textarea class="reply_txt" id="reply_content"></textarea></p>
+				</div>
+			</div>
+		</div>
+	
+		<div class="page out" id="image" style="background: #000000;">
+			<!--轮播-->
+			<div >
+				
+				<div class="lb threadImage">
+					<div class="control">
+						<div class="cont" id="avatarLength">
+							<span class="content-show"></span>
+							<span class="content-show"></span>
+						</div>
+					</div>
+					<ul id="avatarImg">
+						<li class="pd-lb" ><img src="lxs_images_l1.jpg" width='100%' /></li>
+						<li class="pd-lb" ><img src="lxs_images_l2.jpg" width='100%' /></li>
+					</ul>
+				</div>
+			</div>
+			<!--接收-->
+		</div>
+		<script src="ylb_scripts_ylbConfig.js"></script>
+		<script type="text/javascript">
+			
+		;(function(){
+			var page = {
+				timer:0,
+				time:3000,
+				pageIndex:0,
+				spend:400,
+				isAnim:false,
+				lbOjects:$(".lb ul"),
+				controlObjects:$(".content-show"),
+				init:function(){
+					page.pageIndex = 0;
+					page.controlObjects.eq(page.pageIndex).css("background-color","#ffffff");
+				},
+				start:function(){
+					page.timer = setInterval(function(){
+						page.next();
+					},page.time)
+				},
+				stop:function(){
+					clearTimeout(page.timer);
+				},
+				next:function(){
+					page.pageIndex++;
+					page.change();
+					
+				},
+				prev:function(){
+					page.pageIndex--;
+					page.change();
+				},
+				change:function(){
+					if(page.pageIndex>page.lbOjects.children().length-1){
+						page.pageIndex=0;
+					}
+					if(page.pageIndex<0){
+						page.pageIndex = page.lbOjects.children().length-1;
+					}
+					isAnim = true;
+					page.lbOjects.animate({"margin-left":-($(window).width()*page.pageIndex)},page.spend,function(){
+						isAnim = false;
+					});
+					page.controlObjects.css("background-color","#000000");
+					page.controlObjects.eq(page.pageIndex).css("background-color","#ffffff");
+				}
+			}
+			page.init();	
+			page.start();
+			var taps ={
+				start:0,
+				end:0,
+				startTime:0,
+				endTime:0,
+				width:$(window).width()
+			}
+			$(".lb").on("touchstart",function(e){
+				page.stop();
+				taps.startTime = (+ new Date());
+				taps.start = e.changedTouches[0].clientX;
+			}).on("touchend",function(e){
+				taps.end = e.changedTouches[0].clientX;
+				taps.endTime = (+ new Date());
+				if(taps.endTime-taps.startTime>150){
+					if(taps.end<taps.start){
+						page.next();
+					}else{
+						page.prev();
+					}
+				}else{
+					page.lbOjects.animate({"margin-left":-($(window).width()*page.pageIndex)},page.spend);
+				}
+				page.start();
+			}).on("touchmove",function(e){
+				var x =  taps.width*page.pageIndex + taps.start-e.changedTouches[0].clientX;
+				page.lbOjects.css("margin-left",-x);
+			})
+		})();
+		</script>
+		<script type="text/tpl">
+			<!--^reply_item-->
+			<div class="reply_item" onclick="getRpleyName('{#name|posterNameFn}')">
+				<div class="replyer_avatar">
+					<img src="{#avatar}" />
+				</div>
+				<div class="reply_detail ">
+					<div class="detail_top clearfix">
+						<span class="reply_time">{#time|replyTimeFn}</span>
+						<span class="replyer_name">{#name|posterNameFn}</span>
+						<span class="replyer_type">{#type|posterTypeFn}</span>
+						<span class="reply_floor">{#floor}楼</span>
+					</div>
+					<div class="reply_content">
+						{#content|htmlEncode}
+					</div>
+				</div>
+			</div>
+			<!--reply_item$-->
+			<!--^type1-->
+			<!-- 类型为102经纪人-->
+			<div class="house_list hd_consultant_list">
+				<div class="house_item">
+					<div id="user_phone_con" class="phone_warper clearfix">
+						<i class="phone_icon"></i>
+						<a id="user_phone" class="phone_num" href="tel:{#phone}" data-verify="4-{#thread_id}_1-{#id}">{#phone|phoneHide}</a>
+					</div>
+					<div class="house_img avatar">
+						<img id="user_avatar" uid="{#id}" src="{#avatar}">
+						<img style="display:none;" id="oval_v2" src="resourse_images_oval_v.png" />
+					</div>
+					<div class="house_info">
+						<p id="user_name" class="house_name">{#phone|posterNameFormat}
+							<span style="margin-left:20px">&nbsp;</span>
+						</p>
+						<p id="work_age" class="work_age house_price">{#type|typeFormat}
+							<span style="margin-left: 10px;background:#bd081c;" id="company_color" class="house_price">
+                                    {#company|companyAssert}
+                                </span>
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+			<!--type1$-->
+			<!--^type2-->
+			<!--除102经纪人的身份-->
+			<div class="house_list hd_consultant_list">
+				<div class="house_item">
+					<div id="user_phone_con" class="phone_warper clearfix">
+						<i class="phone_icon"></i>
+						<a id="user_phone" class="phone_num" href="tel:{#phone}" data-verify="4-{#thread_id}_1-{#id}">{#phone|phoneHide}</a>
+					</div>
+					<div class="house_img avatar">
+						<img id="user_avatar" uid="{#id}" src="{#avatar}">
+						<img style="display:none;" id="oval_v2" src="resourse_images_oval_v.png" />
+					</div>
+					<div class="house_info">
+						<p id="user_name" class="house_name">{#phone|posterNameFormat}</p>
+						<p id="work_age" class="work_age house_price">{#type|typeFormat}<span style="margin-left: 10px;background:#bd081c;" id="company_color" class="house_price">{#company|companyAssert}</span></p>
+
+					</div>
+				</div>
+			</div>
+			<!--type2$-->
+		</script>
+	</body>
+
+</html>

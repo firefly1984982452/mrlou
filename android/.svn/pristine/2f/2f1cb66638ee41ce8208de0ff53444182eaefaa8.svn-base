@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>添加客户 - 客户</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/lxs/css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="css/kehu.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="graybg">
+        <div class="page">
+            <div class="top_banner gray">
+                <a href="javascript:;" data-rel="back" class="add_btn1"></a>
+                <p class="title">客户信息</p>
+            </div>
+            <div class="content" style="top:60px;">
+                <div class="form">
+                    <div class="line">
+                        <span class="condition_name">交易类型</span>
+                        <div class="condition clearfix">
+                            <div class="conditon_option">
+                                <label class="checkbox">
+                                    <input type="radio" name="trade" value="1">
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">租赁</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="checkbox">
+                                    <input type="radio" name="trade" value="2">
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">购买</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">首次来访日期</span>
+                        <div class="condition clearfix" style="margin-left:100px;">
+                            <input type="text"  class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">客户名字</span>
+                        <div class="condition clearfix">
+                            <input type="text"  style="width:100%"  class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">行业类别</span>
+                        <div class="condition clearfix">
+                            <input type="text"  style="width:100%"  class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">意向面积</span>
+                        <div class="condition clearfix">
+                            <input type="text"  class="condition_ipt"/>m²
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">价格预算</span>
+                        <div class="condition clearfix">
+                            <input type="text"  class="condition_ipt"/><span>元/m²/天</span>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">意向房源</span>
+                        <div class="condition clearfix">
+                            <textarea class="common_txt" id="pre_room" maxlength="200"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="line">
+                        <span class="condition_name">客户简介</span>
+                        <div class="condition clearfix">
+                            <textarea class="common_txt" id="intro" maxlength="200"></textarea>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">联系电话</span>
+                        <div class="condition clearfix">
+                            <input type="text"  style="width:100%"  class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">公司名称</span>
+                        <div class="condition clearfix">
+                            <input type="text"  style="width:100%"  class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">公司职位</span>
+                        <div class="condition clearfix">
+                            <input type="text"  style="width:100%"  class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">租售动机</span>
+                        <div class="condition clearfix">
+                            <input type="text"  style="width:100%"  class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">单位性质</span>
+                        <div class="condition clearfix">
+                            <input type="text"  style="width:100%"  class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">员工数量</span>
+                        <div class="condition clearfix">
+                            <input type="text"  style="width:100%"   class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">目前所在写字楼</span>
+                        <div class="condition clearfix" style="margin-left: 115px;">
+                            <input type="text"  style="width:100%"  class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">租约到期日</span>
+                        <div class="condition clearfix" style="margin-left: 85px;">
+                            <input type="text"  style="width:100%"  class="condition_ipt"/>
+                        </div>
+                    </div>
+                    <div class="form_btns">
+                        <span class="btn2_con"><a href="javascript:;" class="btn2 del_btn">删除客户</a></span>
+                        <span class="btn2_con"><a href="javascript:;" class="btn2 submit_btn">修改保存</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/kehuConfig.js"></script>
+        <script type="text/tpl">
+            <!--^kehu_item-->
+                <div class="kehu_item">
+                    <p class="kehu_name">{#name}</p>
+                    <p class="kehu_note">{#intro}</p>
+                    <i class="kehu_status {#process|statusClassFormat}"></i>
+                </div>
+            <!--kehu_item$-->
+        </script>
+    </body>
+</html>

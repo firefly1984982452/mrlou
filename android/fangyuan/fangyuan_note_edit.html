@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>工作日志编辑 - 房源</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/lxs/css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css"rel="styleSheet" />
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/select2.min.css" type="text/css" rel="styleSheet"/>
+        <link href="css/fangyuan.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="lxs_bg">
+        <div class="page out">
+            <div class="top_banner graybg">
+                <a href="javascript:;" data-rel="back" class="go_back"><i></i></a>
+                <a href="javascript:;" class="submit" data-rel="back"></a>
+                <p class="title">工作日志编辑</p>
+            </div>
+            <div class="content">
+                <div class="note_form">
+                    <div class="line">
+                        <input type="" id="note_date" class="note_date"/>
+                    </div>
+                    <div class="line">
+                        <textarea id="note_content" placeholder="请输入工作日志内容" class="note_content"></textarea>
+                    </div>
+                    <div class="line">
+                        <span class="key">跟进提醒时间</span>
+                        <span class="ipt_span">
+                            <input type="date" id="notice_day" class="notice_day"/></span>
+                        <span class="ipt_span">
+                            <input type="time" id="notice_time" class="notice_time"/>
+                        </span>
+                    </div>
+                </div>
+                <a href="javascript:;" class="common_submit">删 除</a>
+            </div>
+        </div>
+        <script src="scripts/fyConfig.js"></script>
+        <script>
+        Mobilebone.evalScript = true;
+        Mobilebone.callback = function(pagein) {
+        };
+        test = {}
+        test.selectInit = function(){
+        console.log(1)
+            $('select').each(function(){
+                var width = $(this).width();
+                $(this).select2({
+                    minimumResultsForSearch : 10,
+                    width : width + 20
+                });
+            })
+        }
+        test.destroy = function(){
+            $('select').select2("close");
+        }
+        </script>
+    </body>
+</html>

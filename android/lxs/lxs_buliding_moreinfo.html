@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=no" />
+        <title>楼盘更多信息</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="graybg">
+        <div class="page">
+            <div class="top_banner gray">
+                <a href="javascript:;" class="go_back" data-rel="back"></a>
+                <p class="title">太平金融大厦</p>
+            </div>
+            <div class="content">
+                <div class="buliding_more">
+                    <div class="buliding_info_item">
+                        <p class="item_name">楼盘英文名</p>
+                        <p class="item_value">test</p>
+                    </div>
+                    <div class="buliding_info_item">
+                        <p class="item_name">开发商</p>
+                        <p class="item_value">开发商</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="/resourse/scripts/mobilebone.js"></script>
+        <script>
+            var a=document.getElementsByTagName('a');
+            for(var i=0;i<a.length;i++){
+                a[i].addEventListener('touchstart',function(){
+                },false);
+            }
+        </script>
+    </body>
+</html>

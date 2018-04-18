@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>房源信息填写 - 房源</title>
+        <link href="resourse_css_reset.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_register.css" type="text/css" rel="styleSheet"/>
+        <link href="lxs_css_lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.css" type="text/css"rel="styleSheet" />
+        <link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_select2.min.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_timer.css" type="text/css" rel="styleSheet"/>
+        <link href="fangyuan_css_fangyuan.css" type="text/css" rel="styleSheet"/>
+        <style type="text/css">
+        	
+		.conditon_optionRoom{
+		    float: left;
+		    margin-left: 10px;
+		}
+        </style>
+    </head>
+    
+    <body class="graybg">
+    	
+        <div class="page out" id="add">
+            <div class="top_banner graybg">
+                <a href="javascript:app.goBack();" class="go_back"><i></i></a>
+                <a href="#summary" data-rel="auto" class="next_step">下一步</a>
+            </div>
+            <div class="content" id="add_scroller" style="padding-bottom:0;">
+                <div class="form scroller_inner" id="addHouse"></div>
+            </div>
+        </div>
+
+        <div class="page" id="select" style="display:none;">
+            <div class="select_area">
+                <div class="top_banner">
+                    <a  href="#add" class="go_back" data-rel="back"><i></i></a>
+                    <a href="javascript:;" class="submit" data-rel="back"><i></i></a>
+                    <p class="title" id="select_title"></p>
+                </div>
+                <div class="content" id="select_scroller">
+                    <div class="scroller_inner">
+                        <div id="options"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="page" id="summary">
+            <div class="top_banner graybg">
+                <a href="javascript:;" data-rel="back" class="go_back"><i></i></a>
+                <a href="#image" data-rel="auto" class="next_step">下一步</a>
+            </div>
+            <div class="content" style="background: #fff;">
+                <div class="house_desc"><textarea placeholder="请输入发布房源简介!" maxlength="200" class="text_area" id="summary_area"></textarea></div>
+            </div>
+        </div>
+        <div class="page" id="image">
+            <div class="top_banner graybg">
+                <a href="javascript:;" data-rel="back" class="go_back"><i></i></a>
+                <a href="javascript:;" data-rel="auto" class="next_step">发布到楼先生</a>
+            </div>
+            <div class="content white">
+                <div class="house_img_edit">
+                    <div class="img_tips">
+                        您可以添加发布房源的门头、内景、窗户，外部近景，外部远景等图片，最多可添加10张图片
+                    </div>
+                    <div class="spliter"></div>
+                    <div class="cover_con" id="room_cover">
+                        <span class="img_type_name">房源封面</span>
+                        <div class="img_con clearfix">
+                            <a href="javascript:app.upload(3,null,1,2);" class="add_img" id="add_cover" imgt="cover"></a>
+                        </div>
+                    </div>
+                    <div class="other_imgs" id="other_imgs">
+                        <span class="img_type_name">其他图片</span>
+                        <div class="img_con clearfix">
+                            <a href="javascript:app.upload(3,null,2,2);" class="add_img" id="add_image" imgt="images"></a>
+                        </div>
+                    </div>
+                    <div class="other_imgs" id="idCard_imgs">
+                        <span class="img_type_name">身份证明文件（如产证、委托书等）</span>
+                        <div class="img_con clearfix">
+                            <a href="javascript:app.upload(3,null,2,2);" class="add_img" id="add_fileImage" imgt="fileImages"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="datePlugin"></div>
+        <script src="fangyuan_scripts_fyConfig.js"></script>
+        <script type="text/tpl">
+            <!--^editTwo-->
+                <div class="line">
+                    <span class="condition_name">楼盘名称</span>
+                    <div class="condition clearfix">
+                        <input type="text" placeholder="请输入楼盘名称或地址"  style="width:90%;" class="condition_ipt" value="{#building_name}" id="building_name" />
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">{#type|unit_no}</span>
+                    <div class="condition clearfix">
+                        <input type="text" placeholder="{#type|unit_placeholder}" class="condition_ipt" value="{#unit_no}" id="unit_no" style="width:90%" />
+                    </div>
+                </div>
+
+                <div class="line">
+                    <span class="condition_name">房间位置</span>
+                    <div class="condition">
+                        <a st="房间位置" ste="head" id="go_select_head" class="select_condition clearfix" href="#select">
+                            <i></i>
+                            <p>请选择</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="line">
+                    <span class="condition_name">房间座位</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#chair_total}" id="chair_total"/> 人位
+                    </div>
+                </div>
+
+                <div class="line">
+                    <span class="condition_name">房源面积</span>
+                    <div class="condition clearfix">
+                        <input type="text" placeholder="选填" class="condition_ipt" value="{#square_meter}" id="square_meter" /> m²
+                    </div>
+                </div>
+                               
+				              
+				<div class="line">
+					<span class="condition_name">房源报价</span>
+					<div class="condition clearfix">
+                        <input type="text" style="width: 30%;" class="condition_ipt" value="{#room_price}" id="room_price" placeholder="0"/> 
+                        
+						<div  class="sub_line clearfix">
+							<div class="conditon_optionRoom">
+								<label class="checkbox ">
+	                                    <input type="radio" name="roomUnit" checked="checked"/>
+	                                    <span class="is_check left"></span>
+	                                    <span class="checkbox_title" id="room_price_unit1">元/m²/天</span>
+	                                </label>
+							</div>
+							<div class="conditon_optionRoom">
+								<label class="checkbox" id="prop1">
+	                                    <input type="radio" name="roomUnit"/>
+	                                    <span class="is_check left"></span>
+	                                    <span class="checkbox_title" id="room_price_unit2">元/月</span>
+	                                </label>
+							</div>
+						</div>						
+                   </div>					
+				</div>
+                <div class="line">
+                    <span class="condition_name">房源朝向</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width:90%;" placeholder="选填（示例：全方向）" class="condition_ipt" value="{#head_to}" id="head_to" />
+                    </div>
+                </div>
+
+                <div class="line">
+                    <span class="condition_name">交付状态</span>
+                    <div class="condition">
+                        <a st="交付状态" ste="status" id="go_select_status" class="select_condition clearfix" href="#select">
+                            <i></i>
+                            <p>请选择</p>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="line">
+                    <span class="condition_name">交付日期</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#delivery_date}" name="delivery_date" id="delivery_date"/>
+                        <div class="isCompleted">
+                            <label class="checkbox">
+                                <input type="checkbox" id="isCompleted"/>
+                                <span class="is_check left"></span>
+                                <span class="checkbox_title">是否现房</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            <div class="line rent" >
+                <span class="condition_name">付款方式</span>
+                <div class="condition clearfix">
+                    <input type="text" style="width:90%;" class="condition_ipt" placeholder="示例：押一付一"  value="{#pay_method}" id="pay_method" name="pay_method"/>
+                </div>
+            </div>
+
+            <div class="line rent" >
+                <span class="condition_name">合作佣金</span>
+                <div class="condition clearfix">
+                    <input type="text" class="condition_ipt" placeholder="示例：租金10%"  value="{#fee_rate}" id="fee_rate" name="fee_rate"/>
+                    <div class="isCompleted">
+                        <label class="checkbox">
+                            <input type="checkbox" id="isCompletedFee"/>
+                            <span class="is_check left"></span>
+                            <span class="checkbox_title">不合作</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+                <div class="line">
+                    <span class="condition_name">最短租约</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width:90%;" class="condition_ipt" placeholder="示例：1个月"  value="{#min_rent_period}" id="min_rent_period" name="min_rent_period"/>
+                    </div>
+                </div>
+                
+                <div class="line">
+                    <span class="condition_name">联系电话</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width:90%;" class="condition_ipt" value="{#contact_phone}" name="contact_phone" id="contact_phone"/>
+                    </div>
+                </div>
+            <!--editTwo$-->
+            <!--^editOne-->
+                <div class="line">
+                    <span class="condition_name">交易类型</span>
+                    <div class="condition clearfix">
+                        <div class="conditon_option">
+                            <label class="checkbox">
+                                <input type="radio" name="trade" {#transaction_type|edit_transaction_type(1)} value="1"  checked="checked">
+                                <span class="is_check"></span>
+                                <span class="checkbox_title">出租</span>
+                            </label>
+                        </div>
+                        <div class="conditon_option">
+                            <label class="checkbox">
+                                <input type="radio" name="trade" {#transaction_type|edit_transaction_type(2)} value="2">
+                                <span class="is_check"></span>
+                                <span class="checkbox_title">出售</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">楼盘名称</span>
+                    <div class="condition clearfix">
+                        <input type="text" placeholder="请输入楼盘名称或地址" style="width:90%;"  class="condition_ipt" value="{#building_name}" id="building_name" />
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">{#type|unit_no}</span>
+                    <div class="condition clearfix">
+                        <input type="text" placeholder="{#type|unit_placeholder}" class="condition_ipt" value="{#unit_no}" id="unit_no" style="width:90%" />
+                    </div>
+                </div>
+
+                                <div class="line">
+                    <span class="condition_name">房源面积</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#square_meter}" id="square_meter" /> m²
+                    </div>
+                </div>
+                               
+				<div class="line">
+					<span class="condition_name">房源报价</span>
+					<div class="condition clearfix">
+                        <input type="text" style="width: 30%;" class="condition_ipt" value="{#room_price}" id="room_price" placeholder="0"/> 
+                        
+						<div  class="sub_line clearfix">
+							<div class="conditon_optionRoom">
+								<label class="checkbox ">
+	                                    <input type="radio" name="roomUnit" checked="checked"/>
+	                                    <span class="is_check left"></span>
+	                                    <span class="checkbox_title" id="room_price_unit1">元/m²/天</span>
+	                                </label>
+							</div>
+							<div class="conditon_optionRoom">
+								<label class="checkbox" id="prop1">
+	                                    <input type="radio" name="roomUnit"/>
+	                                    <span class="is_check left"></span>
+	                                    <span class="checkbox_title" id="room_price_unit2">元/月</span>
+	                                </label>
+							</div>
+						</div>						
+                   </div>					
+				</div>
+                <div class="line">
+                    <span class="condition_name">房源朝向</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width:90%;" placeholder="选填（示例：朝南）" class="condition_ipt" value="{#head_to}" id="head_to" />
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">交付状态</span>
+                    <div class="condition">
+                        <a st="交付状态" ste="status" id="go_select_status" class="select_condition clearfix" href="#select">
+                            <i></i>
+                            <p>请选择</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">交付日期</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#delivery_date}" name="delivery_date" id="delivery_date"/>
+                        <div class="isCompleted">
+                            <label class="checkbox">
+                                <input type="checkbox" id="isCompleted"/>
+                                <span class="is_check left"></span>
+                                <span class="checkbox_title">是否现房</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+            <div class="line rent" >
+                <span class="condition_name">合同租期</span>
+                <div class="condition clearfix">
+                    <input type="text" style="width:90%;" class="condition_ipt" placeholder="示例：3年"  value="{#rent_period}" id="rent_period" name="rent_period"/>
+                </div>
+            </div>
+
+            <div class="line rent" >
+                <span class="condition_name">付款方式</span>
+                <div class="condition clearfix">
+                    <input type="text" style="width:90%;" class="condition_ipt" placeholder="示例：押三付一"  value="{#pay_method}" id="pay_method" name="pay_method"/>
+                </div>
+            </div>
+
+            <div class="line rent" >
+                <span class="condition_name">装修免租</span>
+                <div class="condition clearfix">
+                    <input type="text" style="width:90%;" class="condition_ipt" placeholder="示例：一个月"  value="{#zxmz}" id="zxmz" name="zxmz"/>
+                </div>
+            </div>
+
+            <div class="line">
+                <span class="condition_name">合作佣金</span>
+                <div class="condition clearfix">
+                    <input type="text" class="condition_ipt" placeholder="示例：一个月"  value="{#fee_rate}" id="fee_rate" name="fee_rate"/>
+                    <div class="isCompleted">
+                        <label class="checkbox">
+                            <input type="checkbox" id="isCompletedFee"/>
+                            <span class="is_check left"></span>
+                            <span class="checkbox_title">不合作</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="line">
+                    <span class="condition_name">联系电话</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width:90%;" class="condition_ipt" value="{#contact_phone}" name="contact_phone" id="contact_phone"/>
+                    </div>
+                </div>
+            <!--editOne$-->
+            <!--^select_option-->
+                <label class="checkbox area">
+                    <input type="radio" name="{#keyName}" value="{#id}"/>
+                    <span class="is_check right"></span>
+                    <span class="checkbox_title">{#name}</span>
+                </label>
+            <!--select_option$-->
+            <!--^img-->
+                <span class="img_span {#imgType}">
+                    <a href="javascript:;" class="img_del" imgId="{#id}"></a>
+                    <img src="{#avatar}" />
+                </span>
+            <!--img$-->
+        </script>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=no" />
+        <title>选择区域</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="lxs_bg">
+        <div class="page">
+            <div class="select_area">
+                <div class="top_banner">
+                    <a href="javascript:;" class="go_back" data-rel="back"></a>
+                    <a href="javascript:;" class="submit" data-rel="back"></a>
+                    <p class="title">选择板块<p>
+                </div>
+                <div class="areas">
+                    <label class="checkbox area">
+                        <input type="checkbox" name="area"/>
+                        <span class="is_check right"></span>
+                        <span class="checkbox_title">全部</span>
+                    </label>
+                </div>
+                <div class="areas">
+                    <div class="area_title">
+                        杨浦区
+                    </div>
+                    <label class="checkbox area">
+                        <input type="checkbox" name="area"/>
+                        <span class="is_check right"></span>
+                        <span class="checkbox_title">黄浦区</span>
+                    </label>
+                    <label class="checkbox area">
+                        <input type="checkbox" name="area"/>
+                        <span class="is_check right"></span>
+                        <span class="checkbox_title">静安区</span>
+                    </label>
+                    <label class="checkbox area">
+                        <input type="checkbox" name="area"/>
+                        <span class="is_check right"></span>
+                        <span class="checkbox_title">徐汇区</span>
+                    </label>
+                </div>
+                <div class="areas">
+                    <div class="area_title">
+                        浦东新区
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="resourse/scripts/mobilebone.js"></script>
+    </body>
+</html>

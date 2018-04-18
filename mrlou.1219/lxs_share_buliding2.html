@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>楼盘分享</title>
+        <link href="resourse_css_reset.css" type="text/css" rel="styleSheet"/>
+        <link rel="styleSheet" type="text/css" href="resourse_css_register.css">
+        <link href="lxs_css_lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="lxs_css_swiper.min.css" type="text/css" rel="styleSheet"/>
+        <!--[if !IE]>
+        <link href="resourse_css_mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <![endif]-->
+    </head>
+    <body class="lxs_bg">
+        <div class="content buliding_inner_info white">
+            <div style="height:100%;width:100%" id="detail_scroller">
+                <div class="scroller_inner">
+                    <div class="buliding_detail ">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper" id="images">
+
+                            </div>
+                        </div>
+                        <div class="buliding_info">
+                            <p class="name" id="name"></p>
+                            <p class="pos" id="address"></p>
+                        </div>
+                    </div>
+                    <div class="info_list clearfix">
+                        <div class="info_item half" id="rent_price">
+                            <span>租金：</span>
+                            <span id="rent_price_span"></span>
+                        </div>
+                        <div class="info_item half" id="sell_price">
+                            <span>售价：</span>
+                            <span id="sell_price_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item" id="property_costs">
+                            <span>物业费：</span>
+                            <span id="property_costs_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item half" id="type">
+                            <span>类型：</span>
+                            <span id="type_span"></span>
+                        </div>
+                        <div class="info_item half" id="build_date">
+                            <span>竣工日期：</span>
+                            <span id="build_date_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item clearfix" id="metro">
+                            <span style="float:left;">地铁：</span>
+                            <p id="metro_span" style="margin-left:42px;"></p>
+                        </div>
+                        <div class="info_item clearfix" id="tags">
+                            <span style="float:left;">特色：</span>
+                            <p id="tags_span" style="margin-left:42px;"></p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <a class="go_detail" href="#detail_more" data-rel="auto" style="display:none;">
+                            <span>详细信息</span>
+                            <i></i>
+                        </a>
+                    </div>
+
+                    <!-- 经纪人 -->
+                    <div class="house_list hd_consultant_list">
+                        <div class="house_item">
+                            <div class="phone_warper clearfix" id="user_phone_con">
+                                <a class="phone_num" id="user_phone"  style="font-size: 12px;"></a>
+                                <i class="phone_icon"></i>
+                            </div>
+                            <div class="house_img avatar">
+                                <img src="" id="user_avatar"/>
+                            </div>
+                            <div class="house_info">
+                                <p class="house_name" id="user_name"></p>
+                                <p class="house_price"><span id="user_company"></span><span class="ml15" id="user_type"></span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 房源 -->
+                    <div class="house_list" id="rooms" style=" margin-top: 10px">
+                    </div>
+
+                    <!-- 更多详情 -->
+                    <div class="buliding_more scroller_inner" id="more_info" style="display:none">
+                    </div>
+
+                </div>
+<div class="con">
+				<p style="font-size: 16px;">&nbsp;&nbsp;楼先生致力于服务办公租售行业的开放平台</p>
+				<img src="lxs_images_code.jpg"/>
+				<br />
+				<div class="download">					
+					<a href="https://itunes.apple.com/us/app/lou-xian-sheng-zhuan-ye-ban/id1052676252?l=zh&ls=1&mt=8">
+						<input type="button"  id="ios" value="iPhone下载" />
+					</a>
+					<a href="https://d.91.com/Soft/Android/com.mrlou.mrlou-1.html">
+						<input type="button"  id="android" value="Android下载" />
+					</a>
+				</div>
+				<br />
+				<p>服务热线：<a href="tel:4009687099">400-968-7099</a></p>
+				<p>平台网址：<a href="http://www.mrlou.com">www.mrlou.com</a></p>
+			</div>
+            </div>
+        </div>
+        <script src="lxs_scripts_lxsShareConfig.js"></script>
+        <script type="text/tpl">
+            <!--^room-->
+                <div class="house_item">
+                    <div class="house_img">
+                        <img src="{#avatar}" />
+                    </div>
+                    <span class="house_type {#transaction_type|typeClass}"></span>
+                    <div class="house_info">
+                        <a rid="{#id}" class="room_detail">
+                            <p class="house_name">{#unit_no}</p>
+                            {#id|priceAssert}
+                        </a>
+                    </div>
+                    {#id|isVerified}
+                </div>
+            <!--room$-->
+            <!--^more_info-->
+                <div class="buliding_info_item">
+                    <span class="item_value">{#key}: {#value}</span>
+                </div>
+            <!--more_info$-->
+        </script>
+    </body>
+</html>

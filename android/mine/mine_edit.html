@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>个人设置</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link rel="styleSheet" type="text/css" href="/resourse/css/register.css">
+        <link href="/lxs/css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="css/mine.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/timer.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="graybg">
+        <div class="page" id="index">
+            <div class="top_banner gray">
+                <a href="javascript:app.href('mine_index.html');" class="go_back"><i></i></a>
+                <p class="title">个人设置</p>
+            </div>
+            <div class="content" style="top:60px;" id="scroller1">
+                <div style="width:100%;">
+                    <div class="scoller_inner">
+                        <div class="form graybg">
+							<div style="background:#fff;">
+								<div id="prop_con">
+									<div class="line">
+										<span class="condition_name">中文名</span>
+										<div class="condition clearfix">
+											<input type="text" style="width: 90%;" class="condition_ipt" id="zh_name" value=""/>
+										</div>
+									</div>
+									<div class="line">
+										<span class="condition_name">英文名</span>
+										<div class="condition clearfix">
+											<input type="text" style="width: 90%;" class="condition_ipt" id="en_name" value=""/>
+										</div>
+									</div>
+									<div class="line">
+										<span class="condition_name">手机号</span>
+										<div class="condition clearfix">
+											<input type="text" style="width: 90%;" class="condition_ipt" id="phone" value="" readonly="readonly"/>
+										</div>
+									</div>
+									<div class="line">
+										<span class="condition_name">邮箱</span>
+										<div class="condition clearfix">
+											<input type="text" style="width: 90%;" class="condition_ipt" id="email" value=""/>
+										</div>
+									</div>
+									<div class="line">
+										<span class="condition_name">身份</span>
+										<div class="condition clearfix">
+											<span id="user_type_str"></span>
+										</div>
+									</div>
+								</div>
+								<div class="line" style="padding-bottom:6px;">
+									<span class="condition_name">头像</span>
+									<div class="condition clearfix">
+										<div class="room_img_list img_con" id="other_imgs">
+											<a href="javascript:app.upload(1,'', 1, 2);" class="img_span {#imgType}" style="margin-left:0;">
+												<img src="images/add.png" id="user_avatar"/>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="border-top:1px solid #cdcdcd;"></div>
+							<div class="search_operate clearfix">
+									<a href="javascript:;"  class="submit" id="modify_submit">修改保存</a>
+									<a href="javascript:;" id="logout" class="reset">退出当前帐户</a>
+								</div>
+                            <p class="concat_us">更改身份请致电：<a href="tel:400-968-7099">400-968-7099</a></p>
+                            <p class="concat_us">或发送邮件至：<a href="mailto:service@mrlou.com" target="_self">service@mrlou.com</a></p>
+                            <p class="concat_us">©2015上海易楼信息科技有限公司 版权所有</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page out" id="select">
+            <div class="select_area">
+                <div class="top_banner">
+                    <a href="#index" class="go_back" data-rel="back"><i></i></a>
+                    <a href="#index" class="submit" data-rel="back" id="select_submit"><i></i></a>
+                    <p class="title" id="select_title"></p>
+                </div>
+                <div class="content" id="select_scroller">
+                    <div class="scroller_inner">
+                        <div id="options">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="datePlugin"></div>
+        <script src="scripts/mineConfig.js"></script>
+        <script type="text/tpl">
+            <!--^public_form-->
+                <div class="line">
+                    <span class="condition_name">中文名</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width: 90%;" class="condition_ipt" id="zh_name" value="{#cn_username}"/>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">英文名</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width: 90%;" class="condition_ipt" id="en_name" value="{#en_username}"/>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">手机号</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width: 90%;" class="condition_ipt" id="phone" value="{#phone_number}" readonly="readonly"/>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">邮箱</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width: 90%;" class="condition_ipt" id="email" value="{#email}"/>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">身份</span>
+                    <div class="condition clearfix">
+                        <span id="user_type_str">{#type|typeFormat}</span>
+                        <!-- <a id="go_select_type" class="select_condition clearfix" href="#select" vals="{#type}">
+                            <i></i>
+                            <p>{#type|typeFormat}</p>
+                        </a>
+                        <a data-preventdefault="checkSelectedRegion" id="go_select_type" class="select_condition clearfix" href="#select">
+                            <i></i>
+                            <p>全部</p>
+                        </a> -->
+                    </div>
+                </div>
+            <!--public_form$-->
+            <!--^form1-->
+                <div class="line">
+                    <span class="condition_name">公司简称</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width: 90%;" class="condition_ipt" id="company" value="{#company}"/>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">楼盘名称</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width: 90%;" class="condition_ipt" id="building_name" value="{#building}"/>
+                    </div>
+                </div>
+            <!--form1$-->
+            <!--^form2-->
+                <div class="line">
+                    <span class="condition_name">公司简称</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width: 90%;" class="condition_ipt" id="company" value="{#company}"/>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">本人简介</span>
+                    <div class="condition clearfix">
+                        <input type="text" style="width: 90%;" class="condition_ipt" id="user_desc" value="{#intro}"/>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">入行年份</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" id="work_start" value="{#start_work}"/>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">擅长区域</span>
+                    <div class="condition clearfix">
+                        <a id="go_select_region" class="select_condition clearfix" href="#select" vals="{#region|regionIdFormat}">
+                            <i></i>
+                            <p>{#region|regionFormat}</p>
+                        </a>
+                    </div>
+                </div>
+            <!--form2$-->
+             <!--^select_option-->
+                <label class="checkbox area">
+                    <input type="checkbox" name="{#keyName}" value="{#id}"/>
+                    <span class="is_check right"></span>
+                    <span class="checkbox_title">{#name}</span>
+                </label>
+            <!--select_option$-->
+             <!--^radio_option-->
+                <label class="radio area">
+                    <input type="radio" name="{#keyName}" value="{#id}"/>
+                    <span class="is_check right"></span>
+                    <span class="radio_title" style="line-height:44px;">{#name}</span>
+                </label>
+            <!--radio_option$-->
+        </script>
+    </body>
+</html>

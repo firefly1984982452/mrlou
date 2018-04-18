@@ -1,0 +1,47 @@
+/* 首页 */
+.msg_block{border-top:1px solid #cdcdcd;border-bottom:1px solid #cdcdcd;background:#fff;padding:10px;margin-top:-1px;position:relative;}
+.content .msg_block:first-child{margin-top:0px;}
+.msg_block .last_msg_time{position:absolute;right:10px;top:12px;font-size:12px;color:#b9b9b9;}
+
+.msg_block .type_img{float:left;width:44px;height:44px;font-size:0;position:relative;}
+.msg_block .type_img .un_read{position:absolute;height:18px;width:18px;top:-9px;right:-9px;background:#bd081b;color:#fff;border-radius:10px;text-align:center;line-height:18px;font-size:11px;display:none;}
+.msg_block .lxs_msg .type_img{background:url(../images/lxs.png) no-repeat;background-size:100%;}
+.msg_block .fangyuan .type_img{background:url(../images/fangyuan.png) no-repeat;background-size:100%;}
+.msg_block .kehu .type_img{background:url(../images/kehu.png) no-repeat;background-size:100%;}
+.msg_block .thread .type_img{background:url(../images/thread.png) no-repeat;background-size:100%;}
+
+.msg_block .msg_con{margin-left:54px;padding:4px 0;}
+.msg_block .msg_con .msg_module{font-size:14px;color:#343434;line-height:14px;}
+.msg_block .msg_con .msg_content{min-height:13px;font-size:13px;color:#b9b9b9;line-height:13px;margin-top:10px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+
+/* 列表页 */
+.msg_list{}
+.msg_list .msg_item{background:#fff;padding:10px;margin-bottom:10px;overflow:hidden;}
+.msg_list .msg_item .msg_time{float:right;font-size:12px;color:#b9b9b9;margin-top:2px;}
+.msg_list .msg_item .note_content{word-break:break-all;font-size:13px;color:#9a9a9a;line-height:15px;margin-top:5px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.msg_list .fangyuan_note .msg_top{}
+
+.msg_list .fangyuan_note .buliding_name{font-size:15px;color:#444;line-height:17px;}
+
+.msg_list .fangyuan_note .fy_name{font-size:13px;color:#9a9a9a;margin-top:12px;line-height:13px;}
+
+.msg_list .kehu_note{}
+.msg_list .kehu_note .kehu_name{font-size:16x;color:#444;line-height:15px;}
+
+.msg_list .lxsmsg{padding-bottom:12px;}
+.msg_list .notice_title{font-size:14px;font-size:14px;color:#9a9a9a;margin-top:5px;}
+
+.msg_list .lxsmsg .notice_name{font-size:17px;color:#444;}
+.msg_list .thread{padding: 12px 10px}
+.msg_list .msg_item .thread_title{font-size:15px;color:#444;line-height:15px;}
+.msg_list .msg_item .reply_content{font-size:13px;color:#b9b9b9;margin-top:12px;line-height:13px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.msg_list .msg_item .msg_bottom{}
+.msg_list .msg_item .msg_bottom span{font-size:9px;color:#b9b9b9;}
+.msg_list .msg_item .msg_bottom .reply_name{float:left;font-size:13px;font-size:13px;line-height:13px;margin-top:8px;}
+.msg_list .msg_item .msg_bottom .reply_type{float:left;margin-left:15px;font-size:13px;line-height:13px;margin-top:8px;}
+.msg_list .msg_item .msg_bottom .reply_time{float:right;color:#b9b9b9;font-size:12px;line-height:10px;margin-top:10px;}
+
+.msg_list .lxsmsg .note_content1{font-size:13px;color:#9a9a9a;margin-top:8px;line-height:13px;}
+.msg_list .lxsmsg .note_title1{font-size:13px;color:#9a9a9a;margin-top:10px;line-height:13px;}
+
+.msg_list .kehu_note .note_content{white-space:normal;overflow:auto;}

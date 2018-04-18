@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>企业服务商案例推荐-楼先生</title>
+        <link href="resourse_css_reset.css" type="text/css" rel="styleSheet"/>
+        <link rel="styleSheet" type="text/css" href="resourse_css_register.css">
+        <link href="lxs_css_lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <style>
+        	.twelve{
+        		margin-top: 50px;
+        		padding: 10px;
+        		background: #FFFFFF;
+        		font-size: 14px;
+        		padding-left: 30px;
+        	}
+        	#recom_twelve{
+        		font-weight: 100;       		
+        	}
+        	.consultant_top {
+        		position: absolute;
+        		width: 25px;
+				height: 25px;
+				right: 30px;
+				margin-top: -50px;
+				right: 50px;
+        	}
+        	
+        	.phone_icon{
+        		color: transparent;
+        		position: relative;
+        		width: 25px;
+				height: 25px;
+				background: url(lxs_images_phone_2.png) no-repeat;
+        	}
+			.consultant_list .consultant_item .consultant_top .phone_icon{
+				width: 25px;
+				height: 25px;
+			}
+
+            .consultant_list .consultant_item .consultant_bottom .consultant_avatar .oval_v2{
+                /*加V ziji tiao yixia jiu hao le  shezhi le overflow:hide jiu shi chao chu yingcang*/
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                top:45px;
+                left: 45px;
+                z-index: 66;
+                position: absolute;
+            }
+            .consultant_list .consultant_item .consultant_bottom .consultant_avatar{
+            	width: 100px;
+            	height: 50px;	
+            }
+            .consultant_name{
+            	width: 70px;
+            	float: right;
+            	text-align: center;
+            	font-weight: 100;
+            	font-size: 12px;
+            	margin-top: -10px;
+            	margin-right: -10px;
+            	color: lightgray;
+            }
+            .consultant_list .consultant_item .consultant_bottom .consultant_info{
+            	margin-left: 110px;
+            	width: auto;
+            	height: 50px;
+            	line-height: 50px;
+            	padding: 0px;
+            }
+            .company_color{
+            	font-weight: 500;     	
+            	font-size: 17px;
+            	color: #000000;
+            }
+            .companyServer{
+            	width:85%;
+            }
+        </style>
+    </head>
+    
+    <body class="lxs_bg">
+        <div class="page out" id="index">
+            <div style="background: none;" class="top_banner">
+                <a href="javascript:app.goBack();" class="go_back"><i></i></a>
+                <a href="#search" class="search right" data-rel="auto"></a>
+                <a href="" class="go_add" id="goServer"></a>
+                <p class="title" id="recom_title">企业服务商案例推荐</p>
+            </div>
+            <div class="twelve">
+            	<p id="recom_twelve">企业服务商案例推荐（最近24个月）</p>
+            </div>            
+            <div style="margin-top: 40px;" class="content">
+                <div class="consultant_list" style="height:100%;">
+                    <div class="common-list" id="agentListArea" style="position:relative;">
+                        <div id="scroller" class="common-list-scroller fans-scroller">
+                            
+                            <div id="consultants" class="clearfix">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="lxs_scripts_lxsConfig.js"></script>
+    	
+    	<script src="resourse_scripts_jquery-1.8.3.js"></script>
+        <script type="text/tpl">
+        <!--^item-->
+            <div class="consultant_item">
+                
+                <div class="consultant_bottom clearfix">
+                	<div class="companyServer" comName = "{#user_company}">                		
+	                    <div fire="{#id}" class="consultant_avatar">
+	                        <img src="{#avatar}" />
+	                        <img style="display:none;" width="25" height="25"  class="oval_v2" src="resourse_images_oval_v.png" />
+	                    </div>
+	                    <div class="consultant_info">
+	                            <span class="company_color">{#user_company}</span>
+	                    </div>
+                	</div>
+                		
+                    <span class="consultant_top clearfix" style="right: 30px;">
+		                <a class="phone_icon" href="tel:{#phone_number}" dataa-verify="1-{#id}" click="click">
+		                    {#phone_number}
+		                </a>
+                    </span>
+                    <div class="consultant_name">{#en_username|nameAssert}
+                    </div>
+                </div>
+            </div>
+        <!--item$-->
+            <!--^select_option-->
+                <label class="checkbox area">
+                    <input type="checkbox" name="{#keyName}" value="{#id}"/>
+                    <span class="is_check right"></span>
+                    <span class="checkbox_title">{#name}</span>
+                </label>
+            <!--select_option$-->
+        </script>
+    </body>
+</html>

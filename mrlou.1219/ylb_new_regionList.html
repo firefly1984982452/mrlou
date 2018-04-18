@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<meta charset="utf-8" />
+	<meta content="width=device-width,user-scalable=no" name="viewport" />
+	<title>区域选择 - 易楼帮</title>
+	<link href="resourse_css_reset.css" type="text/css" rel="styleSheet" />
+	<link href="fangyuan_css_fangyuan.css" type="text/css" rel="styleSheet" />
+	<link href="resourse_css_register.css" type="text/css" rel="styleSheet" />
+	<link href="resourse_css_mobilebone.css" type="text/css" rel="styleSheet" />
+	<link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet" />
+	<link href="resourse_css_select2.min.css" type="text/css" rel="styleSheet" />
+	<link href="ylb_css_ylb.css" type="text/css" rel="styleSheet" />
+
+	<body>
+		<div class="page in" id="select" style="background: transparent;">
+			<div class="select_area">
+				<div class="top_banner">
+					<a href="javascript:app.goBack()" class="go_back" data-rel="back"><i></i></a>
+					<a class="submit" id="submit_region" data-rel="back"><i></i></a>
+					<p class="title" id="select_title">区域选择</p>
+				</div>
+				<div class="content" id="select_scroller" style="top: 60px;">
+					<div class="scroller_inner" style="transform-origin: 0px 0px 0px; position: absolute; top: 0px; left: 0px;">
+						<!--<div class="areas">
+							<label class="checkbox area">
+                                <input type="checkbox" name="all" id="select_all" value="" checked="checked">
+                                <span class="is_check right"></span>
+                                <span class="checkbox_title">全部</span>
+                            </label>
+						</div>-->
+						<div id="options">
+							<div class="areas">
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310115">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">浦东新区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310101">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">黄浦区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310106">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">静安区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310104">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">徐汇区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310105">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">长宁区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310107">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">普陀区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310108">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">闸北区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310109">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">虹口区</span>										
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310110">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">杨浦区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310113">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">宝山区</span>										
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310112">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">闵行区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310114">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">嘉定区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310118">
+									<span class="is_check right">										
+									</span><span class="checkbox_title">青浦区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310117">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">松江区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310120">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">奉贤区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310116">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">金山区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="checkbox" name="region" value="310230">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">崇明县</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="resourse_scripts_jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//;(function(){
+			$("#submit_region").click(function() {
+				var ids = [];
+				var inputs = $("input:checked")
+				for(var i = 0; i < inputs.length; i++) {
+					var data = {};
+					data.id = inputs[i].value;
+					data.content = $(inputs[i]).parent().find(".checkbox_title").text();
+					ids.push(data);
+				}
+				for (var i = 0; i < ids.length; i++) {
+					localStorage.setItem('regionCon'+i,ids[i].content);
+					localStorage.setItem('regionId'+i,ids[i].id);
+				}
+				
+				$(this).attr('href','#');
+				
+			})
+
+			$(".checkbox").on("click", function(e) {
+				var inputs = $("input:checked");
+				var len = inputs.length;
+				if(len >1) {
+					alert("最多只能选择1个!")
+					$(this).find("input").prop("checked", false);
+				}
+			})
+				//})
+		</script>
+		<script src="ylb_scripts_ylbConfig.js"></script>
+	</body>
+
+</html>

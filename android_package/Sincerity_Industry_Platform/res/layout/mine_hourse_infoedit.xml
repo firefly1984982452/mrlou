@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/src_hourse_infoedit_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E4E4E4"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="70dp" >
+
+            <LinearLayout
+                android:id="@+id/lay_hourse_infoedit_back"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical" >
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/resourse_images_back" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|bottom" >
+
+                    <TextView
+                        android:id="@+id/tv_hourse_infoeidt_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/tv_hourse_infoeidt_area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/light_gray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"
+                android:gravity="center_vertical|right" >
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="交易类型" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:id="@+id/lay_hourse_infoedit_icon01"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/iv_hourse_infoedit_icon01"
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/resourse_images_uncheck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="出租" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_hourse_infoedit_icon02"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/iv_hourse_infoedit_icon02"
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/resourse_images_uncheck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="出售" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="房源楼层" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <EditText
+                    android:id="@+id/et_hourse_infoeidt_location"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@null"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="房源面积" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical" >
+
+                    <EditText
+                        android:id="@+id/et_hourse_infoeidt_area"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@null"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="㎡" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="房源报价" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical" >
+
+                    <EditText
+                        android:id="@+id/et_hourse_infoeidt_price"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/lay_hourse_infoedit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:id="@+id/iv_hourse_infoedit"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/resourse_images_uncheck" />
+
+                        <TextView
+                            android:id="@+id/tv_hourse_infoeidt_unit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="元/㎡" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_hourse_infoedit02"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <ImageView
+                            android:id="@+id/iv_hourse_infoedit02"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/resourse_images_uncheck" />
+
+                        <TextView
+                            android:id="@+id/tv_hourse_infoeidt_unit02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="元/㎡" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="房源朝向" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical" >
+
+                <EditText
+                    android:id="@+id/et_hourse_infoeidt_direction"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textSize="13dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="交付状态" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_infoedit_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_infoedit_status"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical|right" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/lxs_images_more" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="交付日期" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:id="@+id/lay_deal_date"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_hourse_infoedit_icon03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_hourse_infoedit_icon03"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        android:id="@+id/iv_hourse_infoeidt_icon03"
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/resourse_images_uncheck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是否现房" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="合作佣金" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical" >
+
+                    <EditText
+                        android:id="@+id/et_hourse_infoedit_icon04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="示例：一个月"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_hourse_infoedit_icon04"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        android:id="@+id/iv_hourse_infoeidt_icon04"
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/resourse_images_uncheck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="不合作" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_hourseinfo_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="联系电话" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical" >
+
+                <EditText
+                    android:id="@+id/et_hourse_infoeidt_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="房源简介" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <EditText
+                    android:id="@+id/et_hourse_infoeidt_intro"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    android:lineSpacingExtra="3dp"
+                    android:maxLength="100"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="房源封面" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical" >
+
+                <!-- <com.mrlou.economic.view.XCRoundRectImageView -->
+                <!-- android:id="@+id/iv_hourseinfo_hourse" -->
+                <!-- android:layout_width="60dp" -->
+                <!-- android:layout_height="60dp" -->
+                <!-- android:layout_marginBottom="10dp" -->
+                <!-- android:layout_marginTop="10dp" -->
+                <!-- android:background="@drawable/fangyuan_images_no_content" /> -->
+
+                <LinearLayout
+                    android:id="@+id/lay_hourse_image"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/iv_hourseinfo_hourse"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/fangyuan_images_no_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="其他图片" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <!-- <com.mrlou.economic.view.XCRoundRectImageView -->
+                        <!-- android:id="@+id/iv_hourseinfo_other1" -->
+                        <!-- android:layout_width="60dp" -->
+                        <!-- android:layout_height="60dp" -->
+                        <!-- android:layout_marginBottom="5dp" -->
+                        <!-- android:layout_marginRight="5dp" -->
+                        <!-- android:layout_marginTop="10dp" -->
+                        <!-- android:background="@drawable/fangyuan_images_no_content" /> -->
+
+                        <LinearLayout
+                            android:id="@+id/lay_hourseinfo_other1"
+                            android:layout_width="70dp"
+                            android:layout_height="fill_parent" >
+
+                            <ImageView
+                                android:id="@+id/iv_hourseinfo_other1"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/fangyuan_images_no_content"
+                                android:scaleType="fitXY" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <!-- <com.mrlou.economic.view.XCRoundRectImageView -->
+                        <!-- android:id="@+id/iv_hourseinfo_other2" -->
+                        <!-- android:layout_width="60dp" -->
+                        <!-- android:layout_height="60dp" -->
+                        <!-- android:layout_marginBottom="5dp" -->
+                        <!-- android:layout_marginRight="5dp" -->
+                        <!-- android:layout_marginTop="10dp" -->
+                        <!-- android:background="@drawable/fangyuan_images_no_content" -->
+                        <!-- android:visibility="gone" /> -->
+
+                        <LinearLayout
+                            android:id="@+id/lay_hourseinfo_other2"
+                            android:layout_width="70dp"
+                            android:layout_height="fill_parent" >
+
+                            <ImageView
+                                android:id="@+id/iv_hourseinfo_other2"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/fangyuan_images_no_content"
+                                android:scaleType="fitXY"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <!-- <com.mrlou.economic.view.XCRoundRectImageView -->
+                        <!-- android:id="@+id/iv_hourseinfo_other3" -->
+                        <!-- android:layout_width="60dp" -->
+                        <!-- android:layout_height="60dp" -->
+                        <!-- android:layout_marginBottom="5dp" -->
+                        <!-- android:layout_marginRight="5dp" -->
+                        <!-- android:layout_marginTop="10dp" -->
+                        <!-- android:background="@drawable/fangyuan_images_no_content" -->
+                        <!-- android:visibility="gone" /> -->
+
+                        <LinearLayout
+                            android:id="@+id/lay_hourseinfo_other3"
+                            android:layout_width="70dp"
+                            android:layout_height="fill_parent" >
+
+                            <ImageView
+                                android:id="@+id/iv_hourseinfo_other3"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/fangyuan_images_no_content"
+                                android:scaleType="fitXY"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_hourseinfo_second"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:visibility="gone" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <!-- <com.mrlou.economic.view.XCRoundRectImageView -->
+                        <!-- android:id="@+id/iv_hourseinfo_other4" -->
+                        <!-- android:layout_width="60dp" -->
+                        <!-- android:layout_height="60dp" -->
+                        <!-- android:layout_marginBottom="5dp" -->
+                        <!-- android:layout_marginRight="5dp" -->
+                        <!-- android:background="@drawable/fangyuan_images_no_content" -->
+                        <!-- android:visibility="gone" /> -->
+
+                        <LinearLayout
+                            android:id="@+id/lay_hourseinfo_other4"
+                            android:layout_width="70dp"
+                            android:layout_height="fill_parent" >
+
+                            <ImageView
+                                android:id="@+id/iv_hourseinfo_other4"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/fangyuan_images_no_content"
+                                android:scaleType="fitXY"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <!-- <com.mrlou.economic.view.XCRoundRectImageView -->
+                        <!-- android:id="@+id/iv_hourseinfo_other5" -->
+                        <!-- android:layout_width="60dp" -->
+                        <!-- android:layout_height="60dp" -->
+                        <!-- android:layout_marginBottom="5dp" -->
+                        <!-- android:layout_marginRight="5dp" -->
+                        <!-- android:background="@drawable/fangyuan_images_no_content" -->
+                        <!-- android:visibility="gone" /> -->
+
+                        <LinearLayout
+                            android:id="@+id/lay_hourseinfo_other5"
+                            android:layout_width="70dp"
+                            android:layout_height="fill_parent" >
+
+                            <ImageView
+                                android:id="@+id/iv_hourseinfo_other5"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/fangyuan_images_no_content"
+                                android:scaleType="fitXY"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <!-- <com.mrlou.economic.view.XCRoundRectImageView -->
+                        <!-- android:id="@+id/iv_hourseinfo_other6" -->
+                        <!-- android:layout_width="60dp" -->
+                        <!-- android:layout_height="60dp" -->
+                        <!-- android:layout_marginBottom="5dp" -->
+                        <!-- android:layout_marginRight="5dp" -->
+                        <!-- android:background="@drawable/fangyuan_images_no_content" -->
+                        <!-- android:visibility="gone" /> -->
+
+                        <LinearLayout
+                            android:id="@+id/lay_hourseinfo_other6"
+                            android:layout_width="70dp"
+                            android:layout_height="fill_parent" >
+
+                            <ImageView
+                                android:id="@+id/iv_hourseinfo_other6"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/fangyuan_images_no_content"
+                                android:scaleType="fitXY"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_hourseinfo_third"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:visibility="gone" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <!-- <com.mrlou.economic.view.XCRoundRectImageView -->
+                        <!-- android:id="@+id/iv_hourseinfo_other7" -->
+                        <!-- android:layout_width="60dp" -->
+                        <!-- android:layout_height="60dp" -->
+                        <!-- android:layout_marginBottom="10dp" -->
+                        <!-- android:layout_marginRight="5dp" -->
+                        <!-- android:background="@drawable/fangyuan_images_no_content" -->
+                        <!-- android:visibility="gone" /> -->
+
+                        <LinearLayout
+                            android:id="@+id/lay_hourseinfo_other7"
+                            android:layout_width="70dp"
+                            android:layout_height="fill_parent" >
+
+                            <ImageView
+                                android:id="@+id/iv_hourseinfo_other7"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/fangyuan_images_no_content"
+                                android:scaleType="fitXY"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <!-- <com.mrlou.economic.view.XCRoundRectImageView -->
+                        <!-- android:id="@+id/iv_hourseinfo_other8" -->
+                        <!-- android:layout_width="60dp" -->
+                        <!-- android:layout_height="60dp" -->
+                        <!-- android:layout_marginBottom="10dp" -->
+                        <!-- android:layout_marginRight="5dp" -->
+                        <!-- android:background="@drawable/fangyuan_images_no_content" -->
+                        <!-- android:visibility="gone" /> -->
+
+                        <LinearLayout
+                            android:id="@+id/lay_hourseinfo_other8"
+                            android:layout_width="70dp"
+                            android:layout_height="fill_parent" >
+
+                            <ImageView
+                                android:id="@+id/iv_hourseinfo_other8"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/fangyuan_images_no_content"
+                                android:scaleType="fitXY"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1" >
+
+                        <LinearLayout
+                            android:id="@+id/lay_hourseinfo_other9"
+                            android:layout_width="70dp"
+                            android:layout_height="fill_parent" >
+
+                            <ImageView
+                                android:id="@+id/iv_hourseinfo_other9"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/fangyuan_images_no_content"
+                                android:scaleType="fitXY"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="发布身份" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/tv_hourse_infoeidt_identify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="经纪人"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_hourseinfo_yezhu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="业主证明" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:id="@+id/lay_hourseinfo_image_yezhu"
+                    android:layout_width="70dp"
+                    android:layout_height="fill_parent" >
+
+                    <ImageView
+                        android:id="@+id/iv_hourseinfo_yezhu"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/fangyuan_images_no_content" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/lay_hourseinfo_image_yezhu02"
+                    android:layout_width="70dp"
+                    android:layout_height="fill_parent" >
+
+                    <ImageView
+                        android:id="@+id/iv_hourseinfo_yezhu02"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:visibility="gone"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/fangyuan_images_no_content" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/lay_hourseinfo_image_yezhu03"
+                    android:layout_width="70dp"
+                    android:layout_height="fill_parent" >
+
+                    <ImageView
+                        android:id="@+id/iv_hourseinfo_yezhu03"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:visibility="gone"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/fangyuan_images_no_content" />
+                </LinearLayout>
+                
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="70dp" >
+
+            <Button
+                android:id="@+id/bt_hourse_infoedit"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/corner_view_red_3dp"
+                android:text="编辑完成发送至楼先生"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

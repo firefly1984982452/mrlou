@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>选择身份</title>
+        <link href="resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link rel="stylesheet" type="text/css" href="lxs/css/lxs.css"/>
+        <style>
+        	.top_banner{
+        		background: #e7e7e7;
+        	}
+        	.ipt_con1{
+        		background: white;
+        	}
+        	.submit_btn1{display:block;margin:27px 10px 10px;text-decoration:none;text-align:center;background:#bd081b;font-size:20px;color:#fff;line-height:47px;height:47px;border-radius:5px;}
+        	span>input{
+        		padding-left: 10px;
+        	}
+        	.ipt_con1>p{
+        		padding-left: 10px;
+        		font-weight: 100;
+        	}
+        </style>
+    </head>
+    <body class="body_select_type">
+    	<!--普通注册-->
+    	<div class="page out" id="common">
+    		<div class="top_banner">
+				<p class="title" style="margin-right: 40px;">普通注册</p>
+				<p class="title_right" style="margin-top: -40px;">
+					<a href="#specialty">专业注册</a>
+				</p>
+			</div>
+			<div class="content">
+					
+	            <div class="ipts">
+	                <div class="ipt_con1">
+	                    <span>
+	                        <input type="text" style="width:90%" placeholder="您的称呼" id="cn_username"/>
+	                    </span>
+	                </div>
+	                <div class="ipt_con1">
+						<span>
+	                        <input type="email"  style="width:90%"  placeholder="您的邮箱" id="email"/>
+	                    </span>
+	                </div>
+				</div>
+				<div class="ipts" style="margin-top: 10px;">
+					<div class="ipt_con1">
+						<p>您好，楼先生将自动为您创建个人账户，如果您是行业内人士，请选择右上角注册专业账户获取更多使用权限，谢谢！</p>
+					</div>				
+				</div>
+	            <div style="text-align: center;padding-top:8px">
+	                <input type="checkbox" checked="checked" onclick="return false">
+					<label for="agreement">
+	                    	同意“<a href="#contact" class="protocol">楼先生用户使用协议</a>”
+	                </label>
+	            </div>
+	            <a href="javascript:;" class="submit_btn1" id="submit">提 交</a>
+			</div>
+    	</div>
+    	<!--专业注册-->
+        <div class="page out" id="specialty">
+    		<div class="top_banner">
+				<a href="#common" class="go_back" data-rel="back"><i></i></a>
+				<p class="title">专业注册</p>
+			</div>
+            <div class="select_type">
+                <p>请选择您的注册身份</p>
+                <div class="types">
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=1');"><div class="type">开发商</div></a>
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=2');"><div class="type">代理商</div></a>
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=3');"><div class="type">运营商</div></a>
+                    <!-- <a class="type_warp" href="javascript:app.href('register_step3.html','type=102');"><div class="type">经纪人</div></a>
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=201');"><div class="type">小业主</div></a>
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=299');"><div class="type">其他</div></a> -->
+                    
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=103');"><div class="type">物业公司</div></a>
+                    <a class="type_warp" style="visibility: hidden;" href="javascript:app.href('register_step3.html','type=299');"><div class="type">其他</div></a>
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=102');"><div class="type">经纪人</div></a>
+                    <!--<img style="max-width: 250px;" src="qq.png" />-->
+                </div>
+            </div>
+        </div>
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script>
+	        $(document).ready(function(){
+	        	$("#submit").on(onclick,function(){
+	        		if (!$("#email").val()) {
+	        			alert('邮箱不可为空!');
+	        			return false;
+	        		}
+	        		if (!$("#cn_username").val()) {
+	        			alert('称呼不可为空!');
+	        			return false;
+	        		}
+	        		var user_url = "http://192.168.5.110/imrlou/frontend/web/index.php/api/user";
+	        		var param = {
+	        			type:299,
+	        			email:$("#email").val(),
+	        			cn_username:$("#cn_username").val(),
+	        			session_id:ut il.getLocal('sessionId')
+	        		}
+	        		$.getJSON(user_url,param,function(data){
+	        			alert("返回信息："+data.msg);
+	        		})
+	        	})
+	        }
+        </script>
+        <script src="resourse/scripts/regConfig.js"></script>
+    </body>
+</html>

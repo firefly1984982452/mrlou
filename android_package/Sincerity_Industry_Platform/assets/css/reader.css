@@ -1,0 +1,43 @@
+﻿/* Reset */
+body { background-color:#F4F2F5; color:#302E31; font-family:"\5FAE\8F6F\96C5\9ED1", Helvetica; font-size:13px; line-height:160%; margin:0; padding:0; }
+form, table, td, h1, h2, h3, h4, ul, ol, li, p { margin:0; padding:0; list-style:none; }
+input, img { vertical-align:middle; }
+img { border:0 none; }
+.clearfix { clear:both; overflow:hidden; }
+.fright { float:right; }
+
+/* 公用样式 */
+.btn { background: -moz-linear-gradient(top, #f8f6f3, #e5e3de); background: -webkit-gradient(linear, left top, left bottom, from(#f8f6f3), to(#e5e3de)); border:1px solid #c2b8a0; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; color:#000; font-size:16px; padding:7px 16px 6px; text-decoration:none; }
+
+/* 图书简介 */
+.book { background:#d4d1cb url(../img/book_bg.png) repeat-x; padding:13px 0; }
+.book-img { float:left; margin:0 14px 0 10px; }
+.book-img img { -webkit-box-shadow:1px 1px 3px #aaaaaa; -moz-box-shadow:1px 1px 3px #aaaaaa; }
+.book-type p { font-weight:700; }
+.star, .star1, .star2, .star3, .star4, .star5 { background:url(../img/star_bg.png) no-repeat 0 -55px; display:inline-block; height:11px; width:59px; }
+.star1 { background-position:0 -44px; }
+.star2 { background-position:0 -33px; }
+.star3 { background-position:0 -22px; }
+.star4 { background-position:0 -11px; }
+.star5 { background-position:0 0; }
+.btn-area { background:url(../img/border_bottom_bg.png) repeat-x 0 100%; overflow:hidden; padding:18px 10px 8px; margin-bottom:10px; }
+.btn-area a { display:inline-block; height:19px; line-height:16px; margin-right:5px; }
+.book-des { color:#6A6054; padding:0 8px 0 13px; text-indent:2em; }
+
+/* 图书列表 */
+.book-area { background:#bfb9b2 url(../img/book_list_bg.png) repeat-x; }
+.book-area h3 { color:#917b60; font-size:15px; font-weight:normal; padding:6px 10px 0; }
+.new-book-area h3 { background-color:#9a6633; color:#fff; padding:5px 12px; }
+.book-list li { border-bottom:1px solid #8e8375; overflow:hidden; padding:5px 10px 6px 2px; }
+.book-list .book-type { padding-top:8px; }
+.book-list .book-type h4 { overflow:hidden; padding-bottom:3px; }
+.book-list .book-type h4 a { color:#000; font-size:15px; font-weight:normal; text-decoration:none; }
+.book-list .book-type .fright, .book-list .book-type p { color:#655541; font-weight:normal; }
+.new-book-area .book-type p { color:#a19381; }
+.book-list .book-type span { margin-right:7px; }
+
+/* 专题 */
+.num { background:url(../img/num_bg.png) no-repeat; color:#a58d78; display:block; float:right; height:28px; line-height:28px; margin-top:14px; overflow:hidden; text-align:center; width:28px; }
+
+/* 广告区 */
+.ad a { display:block; margin:0 auto; width:320px; }

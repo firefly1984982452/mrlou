@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width,user-scalable=no" name="viewport" />
+		<title>发表帖子 - 易楼帮</title>
+		<link href="resourse_css_reset.css" type="text/css" rel="styleSheet" />
+		<link href="fangyuan_css_fangyuan.css" type="text/css" rel="styleSheet" />
+		<link href="resourse_css_register.css" type="text/css" rel="styleSheet" />
+		<link href="resourse_css_mobilebone.css" type="text/css" rel="styleSheet" />
+		<link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet" />
+		<link href="resourse_css_select2.min.css" type="text/css" rel="styleSheet" />
+		<link href="ylb_css_ylb.css" type="text/css" rel="styleSheet" />
+		<style>
+			.add_img {
+				background: url(fangyuan_images_add_img.png) no-repeat;
+				background-size: 100%;
+				width: 64px;
+				height: 64px;
+				float: left;
+				margin-left: 10px;
+				margin-bottom: 10px;
+			}
+			 .img_con{margin-left:50px;max-width:222px;}
+			.img_type_name {
+				display: block;
+				padding: 0px 0px 10px 0;
+			}
+			
+			.img_del {
+				background: url(fangyuan_images_del_img.png) no-repeat;
+				height: 16px;
+				width: 16px;
+				position: absolute;
+				right: 0;
+				top: 0;
+				background-size: 100%;
+			}
+			
+			.img_span {
+				width: 64px;
+				height: 64px;
+				float: left;
+				margin-left: 10px;
+				overflow: hidden;
+				margin-bottom: 10px;
+				position: relative;
+			}
+			
+			.img_span img {
+				width: 100%;
+				height: 100%;
+			}
+			.form .condition{
+				margin-left: 100px;
+			}
+			textarea{
+				font-family: "";
+			}
+		</style>
+	</head>
+
+	<body class="graybg">
+		<div class="page in" id="index">
+			<div class="top_banner graybg">
+				<a href="javascript:app.goBack();" class="go_back"><i></i></a>
+				<a href="javascript:;" class="next_step" id="post_thread">发表</a>
+				<p class="title">添加帖子</p>
+			</div>
+			<div class="content whole_page white">
+				<div class="form whole_form">
+					<div class="line">
+						<span class="condition_name">主题</span>
+						<div class="condition clearfix" style="margin-left:40px;">
+							<div class="conditon_option">
+								<label class="radio">
+                                    <input type="radio" name="type" value="1" checked="checked">
+                                    <span class="is_check left"></span>
+                                    <span class="radio_title">我有房源</span>
+                                </label>
+							</div>
+							<div class="conditon_option">
+								<label class="radio">
+                                    <input type="radio" name="type" value="2">
+                                    <span class="is_check left"></span>
+                                    <span class="radio_title">我有客户</span>
+                                </label>
+							</div>
+							<div class="conditon_option">
+								<label class="radio">
+                                    <input type="radio" name="type" value="3">
+                                    <span class="is_check left"></span>
+                                    <span class="radio_title">其他主题</span>
+                                </label>
+							</div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="whole_line clearfix">
+							<textarea class="common_txt" maxlength="40" type="text" placeholder="标题（不超过40个字,房源所在区域+楼盘名称及概要信息，以及合作佣金规则。)" id="title" style="margin-left:-2px;height: 38px;"></textarea>
+						</div>
+					</div>
+					<div class="line">
+						<div class="whole_line clearfix">
+							<input type="text" placeholder="联系电话" class="condition_ipt" id="phone" style="width:100%;" />
+						</div>
+					</div>
+					<div class="line">
+						<div class="whole_line clearfix">
+							<textarea class="common_txt" placeholder="请输入房源的具体情况及交付等信息" id="content" style="margin-left:-2px;"></textarea>
+						</div>
+					</div>
+					<!--<div class="line">
+						<div class="whole_line clearfix">
+							<textarea placeholder="输入房源所在区域" id="remark" style="margin-left:-2px;width:100%;height: 24px;"></textarea>
+						</div>
+					</div>-->
+					<div class="line" id="markLine">
+						<span class="condition_name" id="region_title">房源所在区域</span>
+						<div class="condition">
+							<a id="go_select_region" class="select_condition clearfix" href="#select">
+								<i></i>
+								<p id="server_con" data-value="">请选择</p>
+							</a>
+						</div>
+					</div>
+					<div class="line">
+
+						<div class="other_imgs" id="other_imgs">
+							<span class="img_type_name">添加图片(选填)</span>
+							<div class="img_con clearfix">
+								<a href="javascript:app.upload(4,null,2,2);" class="add_img" id="add_image" imgt="images"></a>
+							</div>
+						</div>
+					</div>
+					<!--<div class="line">
+                        <div class="whole_line clearfix">
+                            <a href="javascript:app.upload(4,'',2,2);" class="upload_img_btn"></a>
+                        </div>
+                    </div>-->
+				</div>
+				<!--<div class="img_list" style="display:none;">
+					<span class="img_span">
+                        <img src="ylb_images_test.png" id="thread_img"/>
+                        <a href="javascript:;" class="img_del" id="del_img"></a>
+                    </span>
+				</div>-->
+
+			</div>
+		</div>
+
+		<div class="page out" id="select">
+			<div class="select_area">
+				<div class="top_banner">
+					<a href="javascript:app.goBack()" id="goIndex" class="go_back" data-rel="back"><i></i></a>
+					<a class="submit" id="submit_region" data-rel="back"><i></i></a>
+					<p class="title" id="select_title">区域选择</p>
+				</div>
+				<div class="content" id="select_scroller" style="top: 60px;">
+					<div class="scroller_inner" style="transform-origin: 0px 0px 0px; position: absolute; top: 0px; left: 0px;">
+						<!--<div class="areas">
+							<label class="checkbox area">
+                                <input type="checkbox" name="all" id="select_all" value="" checked="checked">
+                                <span class="is_check right"></span>
+                                <span class="checkbox_title">全部</span>
+                            </label>
+						</div>-->
+						<div id="options">
+							<div class="areas">
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310115">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">浦东新区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310101">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">黄浦区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310106">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">静安区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310104">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">徐汇区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310105">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">长宁区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310107">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">普陀区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310108">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">闸北区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310109">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">虹口区</span>										
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310110">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">杨浦区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310113">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">宝山区</span>										
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310112">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">闵行区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310114">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">嘉定区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310118">
+									<span class="is_check right">										
+									</span><span class="checkbox_title">青浦区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310117">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">松江区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310120">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">奉贤区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310116">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">金山区</span>
+								</label>
+								<label class="checkbox area">
+									<input type="radio" name="region" value="310230">
+									<span class="is_check right"></span>
+									<span class="checkbox_title">崇明县</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="ylb_scripts_ylbConfig.js"></script>
+		<script type="text/tpl">
+
+			<!--^img-->
+			<span class="img_span {#imgType}">
+                    <a href="javascript:;" class="img_del" imgId="{#id}"></a>
+                    <img src="{#avatar}" />
+                </span>
+			<!--img$-->
+		</script>
+	</body>
+
+</html>

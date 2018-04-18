@@ -1,0 +1,89 @@
+/* 首页 */
+.no_content{margin:0 auto;text-align:center;display:block;height:180px;width:180px;}
+.no_content img{height:180px;width:180px;}
+.no_content_tip{text-align:center;margin-top:20px;font-size:14px;color:#b9b9b9;}
+
+.kehu_list{background:#fff;}
+
+.kehu_list .kehu_item {position:relative;border-bottom:1px solid #cdcdcd;padding:10px;display: block;}
+.kehu_list .kehu_item .kehu_name{font-size:17px;color:#444;}
+.kehu_list .kehu_item .kehu_note{    display: block;
+    color: #9a9a9a;
+    font-size: 14px;
+    padding-top: 5px;
+    height: 40px;}
+.kehu_list .kehu_item .kehu_status{position:absolute;top:-1px;right:10px;width:35px;height:17.5px;}
+.kehu_list .kehu_item .dealed{background:url(kehu_images_dealed.png) no-repeat;background-size:100%;}
+.kehu_list .kehu_item .disabled{background:url(kehu_images_disabled.png) no-repeat;background-size:100%;}
+.kehu_list .kehu_item .want{background:url(kehu_images_want.png) no-repeat;background-size:100%;}
+.kehu_list .kehu_item .looking{background:url(kehu_images_looking.png) no-repeat;background-size:100%;}
+
+
+.room_progess{padding:12px 10px;border-bottom:1px solid #cdcdcd;border-top:1px solid #cdcdcd;background:#fff;}
+.room_progess .progess{float:left;font-size:14px;color:#444;margin-top:-1px;}
+.room_progess .progess_options{margin-left:60px;}
+.room_progess .progess_options .radio{width:25%;float:left;margin-top:3px;}
+.note_list{margin-top:10px;background:#fff;border-top:1px solid #cdcdcd;}
+.note_list .note_title{padding:10px;border-bottom:1px solid #cdcdcd;}
+.note_list .note_title .title_content{font-size:14px;color:#444;float:left;}
+.note_list .note_title .add_note{width:30px;height:15px;float:right;padding:4px}
+.add_note i {display: block;width:16px;height:16px;background:url(kehu_images_add.png) no-repeat;background-size:100%;}
+.note_list .notes{}
+.note_list .notes .note{border-bottom:1px solid #cdcdcd;padding:10px;display: block;}
+.note_list .notes .note .note_date{font-size:14px;color:#9a9a9a;}
+.note_list .notes .note .note_content{font-size:14px;color:#444;margin-top:4px;word-break: break-all;}
+
+/* 工作日志编辑 */
+.note_form{background:#fff;font-size:14px;}
+.note_form .line{border:1px solid #cdcdcd;margin-top:-1px;padding:10px;}
+.note_form .note_date,
+.note_form .note_content,
+.note_form .notice_day,
+.note_form .notice_time{font-size:14px;color:#444;}
+
+.note_form .note_date,.note_form .note_content{width:100%;}
+.note_form .note_content{height:200px;}
+.note_form .notice_day{width:130px;}
+.note_form .notice_time{width:35px;}
+
+.note_form .key{margin-right:20px;vertical-align:middle;}
+.note_form .ipt_span{border:1px solid #cdcdcd;border-radius:5px;overflow:hidden;display:inline-block;vertical-align:middle;padding:0 10px;}
+.note_form .ipt_span input{font-size:14px;line-height:20px;height:20px;text-align:center;}
+
+
+/* 客户添加与编辑表单样式 */
+.form{background:#fff;border-bottom:1px solid #dadada;border-top:1px solid #dadada;padding-left:10px;overflow:hidden;color:#444;font-size:14px;width: calc(100% - 10px);}
+.form .line{border-top:1px solid #cdcdcd;padding:15px 10px 15px 0;margin-top:-1px;position:relative;}
+.form .search_title{color:#444;font-size:14px;}
+.form .condition_name{position:absolute;left:0;top:15px;}
+.form .condition{margin-left:70px;min-height:20px;}
+.form .conditon_option{float:left;width:33.3333%;}
+.form .checkbox{height:20px;line-height:20px;}
+.form .checkbox input + .is_check{margin:3px 0;}
+.form .condition .condition_ipt{font-size:14px;color:#444;float:left;width:124px;}
+.form .condition .condition_ipt::-webkit-input-placeholder{color:#b9b9b9;}
+.form .condition .condition_ipt:-moz-placeholder{color:#b9b9b9;}
+.form .condition .condition_ipt::-moz-placeholder{color:#b9b9b9;}
+.form .condition .condition_ipt:-ms-input-placeholder{color:#b9b9b9;}
+
+.form .line1{position:relative;border-top:1px solid #cdcdcd;}
+.form .line1 .condition_name{top:15px;}
+.form .line1 .sub_line{border-bottom:1px solid #cdcdcd;padding:15px  0 15px 40px;padding-right:10px;}
+
+.form .select_condition span{float:left;}
+.form .select_condition i{float:right;background:url(kehu_images_more.png) no-repeat;background-size:100%;width:8.5px;height:13.5px;}
+
+.select_waprer{position:absolute;top:10px;font-size:12px;}
+
+.select2-results__option{padding:3px 6px;font-size:12px;}
+.select2-container--default .select2-selection--single .select2-selection__rendered{font-size:12px;}
+
+
+.form_btns{margin:10px 0;overflow:hidden;padding-right:10px;}
+.form_btns .btn2_con{display:block;float:left;width:100%;}
+.form_btns .btn2_con .btn2{display:block;text-decoration:none;text-align:center;background:#bd081b;font-size:20px;color:#fff;line-height:36px;height:36px;border-radius:5px;}
+.form_btns .btn2_con .del_btn{margin-right:5px;}
+.form_btns .btn2_con .submit_btn{margin-left:5px;}
+
+.log_scroller_warper{position:absolute;bottom:0px;top:102px;left:0;right:0;background:#fff;}
+.formBug{overflow: inherit;}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>负责楼盘添加页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="resourse_css_mui.min.css" rel="stylesheet" />
+		<script src="resourse_scripts_mui.min.js"></script>
+		<script src="resourse_scripts_jquery-2.1.0.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<style>
+			#submit_add_house {
+				color: #fff;
+				border: 1px solid #bd081c;
+				background-color: #bd081c;
+				font-size: 18px;
+				display: block;
+				width: 100%;
+				margin-bottom: 10px;
+				padding: 15px 0;
+				border-radius: 5px;
+			}
+			.del_list{
+				width: 20px;
+				height: 20px;
+				background: url(resourse_images_clear.png) 50% no-repeat;
+				z-index: 50;
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">负责楼盘添加页</h1>
+			<a class="mui-action-back mui-icon mui-icon-right-nav mui-pull-right"></a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-group">
+				<div class="mui-card">
+					<p class="mui-table-view-cell">e<i class="del_list"></i></p>
+				</div>
+			</div>
+			<div class="mui-input-row" style="margin: 10px 5px;">
+				<input id="build_con" type="text" placeholder="请输入负责楼盘名称">
+			</div>
+
+		</div>
+		<button id="submit_add_house" type="button" class="mui-btn mui-btn-success mui-btn-block">确认</button>
+		<script>
+			$("#submit_add_house").on('click', function() {
+				var keyword = $("#build_con").val();
+				if(localStorage.pagecount < 20) {
+					localStorage.pagecount = Number(localStorage.pagecount) + 1;
+					localStorage.setItem('hourse' + localStorage.pagecount, keyword);
+				} else {
+					localStorage.pagecount = 1;
+					localStorage.setItem('hourse' + localStorage.pagecount, keyword);
+				}
+				var count = localStorage.pagecount;
+				console.log(count);
+				$(".mui-group").children().remove();
+				for(var i = count; i > 0; i--) {
+					var keyword = localStorage.getItem('hourse' + i);
+					$(".mui-group").append("<div class='mui-card'><p class='mui-table-view-cell'>" + keyword + "<i class='del_list'></i></p></div>");
+					$("#build_con").val("");
+				}
+			})
+			
+			$(".del_list").on("click",function(){
+				
+			})
+		</script>
+	</body>
+
+</html>

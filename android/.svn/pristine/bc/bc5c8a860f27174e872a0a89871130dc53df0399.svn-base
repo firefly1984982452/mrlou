@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>首页 - 易楼帮</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/lxs/css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="css/ylb.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="graybg">
+        <div class="page">
+            <div class="top_banner gray">
+                <a href="javascript:app.href('ylb_add_thread');" class="add_btn1"></a>
+                <a href="javascript:app.href('xiaoxi_index');" class="msg"><i></i></a>
+                <p class="title">易楼帮</p>
+            </div>
+            <div class="content" id="ylb_scroller" style="top:60px;">
+                <div id="threadListArea"  class="common-list" style="position: relative">
+                    <div id="scroller" class="common-list-scroller fans-scroller">
+                        <div id="pullDown" class="common-list-pull">
+                            <span class="pullDownIcon"></span><span class="pullDownLabel">下拉更新数据...</span>
+                        </div>
+                        <div id="thelist" class="clearfix">
+                            <div class="bbs_index">
+                                <div class="thread_list" id="thread_list">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pullUp" class="common-list-pull">
+                            <span class="pullUpIcon"></span><span class="pullUpLabel">上拉获取更多...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/ylbConfig.js"></script>
+        <script type="text/tpl">
+            <!--^thread_item-->
+                <div class="thread_item">
+                    <div class="thread_top clearfix">
+                        <div class="thread_like">
+                            <i></i>
+                            <span>{#collect_total}</span>
+                        </div>
+                        <div class="thread_reply">
+                            <i></i>
+                            <span>{#reply_total}</span>
+                        </div>
+                        <div class="poster_avatar">
+                            <img src="{#user_avatar}" />
+                        </div>
+                        <div class="thread_type thread_type{#subject}">{#subject|subjectConvert}</div>
+                    </div>
+                    <div class="thread_bottom">
+                        <a class="thead_title" href="javascript:app.href('ylb_thread','id={#id}');">{#title|threadTitleSplit}</a>
+                    </div>
+                </div>
+            <!--thread_item$-->
+        </script>
+    </body>
+</html>

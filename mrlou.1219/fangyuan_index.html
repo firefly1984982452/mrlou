@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>首页 - 房源</title>
+        <link href="resourse_css_reset.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_register.css" type="text/css" rel="styleSheet"/>
+        <link href="lxs_css_lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_select2.min.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse_css_timer.css" type="text/css" rel="styleSheet"/>
+        <link href="fangyuan_css_fangyuan.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="lxs_bg">
+        <div class="page out" id="index">
+            <div id="no_content_top">
+                <div class="top_banner">
+                    <p class="title">房源管理</p>
+                </div>
+            </div>
+            <div id="noraml_content_top">
+                <div class="top_banner graybg">
+                    <a href="javascript:app.href('fangyuan_select_house_type.html')" class="go_add"></a>
+                    <a class="msg" href="javascript:app.href('xiaoxi_index.html')"><i></i></a>
+                    <p class="title">房源管理</p>
+                </div>
+            </div>
+            <div class="content"  style="top:60px;">
+                <div id="no_content" style="display:none;" class="no_content_con">
+                    <a class="no_content" href="javascript:app.href('fangyuan_select_house_type.html')">
+                        <img src="fangyuan_images_no_content.png" />
+                    </a>
+                    <p class="no_content_tip">请添加您需要管理的房源信息</p>
+                </div>
+                <div style="height:100%;" id="activeListArea">
+                    <div id="scroller" class="common-list-scroller fans-scroller">
+                        <div id="pullDown" class="common-list-pull">
+                            <span class="pullDownIcon"></span><span class="pullDownLabel">下拉更新数据...</span>
+                        </div>
+                        <div class="room_list" id="thelist">
+
+                        </div>
+                        <div id="pullUp" class="common-list-pull">
+                            <span class="pullUpIcon"></span><span class="pullUpLabel">上拉获取更多...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page out" id="detail" style="display: none;">
+            <div class="top_banner graybg">
+                <a href="javascript:;" data-rel="back" class="go_back"><i></i></a>
+                <a class="right_menu" href="#editHouse"><i></i></a>
+                <p class="title">房源跟踪</p>
+            </div>
+            <div class="content">
+                <div class="room_detail" >
+                    <div id="room_detail">
+                        <div class="room_img">
+                            <img src="" />
+                        </div>
+                        <div class="infos">
+                            <p class="room_name">太平金融大厦</p>
+                            <p class="room_pos">A栋1202室，<span>500m²</span></p>
+                            <p class="room_price">租金报价:<span>¥ 8.5元/m²/天</span></p>
+                        </div>
+                        <span class="room_active">
+                            <i></i>
+                            认证
+                        </span>
+                    </div>
+
+                    <div class="room_progess clearfix">
+                        <span class="progess">进程</span>
+                        <div class="progess_options">
+                            <label class="radio clearfix">
+                                <input type="radio" name="status" value="1">
+                                <span class="is_check left"></span>
+                                <span class="radio_title">带看</span>
+                            </label>
+                            <label class="radio clearfix">
+                                <input type="radio" name="status" value="2">
+                                <span class="is_check left"></span>
+                                <span class="radio_title">意向</span>
+                            </label>
+                            <label class="radio clearfix">
+                                <input type="radio" name="status" value="3">
+                                <span class="is_check left"></span>
+                                <span class="radio_title">成交</span>
+                            </label>
+                            <label class="radio clearfix">
+                                <input type="radio" name="status" value="4">
+                                <span class="is_check left"></span>
+                                <span class="radio_title">失效</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="note_list">
+                        <div class="note_title clearfix">
+                            <a href="#edit" class="add_note"></a>
+                            <span class="title_content">工作日志</span>
+                        </div>
+                        <div class="log_scroller_warper" id="log_scroller">
+                            <div class="scroller_inner">
+                                <div class="notes" id="workLog">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="edit" style="display: none;">
+            <div class="top_banner graybg">
+                <a href="javascript:;" data-rel="back" class="go_back"><i></i></a>
+                <a href="javascript:;" class="submit"></a>
+                <p class="title"></p>
+            </div>
+            <div class="content">
+                <div class="note_form">
+                    <div class="line">
+                        <input type="text" id="note_date" class="note_date"/>
+                    </div>
+                    <div class="line">
+                        <textarea id="note_content" placeholder="请输入工作日志内容" class="note_content"></textarea>
+                    </div>
+                    <div class="line">
+                        <span class="key">跟进提醒时间</span>
+                        <span class="ipt_span">
+                            <input type="text" id="notice_day" class="notice_day"/>
+                        </span>
+                        <!--<span class="ipt_span">-->
+                            <!--<input type="time" id="notice_time" class="notice_time"/>-->
+                        <!--</span>-->
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" id="delete_log" class="common_submit">删除工作日志</a>
+        </div>
+        <div class="page" id="editHouse" style="display: none;">
+            <div class="top_banner graybg">
+                <a href="javascript:void(0);" data-rel="back" class="go_back"></a>
+                <p class="title" id="editHouse_title">
+
+                </p>
+            </div>
+            <div class="content" style="bottom:0;padding-bottom:0;">
+                <!-- 其他字段从house_add.html 或 house_add2.html中直接复制 line 行即可-->
+                <div class="scroller_inner" id="edit_room_scroller">
+                    <div class="scroller_inner">
+                        <div class="form" id="editHouse_form">
+
+                        </div>
+                        <a href="javascript:;" class="common_submit">编辑完成发送至楼先生</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="select" style="display:none;">
+            <div class="select_area">
+                <div class="top_banner">
+                    <a href="#search" class="go_back" data-rel="back"><i></i></a>
+                    <a href="javascript:;" class="submit" data-rel="back"></a>
+                    <p class="title" id="select_title"><p>
+                </div>
+                <div class="content" id="select_scroller" style="top:60px;">
+                    <div class="scroller_inner">
+                        <div id="options" class="scroller_inner">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="page out" id="addNote" style="display: none;">-->
+            <!--<div class="top_banner graybg">-->
+                <!--<a href="javascript:;" data-rel="back" class="go_back"></a>-->
+                <!--<a href="javascript:;" class="submit" data-rel="back"></a>-->
+                <!--<p class="title">新建工作日志</p>-->
+            <!--</div>-->
+            <!--<div class="content">-->
+                <!--<div class="note_form">-->
+                    <!--<div class="line">-->
+                        <!--<input type="text" id="note_date" class="note_date"/>-->
+                    <!--</div>-->
+                    <!--<div class="line">-->
+                        <!--<textarea id="note_content" placeholder="请输入工作日志内容" class="note_content"></textarea>-->
+                    <!--</div>-->
+                    <!--<div class="line">-->
+                        <!--<span class="key">跟进提醒时间</span>-->
+                        <!--<span class="ipt_span">-->
+                            <!--<input type="text" id="notice_day" class="notice_day"/>-->
+                        <!--</span>-->
+                        <!--&lt;!&ndash;<span class="ipt_span">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<input type="time" id="notice_time" class="notice_time"/>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div id="datePlugin"></div>
+        <script src="fangyuan_scripts_fyConfig.js"></script>
+        <script type="text/tpl">
+            <!--^room_item-->
+            <a class="room_item clearfix" data-id="{#id}" data-building_id="{#building_id}" data-category="{#category}" href="javascript:app.href('fangyuan_house_detail.html','goid={#id}&back=index')">
+                <div class="room_img">
+                    <img src="{#avatar}">
+                </div>
+                <div class="room_info">
+                    <p class="room_name">{#building_name}</p>
+                    <p class="room_pos">{#unit_no}</p>
+                    <p class="room_price">{#transaction_type|transaction_type}</span></p>
+                </div>
+                <span class="room_want {#status|statusChange}"></span>
+				{#verified|verified}
+            </a>
+            <!--room_item$-->
+            <!--^room_detail-->
+            <div class="room_info" data-id="{#id}" data-building_id="{#building_id}" data-category="{#category}">
+                <div class="room_img">
+                    <img src="{#avatar}" />
+                </div>
+                <div class="infos">
+                    <p class="room_name">{#building_name}</p>
+                    <p class="room_pos">{#unit_no}</p>
+                    <p class="room_price">{#transaction_type|transaction_type}</p>
+                </div>
+				{#verified|verified}
+            </div>
+            <!--room_detail$-->
+            <!--^work_log_list-->
+            <a id="note_{#id}" class="note" href='#edit' data-id="{#id}" data-time="{#event_date}" data-content="{#content}" data-notify="{#notify_time}">
+                <p class="note_date">{#event_date} {#week_no}</p>
+                <p class="note_content">
+                    {#content}
+                </p>
+            </a>
+            <!--work_log_list$-->
+            <!--^editerTitle-->
+            <span class="main_title">{#building_name}</span>
+            <span class="sub_title">{#unit_no}</span>
+            <!--editerTitle$-->
+
+            <!--^editTwo-->
+                <div class="line">
+                    <span class="condition_name">交易类型</span>
+                    <div class="condition clearfix">
+                        <div class="conditon_option">
+                            <label class="checkbox">
+                                <input type="radio" name="trade" {#transaction_type|edit_transaction_type(1)} value="1">
+                                <span class="is_check"></span>
+                                <span class="checkbox_title">出租</span>
+                            </label>
+                        </div>
+                        <div class="conditon_option">
+                            <label class="checkbox">
+                                <input type="radio" name="trade" {#transaction_type|edit_transaction_type(2)} value="2">
+                                <span class="is_check"></span>
+                                <span class="checkbox_title">出售</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">楼盘名称</span>
+                    <div class="condition clearfix">
+                        <input type="text" placeholder="请输入楼盘名称或地址" class="condition_ipt" value="{#building_name}" />
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">房源单元</span>
+                    <div class="condition clearfix">
+                        <input type="text" placeholder="示例：A栋1402室" class="condition_ipt" value="{#unit_no}" />
+                    </div>
+                </div>
+
+                <div class="line">
+                    <span class="condition_name">房间位置</span>
+                    <div class="condition clearfix">
+                        <input type="text" placeholder="示例：朝南" class="condition_ipt" value="{#position}" />
+                    </div>
+                </div>
+
+                <div class="line">
+                    <span class="condition_name">房间座位</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#chair_total}"/> 人位
+                    </div>
+                </div>
+
+                <div class="line">
+                    <span class="condition_name">房源面积</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#chair_total}"/> m²
+                    </div>
+                </div>
+
+                <div class="line">
+                    <span class="condition_name">房源报价</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt"/> 元/月
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">房源朝向</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt"/>
+                    </div>
+                </div>
+
+                <div class="line">
+                    <span class="condition_name">交付状态</span>
+                    <div class="condition clearfix">
+                            <span class="select_waprer">
+                                <select>
+                                    <option>毛坯房</option>
+                                    <option>已装修已装修已装修</option>
+                                </select>
+                            </span>
+                    </div>
+                </div>
+
+
+                <div class="line">
+                    <span class="condition_name">交付日期</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt"/>
+                    </div>
+                </div>
+
+
+                <div class="line">
+                    <span class="condition_name">最短租约</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt"/>
+                    </div>
+                </div>
+                
+                <div class="line">
+                    <span class="condition_name">联系电话</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#contact_phone}" name="contact_phone" id="contact_phone"/>
+                    </div>
+                </div>
+            <!--editTwo$-->
+            <!--^editOne-->
+                <div class="line">
+                    <span class="condition_name">交易类型</span>
+                    <div class="condition clearfix">
+                        <div class="conditon_option">
+                            <label class="checkbox">
+                                <input type="radio" name="trade" {#transaction_type|edit_transaction_type(1)} value="1">
+                                <span class="is_check"></span>
+                                <span class="checkbox_title">出租</span>
+                            </label>
+                        </div>
+                        <div class="conditon_option">
+                            <label class="checkbox">
+                                <input type="radio" name="trade" {#transaction_type|edit_transaction_type(2)} value="2">
+                                <span class="is_check"></span>
+                                <span class="checkbox_title">出售</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">楼盘名称</span>
+                    <div class="condition clearfix">
+                        <input type="text" placeholder="请输入楼盘名称或地址" class="condition_ipt" value="{#building_name}" />
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">房源单元</span>
+                    <div class="condition clearfix">
+                        <input type="text" placeholder="示例：A栋1402室" class="condition_ipt" value="{#unit_no}" />
+                    </div>
+                </div>
+
+                <div class="line">
+                    <span class="condition_name">房源面积</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#square_meter}"/> m²
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">房源报价</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#room_price}"/>
+                            <span class="select_waprer">
+                                <select id="room_price">
+                                    <option>元/m²</option>
+                                </select>
+                            </span>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">房源朝向</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#head_to}"/>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">交付状态</span>
+                    <div class="condition clearfix">
+                            <span class="select_waprer">
+                                <select>
+                                    <option value="1">毛坯交付</option>
+                                    <option value="2">标准交付</option>
+                                    <option value="3">现状装修隔断</option>
+                                    <option value="4">现状装修家具</option>
+                                    <option value="5">拎包办公</option>
+                                    <option value="6">协商交付条件</option>
+                                </select>
+                            </span>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">交付日期</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#delivery_date}" name="delivery_date" id="delivery_date"/>
+                    </div>
+                </div>
+                
+                <div class="line">
+                    <span class="condition_name">联系电话</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#contact_phone}" name="contact_phone" id="contact_phone"/>
+                    </div>
+                </div>
+            <!--editOne$-->
+            <!--^editThree-->
+                <div class="line">
+                    <span class="condition_name">房源面积</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#square_meter}" id="square_meter" /> m²
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">房源报价</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#sell_price}{#rent_price}" id="room_price"/>
+                        <span class="select_waprer" id="room_price_unit">元/m²</span>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">房源朝向</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" value="{#head_to}" id="head_to"/>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">交付状态</span>
+                    <div class="condition">
+                        <a st="交付" ste="status" id="go_select_status" class="select_condition clearfix" href="#select" vals="{#delivery_status}">
+                            <i></i>
+                            <p>{#delivery_status|delivery_status}</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">交付日期</span>
+                    <div class="condition clearfix">
+                        <input type="text" class="condition_ipt" id="delivery_date" value="{#delivery_date}" />
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="condition_name">房源简介</span>
+                    <div class="condition clearfix">
+                        <textarea class="common_txt" id="intro">{#intro}</textarea>
+                    </div>
+                </div>
+                <div class="line" style="padding-bottom:6px;">
+                    <span class="condition_name">房源封面</span>
+                    <div class="condition clearfix">
+                        <div class="room_img_list img_con" id="room_cover">
+                            {#avatar|roomAvatar}
+                            <a href="javascript:app.upload(3,null,1,2);" class="add_img" id="add_cover_edit" imgt="cover"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="line" style="padding-bottom:6px;">
+                    <span class="condition_name">其他图片</span>
+                    <div class="condition clearfix">
+                        <div class="room_img_list img_con" id="other_imgs">
+                            {#images|roomImages}
+                            <a href="javascript:app.upload(3,null,2,2);" class="add_img" id="add_image_edit" imgt="images"></a>
+                        </div>
+                    </div>
+                </div>
+            <!--editThree$-->
+            <!--^img-->
+                <span class="img_span {#imgType}">
+                    <a href="javascript:;" class="img_del" imgId="{#id}"></a>
+                    <img src="{#avatar}" />
+                </span>
+            <!--img$-->
+            <!--^select_option-->
+                <label class="checkbox area">
+                    <input type="radio" name="{#keyName}" value="{#id}"/>
+                    <span class="is_check right"></span>
+                    <span class="checkbox_title">{#name}</span>
+                </label>
+            <!--select_option$-->
+        </script>
+    </body>
+</html>

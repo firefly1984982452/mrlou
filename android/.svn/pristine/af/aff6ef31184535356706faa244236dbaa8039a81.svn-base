@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>搜索-楼先生</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="lxs_bg search_page">
+        <div class="page">
+            <div class="top_banner">
+                <a href="javascript:;" class="go_back" data-rel="back"><i></i></a>
+                <div class="search_warper">
+                    <i></i>
+                    <div class="ipt_warp"><input type="text" id="keyword" placeholder="请输入楼盘名称或地址"/></div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="search_condition">
+                    <div class="line">
+                        <p class="search_title">请选择搜索条件，可多选</p>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">交易</span>
+                        <div class="condition clearfix">
+                            <div class="conditon_option">
+                                <label class="checkbox ">
+                                    <input type="checkbox" name="trade"/>
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">全部</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="trade"/>
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">出租</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="trade"/>
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">出售</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line1">
+                        <span class="condition_name">属性</span>
+                        <div class="sub_line clearfix">
+                            <div class="conditon_option">
+                                <label class="checkbox ">
+                                    <input type="checkbox" name="prop"/>
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">全部</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="prop"/>
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">单元</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="prop"/>
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">整层</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sub_line clearfix">
+                            <div class="conditon_option">
+                                <label class="checkbox ">
+                                    <input type="checkbox" name="prop"/>
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">独栋</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="prop"/>
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">商务中心</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="prop"/>
+                                    <span class="is_check"></span>
+                                    <span class="checkbox_title">创客空间</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">面积</span>
+                        <div class="condition">
+                            <input type="text" class="condition_ipt" id="acreage" placeholder="00"/>m²
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">预算</span>
+                        <div class="condition">
+                            <input type="text" class="condition_ipt" id="budget" placeholder="¥"/>元/m²/天
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">区域</span>
+                        <div class="condition">
+                            <a class="select_condition clearfix">
+                                <i></i>
+                                <span>全部</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <span class="condition_name">板块</span>
+                        <div class="condition">
+                            <a class="select_condition clearfix">
+                                <i></i>
+                                <span>全部</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="search_operate clearfix">
+                    <a href="javascript:;" class="submit">搜索房源</a>
+                    <a href="javascript:;" class="reset">重置搜索条件</a>
+                </div>
+            </div>
+
+        </div>
+        <script src="/resourse/scripts/mobilebone.js"></script>
+    </body>
+</html>

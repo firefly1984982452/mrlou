@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>消息</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/lxs/css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="css/xiaoxi.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="graybg">
+        <div class="page">
+            <div class="top_banner gray">
+                <a href="javascript:app.goBack();" class="go_back"><i></i></a>
+                <p class="title" id="title">消息</p>
+            </div>
+            <div class="content" style="top:60px">
+                <div class="scroller_inner" style="position:absolute;top:0px;bottom:0px;">
+                    <div id="normal_list">
+                        <div id="dataListArea" class="common-list" style="position: relative">
+                            <div id="scroller" class="common-list-scroller fans-scroller">
+                                <div id="pullDown" class="common-list-pull">
+                                    <span class="pullDownIcon"></span><span class="pullDownLabel">下拉更新数据...</span>
+                                </div>
+                                <div class="msg_list" id="msg_list">
+
+                                </div>
+                                <div id="pullUp" class="common-list-pull">
+                                    <span class="pullUpIcon"></span><span class="pullUpLabel">上拉获取更多...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/xiaoxiConfig.js"></script>
+        <script type="text/tpl">
+            <!--^type3-->
+                <div class="msg_item fangyuan_note">
+                    <a href="javascript:app.href('fangyuan_house_detail','goid={#target_id}');">
+                        <div class="msg_top">
+                            <span class="msg_time">{#notice_time|noticeTime}</span>
+                            <p class="buliding_name">{#name|htmlEncode}</p>
+                        </div>
+                        <p class="fy_name">{#title|htmlEncode}</p>
+                        <p class="note_content">{#content|htmlEncode}</p>
+                    </a>
+                </div>
+            <!--type3$-->
+            <!--^type4-->
+                <div class="msg_item thread">
+                    <a href="javascript:app.href('ylb_thread','goid={#target_id}');">
+                        <div class="msg_top">
+                            <p class="thread_title">{#name|htmlEncode}</p>
+                        </div>
+                        <p class="reply_content">{#content|htmlEncode}</p>
+                        <div class="msg_bottom clearfix">
+                            <span class="reply_name">{#title|splitName}</span>
+                            <span class="reply_type">{#title|splitType}</span>
+                            <span class="reply_time">{#notice_time|noticeTime}</span>
+                        </div>
+                    </a>
+                </div>
+            <!--type4$-->
+            <!--^type5-->
+                <div class="msg_item kehu_note">
+                    <a href="javascript:app.href('kehu_detail','goid={#target_id}');">
+                        <div class="msg_top">
+                            <span class="msg_time">{#notice_time|noticeTime}</span>
+                            <p class="kehu_name">{#name|htmlEncode}</p>
+                        </div>
+                        <p class="note_content" style="margin-top:12px;">{#content|contentSplit}</p>
+                    </a>
+                </div>
+            <!--type5$-->
+            <!--^type8-->
+                <div class="msg_item lxsmsg">
+                    <div class="msg_top">
+                        <span class="msg_time">{#notice_time|noticeTime}</span>
+                        <p class="notice_name">{#name|htmlEncode}</p>
+                    </div>
+                    <p class="note_title1">{#title|htmlEncode}</p>
+                    <p class="note_content1">{#content|htmlEncode}</p>
+                </div>
+            <!--type8$-->
+        </script>
+    </body>
+</html>

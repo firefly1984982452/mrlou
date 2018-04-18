@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>楼盘介绍</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../resourse/css/mui.min.css" rel="stylesheet" />
+		<script src="../resourse/scripts/mui.min.js"></script>
+		<script src="../resourse/scripts/jquery-2.1.0.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">楼盘介绍</h1>
+		    <a class="mui-action-back mui-icon mui-icon-right-nav mui-pull-right"></a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-input-row" style="margin: 10px 5px;">
+				<textarea id="textarea" rows="10" maxlength="500" 
+					placeholder="请输入楼盘介绍(不超过500个字符)"></textarea>
+			</div>
+			
+		</div>
+		<button id="add_introduce" type="button" class="mui-btn mui-btn-success mui-btn-block">确认</button>
+		<script>
+			var house_intro = localStorage.getItem("house_introduce");
+			if(house_intro!=null){
+				$("#textarea").val(house_intro);
+			}else{
+				$("#textarea").val("");
+			}
+			$("#add_introduce").on('click',function(){
+				var house_introduce= $("#textarea").val();
+				localStorage.setItem("house_introduce",house_introduce);
+				//需要接口上传到服务器
+				history.go(-1);
+			})
+		</script>
+	</body>
+</html>

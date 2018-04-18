@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>新增楼盘</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<link href="../resourse/css/mui.min.css" rel="stylesheet" />
+		<link href="css/lxs.css" />
+		<link href="resourse/css/reset.css" type="text/css" rel="styleSheet" />
+		<link href="resourse/css/register.css" type="text/css" rel="styleSheet" />
+		<script src="scripts/lxs_index.js"></script>
+		<script src="../resourse/scripts/mui.min.js"></script>
+		<script src="../resourse/scripts/jquery-2.1.0.js"></script>
+		<!--<script src="../resourse/scripts/reg.js"></script>-->
+		<style>
+			.mui-input-row>input {
+				float: left;
+				width: 45%;
+				margin-bottom: 0;
+				padding-left: 0;
+				border: 0;
+				display: block;
+				height: 100%;
+				line-height: 40px;
+			}
+			
+			.mui-input-row>span {
+				float: right;
+				height: 100%;
+				display: block;
+				line-height: 40px;
+				width: 20%;
+				margin-bottom: 0;
+				padding-left: 0;
+				border: 0
+			}
+			
+			label,
+			.mui-navigate-right,
+			.condition_name {
+				font-size: 13px;
+				color: #444;
+				font-weight: bold;
+			}
+			
+			span {
+				font-size: 13px;
+				font-weight: bold;
+			}
+			
+			.top_banner {
+				padding: 10px;
+				height: 50px;
+				background: #e7e7e7;
+				position: absolute;
+				left: 0;
+				right: 0;
+			}
+			
+			.go_back {
+				left: 6px;
+				top: 6px;
+				padding: 8px;
+				height: 22px;
+				width: 22px;
+				background: url(../resourse/images/back.png)
+			}
+			
+			.go_back:active {
+				background: url(../resourse/images/back_active.png);
+			}
+			
+			.mui-btn-danger,
+			.mui-btn-negative,
+			.mui-btn-red {
+				color: #fff;
+				border: 1px solid #bd081c;
+				background-color: #bd081c;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page out" id="detail" data-fallback="detailFallback">
+			<header class="mui-bar mui-bar-nav">
+				<div class="top_banner">
+					<a href="javascript:app.goBack();" class="go_back" data-rel="back"><i></i></a>
+					<h1 class="mui-title">新增楼盘</h1>
+				</div>
+			</header>
+			<div class="mui-content">
+				<div class="mui-content-padded">
+					<div class="mui-input-group">
+						<div class="mui-input-row">
+							<label>楼盘名称</label>
+							<input type="text" class="mui-input-clear" id="house_name">
+						</div>
+						<div class="mui-input-row">
+							<label>楼盘地址</label>
+							<input type="text" class="mui-input-clear" id="house_address">
+						</div>
+						<div class="mui-input-row">
+							<label>楼盘类型</label>
+							<input type="text" class="mui-input-clear" id="house_type">
+						</div>
+						<div class="mui-input-row">
+							<label style="width: 40%;">租金报价(区间)</label>
+							<input style="width: 30%;float: left;" type="text" class="mui-input-clear" id="rent_quote">
+							<span style="width: 30%;">元/m²/天</span>
+						</div>
+						<div class="mui-input-row">
+							<label style="width: 30%;">平均售价</label>
+							<input style="width: 40%;float: left;" type="text" class="mui-input-clear" id="ave_sel_price">
+							<span style="width: 30%;">元/m²</span>
+						</div>
+						<div class="mui-input-row">
+							<label style="width: 30%;">物业费</label>
+							<input style="width: 40%;float: left;" type="text" class="mui-input-clear" id="pm_fee">
+							<span style="width: 30%;">元/m²/月</span>
+						</div>
+						<ul id="list" class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+								<a style="color: #444;" class="mui-navigate-right" href="lxs_add_house_introduce.html">
+									楼盘介绍
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="mui-input-group">
+						<a href="javascript:app.upload(1,'',1,2);">
+							<label >上传楼盘图片</label>
+							<div class="img_con clearfix">
+								<span href="javascript:;" class="add_img" id="add_cover" imgt="cover"></span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="mui-content-padded">
+					<button type="button" id="add_house" class="mui-btn mui-btn-red mui-btn-block">提交</button>
+
+					<script>
+						var uploading = 'cover';
+						//上传图片
+						$(".mui-input-group").on('click', function() {
+							var uploadCallBack = function(id, url) {
+
+								if(uploading == 'cover') {
+									setCover(id, url);
+								} else {
+									addImages(id, url);
+								}
+							}
+
+							function setCover(id, url) {
+								$('.cover').remove();
+								$('#add_cover').hide();
+								var html = util.tpl.apply('img', {
+									imgType: 'cover',
+									avatar: url,
+									id: id
+								});
+								var newIn = $(html);
+								$('#add_cover').before(newIn);
+							}
+
+							function addImages(id, url) {
+								localStorage.setItem("house_id",id);
+								var html = util.tpl.apply('img', {
+									imgType: 'cover',
+									avatar: url,
+									id: id
+								});
+								var newIn = $(html);
+								$('#add_image').before(newIn);
+								if($('#other_imgs .img_span').size() >= 10) {
+									$('#add_image').hide();
+								}
+							}
+							window.addImages = addImages;
+							window.setCover = setCover;
+							window.uploadCallBack = uploadCallBack;
+						});
+
+						var add_house_url = "http://test.imrlou.com/api/insertnewbuilding";
+
+						//确认按钮
+						$('#add_house').on('click', function() {
+							var name_len = $("#house_name").val().length;
+							var add_len = $("#house_address").val().length;
+							var type_len = $("#house_type").val();
+
+							if(name_len == 0) {
+								alert("楼盘名称不可为空");
+								return false;
+							} else if(name_len < 2 || name_len > 100) {
+								alert("楼盘名称长度错误");
+								return false;
+							}
+
+							if(add_len == 0) {
+								alert("楼盘地址不可为空");
+								return false;
+							} else if(add_len < 2 || add_len > 50) {
+								alert("楼盘地址长度错误");
+								return false;
+							}
+							if(type_len.length == 0) {
+								alert("楼盘类型不可为空");
+								return false;
+							} else if(type_len < 1 || type_len > 8) {
+								alert("楼盘类型错误");
+								return false;
+							}
+
+							if($("#rent_price").val() > 20) {
+								alert("租金报价错误");
+								return false;
+							}
+							if($("#ave_sel_price").val() > 20) {
+								alert("平均售价错误");
+								return false;
+							}
+							if($("#pm_fee").val() > 20) {
+								alert("物业费错误");
+								return false;
+							}
+							if(localStorage.getItem("house_introduce").length > 100) {
+								alert("楼盘介绍错误");
+								return false;
+							}
+							var parm = {
+								name: $("#house_name").val(),
+								address: $("#house_address").val(),
+								type: $("#house_type").val(),
+								rent_price: $("#rent_quote").val(),
+								sell_price: $("#ave_sel_price").val(),
+								wyf: $("#pm_fee").val(),
+								info: localStorage.getItem("house_introduce"),
+								pics: localStorage.getItem("house_id")
+							};
+							$.getJSON(add_house_url, parm, function(data) {
+								alert(data.length + "success:" + data.errorid);
+							})
+							alert("楼盘  " + $("#house_name").val() + "  新增成功，我们将尽快生成新的楼盘字典");
+							localStorage.removeItem("house_introduce");
+							localStorage.removeItem("house_id");
+							history.go(-1);
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+
+		<script src="scripts/lxsConfig.js"></script>
+		<script type="text/tpl">
+			<!--^img-->
+			<span class="img_span {#imgType}">
+                    <a href="javascript:;" class="img_del" imgId="{#id}"></a>
+                    <img src="{#avatar}" />
+                </span>
+			<!--img$-->
+		</script>
+	</body>
+
+</html>

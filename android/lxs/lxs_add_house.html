@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width,user-scalable=no" name="viewport" />
+		<title>新增楼盘</title>
+		<link href="../resourse/css/reset.css" type="text/css" rel="styleSheet" />
+		<link rel="styleSheet" type="text/css" href="../resourse/css/register.css">
+		<link href="css/lxs.css" type="text/css" rel="styleSheet" />
+		<link href="../resourse/css/mobilebone.css" type="text/css" rel="styleSheet" />
+		<link href="../resourse/css/iSlider.css" type="text/css" rel="styleSheet" />
+		<link href="../resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet" />
+		<script src="../resourse/scripts/jquery-2.1.0.js"></script>
+		<style>
+			.search_condition .condition {
+				margin-left: 90px;
+			}
+			
+			#submit_add_house {
+				color: #fff;
+				border: 1px solid #bd081c;
+				background-color: #bd081c;
+				font-size: 18px;
+				display: block;
+				width: 100%;
+				margin-bottom: 10px;
+				padding: 15px 0;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+
+	<body class="lxs_bg">
+		<div class="page in" id="add_house">
+			<div class="top_banner">
+				<a href="javascript:app.goBack();" class="go_back" data-rel="back"><i></i></a>
+				<p class="title">新增楼盘</p>
+			</div>
+			<div class="lxs_content" id="index_buliding_list">
+				<div class="search_condition">
+					<div class="line">
+						<span class="condition_name">楼盘名称</span>
+						<div class="condition">
+							<input type="text" class="condition_ipt" id="house_name" />
+						</div>
+					</div>
+					<div class="line">
+						<span class="condition_name">楼盘地址</span>
+						<div class="condition">
+							<input type="text" class="condition_ipt" id="house_address" />
+						</div>
+					</div>
+					<div class="line">
+						<span class="condition_name">楼盘类型</span>
+						<div class="condition">
+							<input type="text" class="condition_ipt" id="house_type" />
+						</div>
+					</div>
+					<div class="line">
+						<span class="condition_name">租金报价(区间)</span>
+						<div class="condition">
+							<input type="text" class="condition_ipt" id="rent_quote" placeholder="0" />元/m²/天
+						</div>
+					</div>
+					<div class="line">
+						<span class="condition_name">平均售价</span>
+						<div class="condition">
+							<input type="text" class="condition_ipt" id="ave_sel_price" placeholder="0" />元/m²
+						</div>
+					</div>
+					<div class="line">
+						<span class="condition_name">物业费</span>
+						<div class="condition">
+							<input type="text" class="condition_ipt" id="pm_fee" placeholder="0" />元/m²/月
+						</div>
+					</div>
+					<div class="line">
+						<span class="condition_name">楼盘介绍</span>
+						<div class="condition">
+							<a id="go_select_region" class="select_condition clearfix" href="#select">
+								<i></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="search_condition">
+					<div class="line">
+						<a href="javascript:app.upload(1,'',1,2);">
+							<div class="upload_avatar">
+								<span style="color: #444;font-size: 14px;">上传楼盘图片</span>
+								<div class="img_con clearfix">
+									<span href="javascript:;" class="add_img" id="add_cover" imgt="cover"></span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="line">
+						<input type="button" id="submit_add_house" value="提交" />
+					</div>
+
+					<script>
+						var uploading = 'cover';
+						//上传图片
+						$(".mui-input-group").on('click', function() {
+							var uploadCallBack = function(id, url) {
+
+								if(uploading == 'cover') {
+									setCover(id, url);
+								} else {
+									addImages(id, url);
+								}
+							}
+
+							function setCover(id, url) {
+								$('.cover').remove();
+								$('#add_cover').hide();
+								var html = util.tpl.apply('img', {
+									imgType: 'cover',
+									avatar: url,
+									id: id
+								});
+								var newIn = $(html);
+								$('#add_cover').before(newIn);
+							}
+
+							function addImages(id, url) {
+								localStorage.setItem("house_id", id);
+								var html = util.tpl.apply('img', {
+									imgType: 'cover',
+									avatar: url,
+									id: id
+								});
+								var newIn = $(html);
+								$('#add_image').before(newIn);
+								if($('#other_imgs .img_span').size() >= 10) {
+									$('#add_image').hide();
+								}
+							}
+							window.addImages = addImages;
+							window.setCover = setCover;
+							window.uploadCallBack = uploadCallBack;
+						});
+
+						var add_house_url = "http://test.imrlou.com/api/insertnewbuilding";
+
+						//确认按钮
+						$('#submit_add_house').on('click', function() {
+							var name_len = $("#house_name").val().length;
+							var add_len = $("#house_address").val().length;
+							var type_len = $("#house_type").val();
+
+							if(name_len == 0) {
+								alert("楼盘名称不可为空");
+								return false;
+							} else if(name_len < 2 || name_len > 100) {
+								alert("楼盘名称长度错误");
+								return false;
+							}
+
+							if(add_len == 0) {
+								alert("楼盘地址不可为空");
+								return false;
+							} else if(add_len < 2 || add_len > 50) {
+								alert("楼盘地址长度错误");
+								return false;
+							}
+							if(type_len.length == 0) {
+								alert("楼盘类型不可为空");
+								return false;
+							} else if(type_len < 1 || type_len > 8) {
+								alert("楼盘类型错误");
+								return false;
+							}
+
+							if($("#rent_price").val() > 20) {
+								alert("租金报价错误");
+								return false;
+							}
+							if($("#ave_sel_price").val() > 20) {
+								alert("平均售价错误");
+								return false;
+							}
+							if($("#pm_fee").val() > 20) {
+								alert("物业费错误");
+								return false;
+							}
+							if(localStorage.getItem("house_introduce").length > 100) {
+								alert("楼盘介绍错误");
+								return false;
+							}
+							var parm = {
+								name: $("#house_name").val(),
+								address: $("#house_address").val(),
+								type: $("#house_type").val(),
+								rent_price: $("#rent_quote").val(),
+								sell_price: $("#ave_sel_price").val(),
+								wyf: $("#pm_fee").val(),
+								info: localStorage.getItem("house_introduce"),
+								pics: localStorage.getItem("house_id")
+							};
+							$.getJSON(add_house_url, parm, function(data) {
+								alert(data.length + "success:" + data.errorid);
+							})
+							alert("楼盘  " + $("#house_name").val() + "  新增成功，我们将尽快生成新的楼盘字典");
+							localStorage.removeItem("house_introduce");
+							localStorage.removeItem("house_id");
+							history.go(-1);
+						});
+					</script>
+				</div>
+			</div>
+		<script src="scripts/lxsConfig.js"></script>
+			<script type="text/tpl">
+				<!--^img-->
+				<span class="img_span {#imgType}">
+                    <a href="javascript:;" class="img_del" imgId="{#id}"></a>
+                    <img src="{#avatar}" />
+                </span>
+				<!--img$-->
+			</script>
+	</body>
+
+</html>

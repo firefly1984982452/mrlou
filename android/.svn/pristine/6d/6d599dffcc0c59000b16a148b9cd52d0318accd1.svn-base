@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>帖子详情 - 易楼帮</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/fangyuan/css/fangyuan.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css"rel="styleSheet" />
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/select2.min.css" type="text/css" rel="styleSheet"/>
+        <link href="css/ylb.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="graybg">
+        <div class="page">
+            <div class="top_banner white">
+                <a href="javascript:app.goBack();" class="go_back" data-rel="back"><i></i></a>
+                <div class="thread_operate">
+                    <a class="msg" href="javascript:app.href('xiaoxi_index');"><i></i></a>
+                    <a class="collect" href="javascript:;" id="collect_thread"><i></i></a>
+                </div>
+                <a href="javascript:;" class="right_title">评论 <span id="reply_count"></span></a>
+            </div>
+            <div class="content whole_page reply_bottom" style="top:50px;overflow:hidden;" id="thread_detail_scroller">
+                <div style="width:100%;">
+                    <div class="scroller_inner" style="height:100%;">
+                        <div id="poster_info"></div>
+
+                        <div class="thead_content">
+                            <div class="title_area">
+                                <span class="thread_time" id="post_time"></span>
+                                <span class="thread_day" id="post_date"></span>
+                                <span class="thread_type" id="thread_type"></span>
+                            </div>
+                            <div>
+                                <p class="thead_title" id="thread_title"></p>
+                                <p class="thead_text" id="thread_content"></p>
+                            </div>
+                            <div class="img_area" id="thread_img_con" style="display:none;">
+                                <img src="" id="thread_img"/>
+                            </div>
+                        </div>
+                        <div class="reply_list" id="reply_list">
+
+                        </div>
+                    </div>
+                </div>
+  
+            </div>        
+            <div class="reply_area">
+                <div class="reply_warp">
+                    <a href="javascript:;" class="post_reply_btn" id="post_reply">评论</a>
+                    <p class="reply_txt_con"><textarea class="reply_txt" id="reply_content"></textarea></p>
+                </div>
+            </div>  
+        </div>
+
+        <script src="scripts/ylbConfig.js"></script>
+        <script type="text/tpl">
+            <!--^reply_item-->
+                <div class="reply_item" onclick="getRpleyName('{#name|posterNameFn}')">
+                    <div class="replyer_avatar">
+                        <img src="{#avatar}" />
+                    </div>
+                    <div class="reply_detail ">
+                        <div class="detail_top clearfix">
+                            <span class="reply_time">{#time|replyTimeFn}</span>
+                            <span class="replyer_name">{#name|posterNameFn}</span>
+                            <span class="replyer_type">{#type|posterTypeFn}</span>
+                            <span class="reply_floor">{#floor}楼</span>
+                        </div>
+                        <div class="reply_content">
+                            {#content|htmlEncode}
+                        </div>
+                    </div>
+                </div>
+            <!--reply_item$-->
+            <!--^type1-->
+                <div class="consultant_list" style="margin-top:10px;">
+                    <div class="consultant_item">
+                        <div class="consultant_top clearfix">
+                            <div class="consultant_name_warper">
+                                <p class="consultant_name" id="poster_name">{#phone|posterNameFormat}</p>
+                            </div>
+                            <div class="consultant_phone_warper">
+                                <div class="center_warper">
+                                    <i class="phone_icon"></i>
+                                    <a class="consultant_phone" id="poster_phone" data-verify="4-{#thread_id}_1-{#id}" href="tel:{#phone}">{#phone}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="consultant_bottom clearfix">
+                            <div class="consultant_avatar">
+                                <img src="{#avatar}" id="poster_avatar"/>
+                            </div>
+                            <div class="consultant_info">
+                                <p class="consultant_desc">简介：<span id="poster_desc">{#intro}</span></p>
+                                <p class="consultant_company">{#company|companyAssert}<span class="work_age" id="poster_work_age">从业{#work_age}年</span></p>
+                                <p class="consultant_googat">擅长：<span id="poster_goodat">{#regions|regionsFormat}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!--type1$-->
+            <!--^type2-->
+                <div class="house_list hd_consultant_list">
+                    <div class="house_item">
+                        <div id="user_phone_con" class="phone_warper clearfix">
+                            <i class="phone_icon"></i>
+                            <a id="user_phone" class="phone_num"  href="tel:{#phone}" data-verify="4-{#thread_id}_1-{#id}" >{#phone}</a>
+                        </div>
+                        <div class="house_img avatar">
+                            <img id="user_avatar" src="{#avatar}">
+                        </div>
+                        <div class="house_info">
+                            <p id="user_name" class="house_name">{#phone|posterNameFormat}</p>
+                            <p class="house_price">{#company|companyAssert}<span id="work_age" class="work_age">{#type|typeFormat}</span></p>
+                        </div>
+                    </div>
+                </div>
+<!--            <p class="consultant_desc">简介：<span id="poster_desc">{#intro}</span></p>
+                <p class="consultant_company">{#company|companyAssert}<span class="work_age">{#type|typeFormat}</span></p> -->
+            <!--type2$-->
+        </script>
+    </body>
+</html>

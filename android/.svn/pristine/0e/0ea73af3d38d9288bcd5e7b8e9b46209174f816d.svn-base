@@ -1,0 +1,14 @@
+跳转到帖子详情页的时候如果要回退到首页
+则跳转的时候应该这样调用
+location.href='http://obj@href@ylb_thread.html@id=1&back=index'或者
+app.href('ylb_thread',{
+    id : 1,
+    back : index
+})或者
+app.href('ylb_thread','id=1&back=index')
+若直接
+location.href='http://obj@href@ylb_thread.html@id=1'或者
+app.href('ylb_thread',{
+    id : 1
+})
+则会调用APP的http://obj@back方法，回退到上一页

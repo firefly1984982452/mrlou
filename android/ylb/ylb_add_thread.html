@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>发表帖子 - 易楼帮</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/fangyuan/css/fangyuan.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css"rel="styleSheet" />
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/select2.min.css" type="text/css" rel="styleSheet"/>
+        <link href="css/ylb.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="graybg">
+        <div class="page">
+            <div class="top_banner graybg">
+                <a href="javascript:app.goBack();" class="go_back"><i></i></a>
+                <a href="javascript:;" class="next_step" id="post_thread">发表</a>
+                <p class="title">添加帖子</p>
+            </div>
+            <div class="content whole_page white">
+                <div class="form whole_form">
+                    <div class="line">
+                        <span class="condition_name">主题</span>
+                        <div class="condition clearfix"style="margin-left:40px;">
+                            <div class="conditon_option">
+                                <label class="radio">
+                                    <input type="radio" name="type" value="1" checked="checked">
+                                    <span class="is_check left"></span>
+                                    <span class="radio_title">房源合作</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="radio">
+                                    <input type="radio" name="type" value="2">
+                                    <span class="is_check left"></span>
+                                    <span class="radio_title">客户合作</span>
+                                </label>
+                            </div>
+                            <div class="conditon_option">
+                                <label class="radio">
+                                    <input type="radio" name="type" value="3">
+                                    <span class="is_check left"></span>
+                                    <span class="radio_title">其他主题</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="whole_line clearfix">
+                            <textarea class="common_txt" maxlength="40" type="text" placeholder="标题（不超过40个字）"  id="title" style="margin-left:-2px;height: 38px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="whole_line clearfix">
+                            <input type="text" placeholder="联系电话" class="condition_ipt" id="phone" style="width:100%;"/>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="whole_line clearfix">
+                            <textarea class="common_txt" placeholder="请输入发表内容" id="content" style="margin-left:-2px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="whole_line clearfix">
+                            <textarea placeholder="请输入区域和合作佣金规则" id="remark" style="margin-left:-2px;height: 24px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="whole_line clearfix">
+                            <a href="javascript:app.upload(4,'',2,2);" class="upload_img_btn"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="img_list" style="display:none;">
+                    <span class="img_span">
+                        <img src="images/test.png" id="thread_img"/>
+                        <a href="javascript:;" class="img_del" id="del_img"></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/ylbConfig.js"></script>
+    </body>
+</html>

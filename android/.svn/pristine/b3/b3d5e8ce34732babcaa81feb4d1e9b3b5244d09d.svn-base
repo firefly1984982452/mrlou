@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>首页 - 房源</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/lxs/css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css"rel="styleSheet" />
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="css/fangyuan.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="lxs_bg">
+        <div class="page">
+            <div class="top_banner graybg">
+                <a href="javascript:app.goBack()" class="go_back"><i></i></a>
+            </div>
+            <div class="content">
+            <div class="select_type">
+                <p>请选择发布房源属性</p>
+                <div class="types">
+                    <a class="type_warp" href="javascript:app.href('fangyuan_house_add.html','type=1')"><div class="type">单元</div></a>
+                    <a class="type_warp" href="javascript:app.href('fangyuan_house_add.html','type=2')"><div class="type">整层</div></a>
+                    <a class="type_warp" href="javascript:app.href('fangyuan_house_add.html','type=3')"><div class="type">独栋</div></a>
+                    <a class="type_warp" href="javascript:app.href('fangyuan_house_add.html','type=4')"><div class="type">商务中心</div></a>
+                    <a class="type_warp" href="javascript:app.href('fangyuan_house_add.html','type=5')"><div class="type">创客空间</div></a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <script src="scripts/fyConfig.js"></script>
+    </body>
+</html>

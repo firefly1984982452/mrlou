@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>客户详情 - 客户</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/lxs/css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="css/kehu.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/timer.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="graybg">
+        <div class="page out" id="detail">
+            <div class="top_banner gray">
+                <a href="javascript:app.goBack();" class="go_back"><i></i></a>
+                <a href="#editClent" class="right_menu"><i></i></a>
+                <p class="title" id="page_title">客户管理</p>
+            </div>
+            <div class="content" style="top:60px;">
+                <div class="room_progess clearfix">
+                    <span class="progess">进程</span>
+                    <div class="progess_options">
+                        <label class="radio clearfix">
+                            <input type="radio" name="process" value="1">
+                            <span class="is_check left"></span>
+                            <span class="radio_title">带看</span>
+                        </label>
+                        <label class="radio clearfix">
+                            <input type="radio" name="process" value="2">
+                            <span class="is_check left"></span>
+                            <span class="radio_title">意向</span>
+                        </label>
+                        <label class="radio clearfix">
+                            <input type="radio" name="process" value="3">
+                            <span class="is_check left"></span>
+                            <span class="radio_title">成交</span>
+                        </label>
+                        <label class="radio clearfix">
+                            <input type="radio" name="process" value="4">
+                            <span class="is_check left"></span>
+                            <span class="radio_title">失效</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="note_list">
+                    <div class="note_title clearfix">
+                        <a href="#edit" class="add_note">
+                            <i></i>
+                        </a>
+                        <span class="title_content">工作日志</span>
+                    </div>
+                    <div class="log_scroller_warper" id="log_scroller">
+                        <div class="scroller_inner">
+                            <div class="notes" id="workLog">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page out" id="edit" style="display: none;">
+            <div class="top_banner graybg">
+                <a href="#detail" data-rel="back" class="go_back"><i></i></a>
+                <a href="javascript:;" class="submit"><i></i></a>
+                <p class="title"></p>
+            </div>
+            <div class="content">
+                <div class="note_form">
+                    <div class="line">
+                        <input type="text" id="note_date" class="note_date"/>
+                    </div>
+                    <div class="line">
+                        <textarea id="note_content" placeholder="请输入工作日志内容" class="note_content"></textarea>
+                    </div>
+                    <div class="line">
+                        <span class="key">跟进提醒时间</span>
+                        <span class="ipt_span">
+                            <input type="text" id="notice_day" class="notice_day"/>
+                        </span>
+                        <!--<span class="ipt_span">-->
+                        <!--<input type="time" id="notice_time" class="notice_time"/>-->
+                        <!--</span>-->
+                    </div>
+                </div>
+                <a href="javascript:;" id="delete_log" class="common_submit">删除工作日志</a>
+            </div>
+        </div>
+
+        <div class="page out" id="editClent">
+            <div class="top_banner gray">
+                <a href="#detail" data-rel="back" class="go_back"><i></i></a>
+                <a href="javascript:;" class="next_step submit" id="save"><i></i></a>
+                <p class="title">客户信息</p>
+            </div>
+            <div class="content" style="top:60px;">
+                <div  id="kehu_detail_scroller" style="height:100%;width:100%;">
+                    <div class="form">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="datePlugin"></div>
+        <script src="scripts/kehuConfig.js"></script>
+        <script type="text/tpl">
+            <!--^kehu_item-->
+                <a class="kehu_item" href="#detail" data-id="{#id}">
+                    <p class="kehu_name">{#name}</p>
+                    <p class="kehu_note">{#intro}</p>
+                    <i class="kehu_status {#process|statusClassFormat}"></i>
+                </a>
+            <!--kehu_item$-->
+            <!--^work_log_list-->
+            <a id="note_{#id}" class="note" href="#edit" data-id="{#id}" data-time="{#event_date}" data-content="{#content}" data-notify="{#notify_time}">
+                <p class="note_date">{#event_date} {#week_no}</p>
+                <p class="note_content">
+                    {#content}
+                </p>
+            </a>
+            <!--work_log_list$-->
+            <!--^editClent-->
+            <div class="line">
+                <span class="condition_name">交易类型</span>
+                <div class="condition clearfix">
+                    <div class="conditon_option">
+                        <label class="checkbox">
+                            <input type="radio" name="trade" value="1" {#transaction_type|transaction_type(1)}>
+                            <span class="is_check"></span>
+                            <span class="checkbox_title">租赁</span>
+                        </label>
+                    </div>
+                    <div class="conditon_option">
+                        <label class="checkbox">
+                            <input type="radio" name="trade" value="2" {#transaction_type|transaction_type(2)}>
+                            <span class="is_check"></span>
+                            <span class="checkbox_title">购买</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">首次来访日期</span>
+                <div class="condition clearfix" style="margin-left:100px;">
+                    <input type="text"  class="condition_ipt" value="{#first_access_time}" name="first_access_time" id="first_access_time" />
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">客户名字</span>
+                <div class="condition clearfix">
+                    <input type="text" style="width:100%" class="condition_ipt" value="{#name}" name="name" id="name" />
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">行业类别</span>
+                <div class="condition clearfix">
+                    <input type="text"  style="width:100%"   class="condition_ipt" value="{#sector}" name="sector" id="sector" />
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">意向面积</span>
+                <div class="condition clearfix">
+                    <input type="text"  class="condition_ipt" value="{#pre_square_meter}" name="pre_square_meter" id="pre_square_meter" />m²
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">价格预算</span>
+                <div class="condition clearfix">
+                    <input type="text"  class="condition_ipt" value="{#pre_price_1}"  name="pre_price_1" id="pre_price_1"/><span id="room_price_unit">{#transaction_type|pre_price}</span>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">意向房源</span>
+                <div class="condition clearfix">
+                    <textarea class="common_txt"  name="pre_room" id="pre_room"  maxlength="200">{#pre_room}</textarea>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">客户简介</span>
+                <div class="condition clearfix">
+                    <textarea class="common_txt" id="intro" style="height:24px;">{#intro}</textarea>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">联系电话</span>
+                <div class="condition clearfix">
+                    <input type="text"  class="condition_ipt" value="{#phone_number}" name="phone_number" id="phone_number"/>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">公司名称</span>
+                <div class="condition clearfix">
+                    <input type="text"  style="width:100%" maxlength="20" class="condition_ipt" value="{#company}" name="company" maxlength="20" id="company"/>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">公司职位</span>
+                <div class="condition clearfix">
+                    <input type="text"  style="width:100%"  class="condition_ipt" value="{#job_title}" name="job_title" id="job_title"/>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">租售动机</span>
+                <div class="condition clearfix">
+                    <input type="text"  style="width:100%"   class="condition_ipt" value="{#use_for}" name="use_for" id="use_for"/>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">单位性质</span>
+                <div class="condition clearfix">
+                    <input type="text" maxlength="20"  style="width:100%"  class="condition_ipt" value="{#company_property}" name="company_property" id="company_property"/>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">员工数量</span>
+                <div class="condition clearfix">
+                    <input type="text"  style="width:100%"  class="condition_ipt" value="{#employee_total}" name="employee_total" id="employee_total"/>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">目前所在写字楼</span>
+                <div class="condition clearfix" style="margin-left: 115px;">
+                    <input type="text"  style="width:100%"  class="condition_ipt" value="{#current_building}" name="current_building" id="current_building"/>
+                </div>
+            </div>
+            <div class="line">
+                <span class="condition_name">租约到期日</span>
+                <div class="condition clearfix" style="margin-left: 85px;">
+                    <input type="text"  class="condition_ipt" value="{#expire_time}" name="expire_time" id="expire_time"/>
+                </div>
+            </div>
+            <div class="form_btns">
+                <span class="btn2_con"><a style="height:48px;line-height:48px;" href="javascript:;" class="btn2 del_btn">删除客户</a></span>
+            </div>
+            <!--editClent$-->
+        </script>
+    </body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width,user-scalable=no" name="viewport" />
+		<title>开发商运营商代理商注册</title>
+		<link href="resourse/css/reset.css" type="text/css" rel="styleSheet" />
+		<link href="resourse/css/register.css" type="text/css" rel="styleSheet" />
+		<link href="resourse/css/mobilebone.css" type="text/css" rel="styleSheet" />
+		<link href="resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet" />
+		<link href="resourse/css/select2.min.css" type="text/css" rel="styleSheet" />
+		<link href="resourse/css/timer.css" type="text/css" rel="styleSheet" />
+    </head>
+    <body class="graybg">
+        <div class="page in" id="add">
+            <div class="top_banner">
+                <a href="javascript:app.href('register_step2');" class="go_back" ><i></i></a>
+                <p class="title">身份注册<p>
+            </div>
+            <div class="content">
+                <div style="height:100%;width:100%;" id="reg_scroller">
+                    <div class="company_reg scroller_inner">
+                        <div class="company_reg_form" id='user_reg_form'  data-callback="regScroller">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="select" style="display:none;">
+            <div class="select_area">
+                <div class="top_banner">
+                    <a href="#add" class="go_back" data-rel="back"><i></i></a>
+                    <a href="javascript:;" class="submit" data-rel="back"><i></i></a>
+                    <p class="title" id="select_title"></p>
+                </div>
+                <div class="content">
+                    <div style="height:100%;width:100%;" id="select_scroller">
+                        <div class="scroller_inner">
+                            <div id="options">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page out" id="contact" data-callback="protocolInit">
+            <div class="select_area">
+                <div class="top_banner">
+                    <a href="javascript:;" class="go_back" data-rel="back"><i></i></a>
+                    <p class="title" id="contact_title">楼先生用户条款</p>
+                </div>
+                <div class="content" id="contact_scroller" style="top:60px;padding-bottom:0;">
+                    <article>
+                        <p class="p_excerpt">尊敬的用户，欢迎使用楼先生专业版APP应用（以下称“楼先生”），本产品由上海易楼信息科技有限公司（以下简称“易楼公司”）开发运营，为了更好为注册使用人（以下称“会员”）提供优质的产品和服务，我们与会员订立以下用户协议，本协议内容包括协议正文及所有楼先生平台已经发布的或将来可能发布的各种规则、公告或通知，并且为协议不可分割的一部分，与协议具有同等法律效力。</p>
+                        <p class="p_detail">一、服务内容条款</p>
+                        <p class="p_detail">楼先生专业版提供的服务是为会员提供专业办公领域内的楼盘信息展示及发布服务，楼先生平台所有房源信息发布均为会员独立发布。楼先生在楼盘信息发布之前，已经对信息的准确性、真实性及合法性做了必要的核查，但是业主会员也务必自行核查所发布楼盘信息的准确性、真实性和合法性，楼先生平台不承担任何保证责任。</p>
+                        <p class="p_detail">会员若发现平台内存在虚假身份、虚假房源信息、违法信息等，请立即向楼先生平台举报，楼先生平台将采取删除或屏蔽，以及其他相应的技术和法律手段阻止此类信息的发布，楼先生平台会尽量保证会员存储信息的稳定与安全，但不对会员发布的信息删除或其存储失败负责。楼先生平台服务的具体内容由本公司根据实际情况提供，本公司保留随时变更、中断或终止部分或全部楼先生服务的权利。<br></p>
+                        <p class="p_detail">二、目的</p>
+                        <p class="p_detail">本协议是以规定会员使用易楼公司及楼先生平台提供的服务时，楼先生平台与会员间的权利、义务、服务条款等基本事宜为目的。</p>
+                        <p class="p_detail">三、遵守法律及法律效力</p>
+                        <p class="p_detail">本服务使用协议在向会员公告后，开始提供服务或以其他方式向会员提供服务同时产生法律效力。</p>
+                        <p class="p_detail">会员同意遵守《中华人民共和国保密法》、《计算机信息系统国际联网保密管理规定》、《中华人民共和国计算机信息系统安全保护条例》、《计算机信息网络国际联网安全保护管理办法》、《中华人民共和国计算机信息网络国际联网管理暂行规定》及其实施办法等相关法律法规的任何及所有的规定，并对会员以任何方式使用服务的任何行为及其结果承担全部责任。</p>
+                        <p class="p_detail"><p class="p_detail">本服务使用协议在向会员公告后，开始提供服务或以其他方式向会员提供服务同时产生法律效力。</p></p>
+                        <p class="p_detail">四、会员的义务</p>
+                        <p class="p_detail">用户在申请使用本平台楼先生专业版服务时，必须向本平台提供真实准确的个人资料，如个人资料有任何变动，必须及时更新。</p>
+                        <p class="p_detail">用户在使用楼先生应用网络服务过程中，必须遵循以下原则：<br>
+                             遵守中国有关的法律和法规；<br>
+                            不得为任何非法目的而使用网络服务系统；<br>
+                            遵守所有与网络服务有关的网络协议、规定和程序；<br>
+                            不得利用楼先生服务系统传输任何危害社会，侵蚀道德风尚，宣传不法宗教组织等内容；<br>
+                            不得利用楼先生服务系统进行任何可能对互联网的正常运转造成不利影响的行为；<br>
+                            不得利用楼先生服务系统上载、张贴或传送任何非法、有害、胁迫、滥用、骚扰、侵害、中伤、粗俗、猥亵、诽谤、侵害他人隐私、辱骂性的、恐吓性的、庸俗淫秽的及有害或种族歧视的或道德上令人不快的包括其他任何非法的信息资料；<br>
+                            不得利用楼先生服务系统进行任何不利于楼先生的行为；<br>
+                            如发现任何非法使用用户帐号或帐号出现安全漏洞的情况，应立即通告易楼公司。<br>
+                        </p>
+                        <p class="p_detail">五、楼先生应用的权利及义务</p>
+                        <p class="p_detail">楼先生应用除特殊情况外（例如：协助公安等相关部门调查破案等），致力于努力保护会员的个人资料不被外漏，且不得在未经本人的同意下向第三者提供会员的个人资料。</p>
+                        <p class="p_detail">楼先生应用根据提供服务的过程，经营上的变化，无需向会员得到同意即可更改，变更所提供服务的内容。</p>
+                        <p class="p_detail">楼先生应用在提供服务过程中，应及时解决会员提出的不满事宜，如在解决过程中确有难处，可以采取公开通知方式或向会员发送电子邮件寻求解决办法。</p>
+                        <p class="p_detail">楼先生应用在下列情况下可以不通过向会员通知，直接删除其上载的内容：<br>
+                            有损于楼先生，会员或第三者名誉的内容；<br>
+                            利用途牛服务系统上载、张贴或传送任何非法、有害、胁迫、滥用、骚扰、侵害、中伤、粗俗、猥亵、诽谤、侵害他人隐私、辱骂性的、恐吓性的、庸俗淫秽的及有害或种族歧视的或道德上令人不快的包括其他任何非法的内容；<br>
+                            侵害楼先生或第三者的版权，著作权等内容；<br>
+                            存在与楼先生提供的服务无关的内容；<br>
+                            无故盗用他人的帐号，姓名上载、张贴或传送任何内容及恶意更改，伪造他人上载内容。<br>
+                        </p>
+                        <p class="p_detail">六、知识产权声明</p>
+                        <p class="p_detail">本应用（楼先生专业版）所有的产品、技术、程序、页面（包括但不限于页面设计及内容）以及资料内容（包括但不限于本站所刊载的图片、视频、Flash等）均属于知识产权，仅供本用户交流、学习、研究和欣赏，未经授权，任何人不得擅自使用，否则，将依法追究法律责任。</p>
+                        <p class="p_detail">楼先生用户在易楼帮频道上传的资料内容（包括但不限于图片、视频、Flash、点评等），应保证为原创或已得到充分授权，并具有准确性、真实性、正当性、合法性，且不含任何侵犯第三人权益的内容，因抄袭、转载、侵权等行为所产生的纠纷由用户自行解决，易楼公司不承担任何法律责任。</p>
+                        <p class="p_detail">七、免责声明</p>
+                        <p class="p_detail">任何人因使用本应用而可能遭致的意外及其造成的损失（包括因下载本应用可能链接的第三方APP内容而感染手机病毒），我们对此概不负责，亦不承担任何法律责任。</p>
+                        <p class="p_detail">楼先生应用禁止制作、复制、发布、传播等具有反动、色情、暴力、淫秽等内容的信息，一经发现，立即删除。若您因此触犯法律，我们对此不承担任何法律责任。</p>
+                        <p class="p_detail">本应用会员自行上传或通过网络收集的资源，我们仅提供一个展示、交流的平台，不对其内容的准确性、真实性、正当性、合法性负责，也不承担任何法律责任。</p>
+                        <p class="p_detail">任何单位或个人认为通过本应用页面内容可能涉嫌侵犯其著作权，应该及时向我们提出书面权利通知，并提供身份证明、权属证明及详细侵权情况证明。我们收到上述法律文件后，将会依法尽快处理。</p>
+                        <p class="p_detail">八、服务变更、中断或终止</p>
+                        <p class="p_detail">如因系统维护或升级的需要而需暂停楼先生服务，楼先生将尽可能事先进行通告。</p>
+                        <p class="p_detail">如发生下列任何一种情形，楼先生有权随时中断或终止向用户提供本协议项下的楼先生服务而无需通知用户：<br>
+                            用户提供的个人资料不真实；<br>
+                            用户违反本协议中规定的使用规则。<br>
+                            除前款所述情形外，楼先生同时保留在不事先通知用户的情况下随时中断或终止部分或全部楼先生服务的权利，对于所有服务的中断或终止而造成的任何损失，楼先生无需对用户或任何第三方承担任何责任。
+                        </p>
+                        <p class="p_detail">九、法律适用及争议解决</p>
+                        <p class="p_detail">本协议之效力、解释、变更、执行与争议解决均适用中华人民共和国法律。因履行本协议过程中所产生的争议，应友好协商，协商不成，可向易楼公司所在当地人民法院提起诉讼。</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div id="datePlugin"></div>
+		<script src="resourse/scripts/regConfig.js"></script>
+        <script type="text/tpl">
+            <!--^regPersonal-->
+			<!--其它注册页-->
+            <div class="ipts">
+                <div class="ipt_con1">
+                    <span>
+                        <input type="text" style="width:90%" placeholder="您的称呼" id="cn_username"/>
+                    </span>
+                </div>
+                <div class="ipt_con1">
+					<span>
+                        <input type="email"  style="width:90%"  placeholder="您的邮箱" id="email"/>
+                    </span>
+                </div>
+			</div>
+            <div style="text-align: center;padding-top:8px">
+                <input type="checkbox" checked="checked" onclick="return false">
+				<label for="agreement">
+                    	我接受“<a href="#contact" class="protocol">楼先生用户使用协议</a>”
+                </label>
+            </div>
+            <a href="javascript:;" class="submit_btn1">提 交</a>
+            <!--regPersonal$-->
+            <!--^regCompany-->
+			<!--开、代、运、物注册-->
+            <div class="ipts">
+                <div class="ipt_con1">
+                    <span>
+                        <input type="text"  style="width:90%"  placeholder="您的中文名" id="cn_username"/>
+                    </span>
+                </div>
+                <div class="ipt_con1">
+					<span>
+                        <input type="text"  style="width:90%"  placeholder="您的英文名(选填)" id="en_username"/>
+                    </span>
+				</div>
+				<div class="ipt_con1">
+					<span>
+                        <input type="email"  style="width:90%"  placeholder="您的邮箱(选填)" id="email"/>
+                    </span>
+				</div>
+				<div class="ipt_con1">
+					<span>
+	                    <input type="text" maxlength="7"  style="width:90%"  placeholder="公司简称，不超过7个字符" id="company"/>
+	                </span>
+				</div>
+				<div class="ipt_con1">
+					<span>
+                        <input type="text"  style="width:90%"  placeholder="负责的楼盘名称(可多选)" id="building_name"/>
+                    </span>
+				</div>
+				<div class="ipt_con1">
+					<span>
+                        <input type="text"  style="width:90%"  placeholder="您的微信号" id="wechat_number"/>
+                    </span>
+				</div>
+            </div>
+            <a href="javascript:app.upload(1,'',1,2);">                
+				<div class="upload_avatar">
+					<span>上传您的微信二维码(选填)</span>
+					<div class="img_con clearfix">
+						<span href="javascript:;" class="add_img" id="wechat_code" imgt="weixin_code"></span>
+					</div>
+				</div>
+			</a>
+			<a  href="javascript:app.upload(1,'',1,2);">
+				<div class="upload_avatar">
+					<span>上传您的头像(选填)</span>
+					<div class="img_con clearfix">
+						<span href="javascript:;" class="add_img" id="add_cover" imgt="cover"></span>
+					</div>
+				</div>
+			</a>
+			<a  href="javascript:app.upload(1,'',1,2);">
+				<div class="upload_avatar">
+					<span>上传您的名片</span>
+					<div class="img_con clearfix">
+						<span href="javascript:;" class="add_img" id="add_id_card" imgt="id_cover"></span>
+					</div>
+				</div>
+            </a>
+            <div style="text-align: center;padding-top:8px">
+                <input type="checkbox" checked="checked" onclick="return false">
+                <label for="agreement">
+                    我接受“<a href="#contact" class="protocol">楼先生用户使用协议</a>”
+                </label>
+            </div>
+            <a href="javascript:;" class="submit_btn1">提 交</a>
+            <!--regCompany$-->
+             <!--^regManager-->
+             <!--经纪人-->
+            <div class="ipts">
+                <div class="ipt_con1">
+                    <span>
+                        <input type="text"  style="width:90%"  placeholder="您的中文名" id="cn_username"/>
+                    </span>
+                </div>
+                <div class="ipt_con1">
+					<span>
+                        <input type="text"  style="width:90%"  placeholder="您的英文名(选填)" id="en_username"/>
+                    </span>
+				</div>
+				<div class="ipt_con1">
+					<span>
+                        <input type="email"  style="width:90%"  placeholder="您的邮箱" id="email"/>
+                    </span>
+				</div>
+				<div class="ipt_con1">
+					<span>
+                        <input type="text"  maxlength="7" style="width:90%"  placeholder="公司简称，不超过7个字" id="company"/>
+                    </span>
+				</div>
+				<div class="ipt_con1">
+					<span class="condition_name" style="top:10px;color: darkgrey;">擅长区域</span>
+					<div class="condition" style="margin-left:80px;">
+                        <a st="擅长区域" ste="region" id="go_select_region" class="select_condition clearfix" href="#select">
+                            <i></i>
+                            <p>请选择(不超过3个，选填)</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="ipt_con1">
+                  <span>
+                    <input type="text" placeholder="入行时间" id="work_start"/>
+                  </span>
+                </div>
+                <div class="ipt_con1">
+					<span>
+                        <input type="text"  style="width:90%"  placeholder="您的微信号" id="wechat_number"/>
+                    </span>
+				</div>
+            </div>
+			<a href="javascript:app.upload(1,'',1,2);">
+				<div class="upload_avatar">
+					<span>上传您的微信二维码(选填)</span>
+					<div class="img_con clearfix">
+						<span href="javascript:;" class="add_img" id="wechat_code" imgt="weixin_code"></span>
+					</div>
+				</div>
+			</a>
+			<a  href="javascript:app.upload(1,'',1,2);">
+				<div class="upload_avatar">
+					<span>上传您的头像(选填)</span>
+                    <div class="img_con clearfix">
+                        <span href="javascript:;" class="add_img" id="add_cover" imgt="cover"></span>
+                    </div>
+				</div>
+			</a>
+			<a  href="javascript:app.upload(1,'',1,2);">
+				<div class="upload_avatar">
+					<span>上传您的名片</span>
+					<div class="img_con clearfix">
+						<span href="javascript:;" class="add_img" id="add_id_card" imgt="cover"></span>
+					</div>
+				</div>
+            </a>
+			<div style="text-align: center;padding-top:8px">
+				<input type="checkbox" checked="checked" onclick="return false">
+				<label for="agreement">
+                    	我接受“<a href="#contact" class="protocol">楼先生用户使用协议</a>”
+                </label>
+            </div>
+            <a href="javascript:;" class="submit_btn1" style="margin-bottom:15px">提 交</a>
+            <!--regManager$-->
+             <!--^select_option-->
+                <label class="checkbox area">
+                    <input type="checkbox" name="{#keyName}" value="{#id}"/>
+                    <span class="is_check right"></span>
+                    <span class="checkbox_title">{#name}</span>
+                </label>
+            <!--select_option$-->
+            <!--^img-->
+                <span class="img_span {#imgType}">
+                    <a href="javascript:;" class="img_del" imgId="{#id}"></a>
+                    <img src="{#avatar}" />
+                </span>
+                <span class="img_span {#imgType}">
+                    <a href="javascript:;" class="img_weixin" imgId="{#id}"></a>
+                    <img src="{#weixin_avatar}" />
+                </span>
+                <span class="img_span {#imgType}">
+                    <a href="javascript:;" class="img_id" imgId="{#id}"></a>
+                    <img src="{#id_avatar}" />
+                </span>
+            <!--img$-->
+
+        </script>
+
+    </body>
+</html>

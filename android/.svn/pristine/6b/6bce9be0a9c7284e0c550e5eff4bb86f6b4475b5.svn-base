@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>选择身份</title>
+        <link href="resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+    </head>
+    <body class="body_select_type">
+        <div class="page in">
+            <div class="select_type">
+                <p>请选择您的注册身份</p>
+                <div class="types">
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=1');"><div class="type">开发商</div></a>
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=2');"><div class="type">代理商</div></a>
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=3');"><div class="type">运营商</div></a>
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=102');"><div class="type">经纪人</div></a>
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=201');"><div class="type">小业主</div></a>
+                    <a class="type_warp" href="javascript:app.href('register_step3.html','type=299');"><div class="type">其他</div></a>
+                </div>
+            </div>
+        </div>
+        <script src="resourse/scripts/regConfig.js"></script>
+    </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=no" />
+        <title>楼盘详情</title>
+        <link href="/resourse/css/reset.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/register.css" type="text/css" rel="styleSheet"/>
+        <link href="css/lxs.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/iSlider.css" type="text/css" rel="styleSheet"/>
+        <link href="/resourse/css/mobilebone.animate.css" type="text/css" rel="styleSheet"/>
+        <script src="../resourse/scripts/jquery-1.8.3.js"></script>
+    </head>
+    <!-- 收藏夹楼盘点击之后的楼盘详情页面 -->
+    <body class="graybg">
+        <div class="page out" id="detail" data-fallback="detailFallback">
+            <div class="top_banner">
+                <a href="javascript:app.goBack();" class="go_back" data-rel="back"><i></i></a>
+                <div class="buliding_operate">
+                   <a class="error_correction">
+						<i></i>
+					</a>
+                    <a href="javascript:;" class="buliding_collect" id="collect_buliding"><i></i></a>
+                    <a href="javascript:;" class="buliding_share" id="buliding_share"><i></i></a>
+                </div>
+                <p class="title_right"><a href="javascript:app.href('ylb_index.html');">易楼帮</a></p>
+            </div>
+            <div class="content buliding_inner_info white" id="detail_scroller">
+                <div class="scroller_inner">
+                    <div class="buliding_detail ">
+                        <div class="buliding_img">
+                            <img src="" id="avatar"/>
+                            <a class="img_count" href="javascript:;" id="buliding_img" style="display:none;">
+                                <i></i>
+                                <span class="img_count_span" id="img_total_span"></span>
+                            </a>
+                        </div>
+                        <div class="buliding_info">
+                            <a href="javascript:;" class="go_pos" id="go_map"></a>
+                            <p class="name" id="name"></p>
+                            <p class="pos" id="address"></p>
+                        </div>
+                    </div>
+                    <div class="info_list clearfix">
+                        <div class="info_item" id="rent_price">
+                            <span>租金：</span>
+                            <span id="rent_price_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item" id="sell_price">
+                            <span>售价：</span>
+                            <span id="sell_price_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item" id="property_costs">
+                            <span>物业费：</span>
+                            <span id="property_costs_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item half" id="type">
+                            <span>类型：</span>
+                            <span id="type_span"></span>
+                        </div>
+                        <div class="info_item half" id="build_date">
+                            <span>竣工日期：</span>
+                            <span id="build_date_span"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="info_item clearfix" id="metro">
+                            <span style="float:left;">地铁：</span>
+                            <p id="metro_span" style="margin-left:42px;"></p>
+                        </div>     
+                        <div class="info_item clearfix" id="tags">
+                            <span style="float:left;">特色：</span>
+                            <p id="tags_span" style="margin-left:42px;"></p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <a class="go_detail" href="#detail_more" data-rel="auto" style="display:none;">
+                            <span>详细信息</span>
+                            <i></i>
+                        </a>
+                    </div>
+                    <div class="phones clearfix" id="phones">
+                        <i></i>
+                        <a class="phone" id="phone1" data-verify=""></a>
+                        <a class="phone" id="phone2" data-verify="" style="margin-right:0;"></a>
+                    </div>
+                    
+                    <div id="consultant_space" style="width: 1px;height: 10px;display:none;"></div>
+                    <!-- consultant_space为空隙，当phones隐藏时，它就显示，反之隐藏 -->
+					<!--成交经纪人推荐-->
+					<div style="font-size: 14px;" class="house_list" id="con_recom">
+						<div style="width: 1px;height: 10px;"></div>
+						<a style="margin-left: 8px;" class="recom" id="name">上海来福士广场</a><span class="recom">成交经纪人推荐</span>
+						<div style="width: 1px;height: 10px;"></div>
+						<!-- 多图 -->
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<div class="mui-slider-item mui-slider-item-duplicate">
+									<ul style="margin-left: 9px;" class="mui-table-view mui-grid-view"></ul>
+								</div>
+							</div>
+						</div>
+						<div style="width: 1px;height: 60px;"></div>
+
+					</div>
+					<div id="consultant_space_bottom" style="width: 1px;height: 10px;"></div>
+					
+                    <div class="house_list" id="rooms">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page out" id="detail_more">
+            <div class="top_banner gray">
+                <a href="#detail" class="go_back" data-rel="back"><i></i></a>
+                <p class="title" id="buliding_title2"></p>
+            </div>
+            <div class="content" id="detail_more_scroller">
+                <div class="buliding_more scroller_inner" id="more_info">
+
+                </div>
+            </div>
+        </div>
+        
+		<!--纠错页面跳转前的操作-->
+		<script type="text/javascript">
+			var href_con = "javascript:app.href('lxs_error_correction.html?";
+			var href_end = "')";
+			$(".error_correction").on("click", function() {
+				var parent = $(this).parent().parent().parent().attr("id");
+				if(parent == "detail") {
+					//楼盘
+					var name = $("#name").text();
+					localStorage.setItem("lp_name", name);
+					$(this).attr("href", encodeURI(href_con + "type=1" + href_end));
+				}
+
+				if(parent == "room_detail") {
+					//房源
+					var room_buliding_name = $("#room_buliding_name").text();
+					var room_square_meter_span = $("#room_square_meter_span").text(); //面积
+					localStorage.setItem("fy_name", room_buliding_name);
+					localStorage.setItem("unit", $("#unit_no").text());
+					$(this).attr("href", encodeURI(href_con + "type=2" + href_end));
+				}
+			})
+		</script>
+
+        <script src="scripts/lxsConfig.js"></script>
+        <script type="text/tpl">
+            <!--^room-->
+                <div class="house_item">
+                    <div class="house_img">
+                        <img src="{#avatar}" />
+                    </div>
+                    <span class="house_type {#transaction_type|typeClass}"></span>
+                    <div class="house_info">
+                        <a href="javascript:;" rid="{#id}" class="room_detail">
+                            <p class="house_name">{#unit_no}</p>
+                            {#id|priceAssert}
+                        </a>
+                    </div>
+                    <span class="house_want {#status|statusClass}"></span>
+                    {#id|isVerified}
+                </div>
+            <!--room$-->
+            <!--^more_info-->
+                <div class="buliding_info_item">
+                    <span class="item_value">{#key}: {#value}</span>
+                </div>
+            <!--more_info$-->
+        </script>
+    </body>
+</html>
